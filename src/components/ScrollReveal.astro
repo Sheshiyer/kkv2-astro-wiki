@@ -7,7 +7,7 @@ interface Props {
   y?: number;
 }
 
-const { class: className = '', delay = 0, duration = 0.8, y = 50 } = Astro.props;
+const { class: className = '', delay = 0, duration = 0.6, y = 30 } = Astro.props;
 ---
 
 <div 
@@ -30,7 +30,7 @@ const { class: className = '', delay = 0, duration = 0.8, y = 50 } = Astro.props
   /* Only hide when GSAP is ready to animate */
   .gsap-ready .scroll-reveal {
     opacity: 0;
-    transform: translateY(var(--reveal-y, 50px));
+    transform: translateY(var(--reveal-y, 30px));
   }
   
   @media (prefers-reduced-motion: reduce) {
@@ -60,8 +60,8 @@ const { class: className = '', delay = 0, duration = 0.8, y = 50 } = Astro.props
     const initScrollReveals = () => {
       document.querySelectorAll('.scroll-reveal').forEach((el) => {
         const delay = parseFloat(el.dataset.delay || '0');
-        const duration = parseFloat(el.dataset.duration || '0.8');
-        const y = parseFloat(el.dataset.y || '50');
+        const duration = parseFloat(el.dataset.duration || '0.6');
+        const y = parseFloat(el.dataset.y || '30');
         
         // Set initial state
         gsap.set(el, { 
@@ -75,12 +75,12 @@ const { class: className = '', delay = 0, duration = 0.8, y = 50 } = Astro.props
           y: 0,
           duration: duration,
           delay: delay,
-          ease: 'power3.out',
+          ease: 'power2.out',
           scrollTrigger: {
             trigger: el,
-            start: 'top 85%',
-            end: 'bottom 15%',
-            toggleActions: 'play none none reverse'
+            start: 'top 90%',
+            end: 'bottom 10%',
+            toggleActions: 'play none none none'
           }
         });
       });

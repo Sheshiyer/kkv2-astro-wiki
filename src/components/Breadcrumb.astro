@@ -13,8 +13,58 @@ const copy = t(locale);
 ---
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
-  <a href={localizedPath(locale, '/')}>{copy.shell.portal}</a>
-  {category && <><span>/</span><span>{category}</span></>}
-  <span>/</span>
+  <a href={localizedPath(locale, '/')} class="breadcrumb__link">{copy.shell.portal}</a>
+  {category && (
+    <>
+      <span class="breadcrumb__separator">/</span>
+      <span class="breadcrumb__category">{category}</span>
+    </>
+  )}
+  <span class="breadcrumb__separator">/</span>
   <span class="breadcrumb__current">{title}</span>
 </nav>
+
+<style>
+  .breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-4);
+  }
+
+  .breadcrumb__link {
+    color: var(--text-soft);
+    text-decoration: none;
+    transition: color 180ms ease;
+  }
+
+  .breadcrumb__link:hover {
+    color: var(--brand-accent);
+  }
+
+  .breadcrumb__separator {
+    color: var(--text-soft);
+    opacity: 0.5;
+  }
+
+  .breadcrumb__category {
+    color: var(--text-muted);
+  }
+
+  .breadcrumb__current {
+    color: var(--text-strong);
+    font-weight: 700;
+  }
+
+  @media (max-width: 768px) {
+    .breadcrumb {
+      font-size: 0.65rem;
+      gap: var(--space-1);
+    }
+  }
+</style>

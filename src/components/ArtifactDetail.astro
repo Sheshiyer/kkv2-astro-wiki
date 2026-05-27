@@ -30,3 +30,89 @@ const sectionCount = headings.filter((heading) => heading.depth <= 2).length;
     </div>
   </dl>
 </aside>
+
+<style>
+  .artifact-detail {
+    border-radius: var(--radius-xl);
+    background: linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.025)
+    );
+    border: 1px solid var(--surface-border);
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(24px) saturate(135%);
+    padding: clamp(1.2rem, 2vw, 1.8rem);
+  }
+
+  [data-theme='dark'] .artifact-detail {
+    background: linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.02)
+    );
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .eyebrow {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--brand-accent);
+    margin: 0 0 var(--space-2);
+  }
+
+  .artifact-detail h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 var(--space-3);
+    color: var(--text-strong);
+  }
+
+  .artifact-detail > p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0 0 var(--space-4);
+  }
+
+  .artifact-detail dl {
+    margin: 0;
+    display: grid;
+    gap: 0;
+  }
+
+  .artifact-detail div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) 0;
+    border-top: 1px solid var(--surface-border);
+  }
+
+  .artifact-detail dt {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-soft);
+  }
+
+  .artifact-detail dd {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-strong);
+    text-align: right;
+  }
+
+  @media (max-width: 768px) {
+    .artifact-detail {
+      padding: var(--space-4);
+      border-radius: var(--radius-lg);
+    }
+  }
+</style>

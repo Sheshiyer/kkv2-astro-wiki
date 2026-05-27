@@ -22,7 +22,7 @@
       
       proseContainers.forEach((container) => {
         // Select all content blocks that should animate individually
-        const blocks = container.querySelectorAll('h1, h2, h3, h4, p, ul, ol, blockquote, pre, table, .story-section');
+        const blocks = container.querySelectorAll('h1, h2, h3, h4, p, ul, ol, blockquote, pre, table, hr');
         
         blocks.forEach((block, index) => {
           // Skip if already processed
@@ -32,23 +32,21 @@
           // Set initial state
           gsap.set(block, { 
             opacity: 0, 
-            y: 40,
-            scale: 0.98
+            y: 30,
           });
           
           // Create scroll-triggered animation with stagger
           gsap.to(block, {
             opacity: 1,
             y: 0,
-            scale: 1,
-            duration: 0.7,
-            delay: index * 0.04, // Stagger based on DOM order
-            ease: 'power3.out',
+            duration: 0.6,
+            delay: Math.min(index * 0.05, 0.3), // Cap delay at 0.3s
+            ease: 'power2.out',
             scrollTrigger: {
               trigger: block,
-              start: 'top 88%',
+              start: 'top 90%',
               end: 'bottom 10%',
-              toggleActions: 'play none none reverse'
+              toggleActions: 'play none none none'
             }
           });
         });
@@ -78,140 +76,9 @@
   .doc-content-animator :global(ol),
   .doc-content-animator :global(blockquote),
   .doc-content-animator :global(pre),
-  .doc-content-animator :global(table) {
-    opacity: 1;
-  }
-  
-  /* Storytelling narrative styles */
-  .doc-content-animator :global(p:first-of-type) {
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: var(--kk-gold-400);
-    font-weight: 400;
-    letter-spacing: -0.01em;
-    margin-bottom: 1.75rem;
-  }
-  
-  .doc-content-animator :global(p:first-of-type)::first-letter {
-    float: left;
-    font-size: 3.5rem;
-    line-height: 1;
-    padding-right: 0.75rem;
-    padding-top: 0.25rem;
-    color: var(--kk-gold-500);
-    font-weight: 700;
-    font-family: var(--font-display);
-  }
-  
-  /* Pull quote styling */
-  .doc-content-animator :global(blockquote) {
-    position: relative;
-    margin: 2.5rem 0;
-    padding: 1.5rem 2rem;
-    background: linear-gradient(135deg, var(--glass-bg) 0%, rgba(184, 154, 106, 0.05) 100%);
-    border-left: 3px solid var(--kk-gold-500);
-    border-radius: 0 12px 12px 0;
-    font-style: italic;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: var(--kk-text-300);
-  }
-  
-  .doc-content-animator :global(blockquote)::before {
-    content: '"';
-    position: absolute;
-    top: -0.5rem;
-    left: 1rem;
-    font-size: 4rem;
-    color: var(--kk-gold-600);
-    font-family: var(--font-display);
-    line-height: 1;
-    opacity: 0.3;
-  }
-  
-  .doc-content-animator :global(blockquote p) {
-    margin: 0;
-    color: var(--kk-text-300);
-    font-size: 1.1rem;
-  }
-  
-  /* Enhanced heading spacing */
-  .doc-content-animator :global(h2) {
-    margin-top: 3rem;
-    margin-bottom: 1.25rem;
-    position: relative;
-    padding-bottom: 0.75rem;
-  }
-  
-  .doc-content-animator :global(h2)::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 2px;
-    background: linear-gradient(90deg, var(--kk-gold-500), transparent);
-  }
-  
-  /* Lists with better narrative flow */
-  .doc-content-animator :global(ul),
-  .doc-content-animator :global(ol) {
-    margin: 1.5rem 0;
-    padding-left: 1.5rem;
-  }
-  
-  .doc-content-animator :global(li) {
-    margin-bottom: 0.75rem;
-    line-height: 1.6;
-    position: relative;
-  }
-  
-  .doc-content-animator :global(ul li::marker) {
-    color: var(--kk-gold-500);
-  }
-  
-  /* Story section dividers */
+  .doc-content-animator :global(table),
   .doc-content-animator :global(hr) {
-    border: none;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--kk-gold-700), transparent);
-    margin: 3rem 0;
-    position: relative;
-  }
-  
-  .doc-content-animator :global(hr)::after {
-    content: '• • •';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background: var(--kk-bg-elevated);
-    padding: 0 1rem;
-    color: var(--kk-gold-600);
-    font-size: 0.75rem;
-    letter-spacing: 0.5rem;
-  }
-  
-  /* Tables */
-  .doc-content-animator :global(table) {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1.5rem 0;
-    font-size: 0.9rem;
-  }
-  
-  .doc-content-animator :global(th) {
-    background: var(--glass-bg);
-    padding: 0.75rem 1rem;
-    text-align: left;
-    font-weight: 600;
-    color: var(--kk-gold-400);
-    border-bottom: 2px solid var(--kk-gold-800);
-  }
-  
-  .doc-content-animator :global(td) {
-    padding: 0.75rem 1rem;
-    border-bottom: 1px solid var(--glass-border);
+    opacity: 1;
   }
   
   /* Reduced motion support */
