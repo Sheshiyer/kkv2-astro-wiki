@@ -38,7 +38,11 @@ body.immersive-body {
   gap: 1rem;
 }
 
-.immersive-lockup .brand-lockup__orb {
+.immersive-lockup .brand-lockup__logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  object-fit: contain;
   transform: translate3d(calc(var(--pointer-x) * 5px), calc(var(--pointer-y) * 5px), 0);
 }
 
