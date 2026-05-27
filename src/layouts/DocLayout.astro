@@ -1,6 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import ScrollReveal from '../components/ScrollReveal.astro';
+import DocContentAnimator from '../components/DocContentAnimator.astro';
 import ArtifactDetail from '../components/ArtifactDetail.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import TableOfContents from '../components/TableOfContents.astro';
@@ -35,13 +36,13 @@ const readingTime = Math.max(1, Math.ceil(wordCount / 210));
     </div>
 
     <div class="immersive-doc-grid">
-      <ScrollReveal delay={0.1}>
-        <article class="immersive-doc-panel glass-panel">
+      <article class="immersive-doc-panel glass-panel">
+        <DocContentAnimator>
           <div class="prose portal-prose">
             <slot />
           </div>
-        </article>
-      </ScrollReveal>
+        </DocContentAnimator>
+      </article>
 
       <ScrollReveal delay={0.2}>
         <div class="immersive-doc-rail">

@@ -1,8 +1,6 @@
 ---
-// Note: Using Barba.js for page transitions instead of Astro ViewTransitions
 import Navigation from '../components/Navigation.astro';
 import PageTransitionController from '../components/PageTransitionController.astro';
-import BarbaPageTransition from '../components/BarbaPageTransition.astro';
 import PixelMediaLayer from '../components/PixelMediaLayer.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
 import LanguageToggle from '../components/LanguageToggle.astro';
@@ -54,11 +52,9 @@ const pathname = Astro.url.pathname;
     <PageTransitionController />
     <PixelMediaLayer />
 
-    <BarbaPageTransition />
-
-      <div class="immersive-shell" data-barba="wrapper">
+      <div class="immersive-shell">
       <header class="immersive-topbar glass-panel">
-        <a href={localizedPath(locale, '/')} class="brand-lockup immersive-lockup" data-barba-prevent="self">
+        <a href={localizedPath(locale, '/')} class="brand-lockup immersive-lockup">
           <img src="/logo.png" alt="Klear Karma" class="brand-lockup__logo" width="32" height="32" />
           <span>
             <strong>{siteData.brandName}</strong>
@@ -79,7 +75,7 @@ const pathname = Astro.url.pathname;
         </aside>
       )}
 
-      <main class={`immersive-content ${fullWidth ? 'immersive-content--fullwidth' : ''}`} data-barba="container" data-barba-namespace={fullWidth ? 'home' : 'docs'}>
+      <main class={`immersive-content ${fullWidth ? 'immersive-content--fullwidth' : ''}`}>
         <slot />
       </main>
     </div>

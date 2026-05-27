@@ -223,7 +223,6 @@ const artifactsJson = JSON.stringify(artifacts);
       if (card) {
         const artifactId = card.getAttribute('data-artifact-id');
         if (artifactId) {
-          e.preventDefault();
           openPlayer(artifactId);
         }
       }

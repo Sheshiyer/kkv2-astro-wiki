@@ -61,7 +61,8 @@ const safeFormat = format || 'md';
 const formatLabel = formatLabels[safeFormat] || safeFormat.toUpperCase();
 ---
 
-<article class="artifact-card" data-artifact-id={id} data-type={type} data-featured={featured} style={`--card-index: ${index}; --type-bg: ${colors.bg}; --type-text: ${colors.text}`}>
+<article class="artifact-card" data-artifact-id={id} data-type={type} data-featured={featured} style={`--card-index: ${index}; --type-bg: ${colors.bg}; --type-text: ${colors.text}`}>  
+  <button type="button" class="artifact-card__link" aria-label={`Open ${title}`}>
   <div class="artifact-card__link">
     <div class="artifact-card__preview">
       {thumbnail ? (
@@ -109,7 +110,7 @@ const formatLabel = formatLabels[safeFormat] || safeFormat.toUpperCase();
         {size && <span class="artifact-card__size">{size}</span>}
       </div>
     </div>
-  </div>
+  </button>
 </article>
 
 <style>
@@ -128,8 +129,15 @@ const formatLabel = formatLabels[safeFormat] || safeFormat.toUpperCase();
   
   .artifact-card__link {
     display: block;
+    width: 100%;
     text-decoration: none;
     color: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
   }
   
   .artifact-card__preview {
