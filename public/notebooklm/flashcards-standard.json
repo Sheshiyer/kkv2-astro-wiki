@@ -1,0 +1,313 @@
+{
+  "title": "Karma Flashcards",
+  "cards": [
+    {
+      "front": "What is the official tagline of the Klear Karma brand?",
+      "back": "Mirror-guided trust for seekers and verified practitioners."
+    },
+    {
+      "front": "Which brand archetype does Klear Karma represent?",
+      "back": "The Reflective Steward."
+    },
+    {
+      "front": "How is the Klear Karma voice persona described in professional terms?",
+      "back": "A grounded reflective strategist."
+    },
+    {
+      "front": "What are the five primary identity pillars of Klear Karma?",
+      "back": "Mirror creates intent, tokens prove utility, practitioners fulfill support, protocol-reviewed commerce, and trust-based results."
+    },
+    {
+      "front": "Identify the primary background color name and hex code for the visual system.",
+      "back": "Mirror Black (#090711)."
+    },
+    {
+      "front": "What is the hex code for the color 'Karma Violet'?",
+      "back": "#221245."
+    },
+    {
+      "front": "Which specific hex code is assigned to the accent color 'Quiet Gold'?",
+      "back": "#D8B35A."
+    },
+    {
+      "front": "What is the primary font used for headers in the Klear Karma brand?",
+      "back": "Sora."
+    },
+    {
+      "front": "Which typeface is designated for body text across all materials?",
+      "back": "Inter."
+    },
+    {
+      "front": "What font is used specifically for data and technical displays?",
+      "back": "JetBrains Mono."
+    },
+    {
+      "front": "What is the name of the primary persona targeted by Klear Karma?",
+      "back": "The Premium Seeker In Transition."
+    },
+    {
+      "front": "What is the primary pain point seekers experience with traditional wellness marketplaces?",
+      "back": "They ask for category, price, and time before understanding the person."
+    },
+    {
+      "front": "Name one of the four core emotional drivers for the Klear Karma persona.",
+      "back": "Relief."
+    },
+    {
+      "front": "Which emotional driver reflects the seeker's value for expertise and quality?",
+      "back": "Discernment."
+    },
+    {
+      "front": "What is the name of the app-native reflective guide and hero product?",
+      "back": "Klear Karma Mirror."
+    },
+    {
+      "front": "How many free Mirror tokens are granted to new users upon signup?",
+      "back": "369 tokens."
+    },
+    {
+      "front": "Approximately how many tokens does the opening Mirror/chart flow cost?",
+      "back": "108 tokens."
+    },
+    {
+      "front": "What is the lowest value for a token recharge anchor?",
+      "back": "299."
+    },
+    {
+      "front": "Identify the four standard recharge anchors used in local currency.",
+      "back": "299, 599, 799, and 1099."
+    },
+    {
+      "front": "How is a 'paid-activated user' defined by Klear Karma?",
+      "back": "A user who recharges at least 299 within 90 days of signup or interaction."
+    },
+    {
+      "front": "Which two countries are the designated launch markets for the brand?",
+      "back": "Thailand and India."
+    },
+    {
+      "front": "What is the currency used for users located in Thailand?",
+      "back": "THB (Thai Baht)."
+    },
+    {
+      "front": "What is the currency used for users located in India?",
+      "back": "INR (Indian Rupee)."
+    },
+    {
+      "front": "What visual metaphor describes the app's aesthetic environment?",
+      "back": "A black-violet reflective chamber with quiet gold geometry."
+    },
+    {
+      "front": "The visual element representing token value and practitioner highlights is _____.",
+      "back": "Quiet Gold"
+    },
+    {
+      "front": "Klear Karma explicitly prohibits making _____ or deterministic astrology claims.",
+      "back": "medical"
+    },
+    {
+      "front": "What role does the marketplace play within the Klear Karma ecosystem?",
+      "back": "The fulfillment layer."
+    },
+    {
+      "front": "What is the primary function of the 'Mirror' feature?",
+      "back": "A paid-intent engine that asks for lived context before category or price."
+    },
+    {
+      "front": "What is the target ARR (Annual Recurring Revenue) for the investor milestone?",
+      "back": "600,000 to 700,000 THB."
+    },
+    {
+      "front": "How many paid-activated users are required to meet the strategic KPI set?",
+      "back": "1,000 users."
+    },
+    {
+      "front": "What is the target number of repeat purchasers for the early launch phase?",
+      "back": "200 purchasers."
+    },
+    {
+      "front": "What percentage revenue share is applied to marketplace product sales?",
+      "back": "10 percent."
+    },
+    {
+      "front": "What is the consultation commission fee for practitioners during the MVP phase?",
+      "back": "Zero (No consultation commission)."
+    },
+    {
+      "front": "What is the token payout threshold for practitioners?",
+      "back": "10,000 to 15,000 tokens."
+    },
+    {
+      "front": "What requirement must practitioners meet before being eligible for a payout?",
+      "back": "Completed profile and KYC/payment verification."
+    },
+    {
+      "front": "What is the primary background visual material used in the UI?",
+      "back": "Black mirrored glass."
+    },
+    {
+      "front": "What geometry is used for the seal material and system icons?",
+      "back": "Minimal lotus geometry."
+    },
+    {
+      "front": "Klear Karma's tone is described as 'internal-first' and '_____ under investor scrutiny'.",
+      "back": "calm"
+    },
+    {
+      "front": "Which color signifies the 'Mirror state' and progress within the app?",
+      "back": "Signal Lotus (#8B5CF6)."
+    },
+    {
+      "front": "What is the purpose of the 'Moon Glass' color (#D9D2C6)?",
+      "back": "Readable text and diagrams."
+    },
+    {
+      "front": "The brand's strategic 'moat' is described as _____.",
+      "back": "trust formation and context-aware handoff"
+    },
+    {
+      "front": "How many tokens are used to stake a marketplace listing submission?",
+      "back": "A specific amount (token staking) that is partially refunded if rejected."
+    },
+    {
+      "front": "Which founder owns technology, the mobile app, and technical setup?",
+      "back": "Shesh Narayan Iyer."
+    },
+    {
+      "front": "Who is responsible for marketing, distribution, and on-ground activations?",
+      "back": "Sahil Sahaparwal."
+    },
+    {
+      "front": "Which founder manages healer relationships and company registration?",
+      "back": "Mathis."
+    },
+    {
+      "front": "What is the current estimated valuation of the Klear Karma product?",
+      "back": "450,000 THB."
+    },
+    {
+      "front": "Identify the two secondary personas mentioned in the brand analysis.",
+      "back": "The Casual Explorer and The Skeptical Seeker."
+    },
+    {
+      "front": "What is the designated 'primary metric' for optimizing paid activation?",
+      "back": "Token recharge after meaningful use."
+    },
+    {
+      "front": "Mirror is described as an _____ onboarding and reflective guide.",
+      "back": "agentic"
+    },
+    {
+      "front": "What specific user data is treated as 'symbolic context' rather than certainty?",
+      "back": "Birth data."
+    },
+    {
+      "front": "Name the document that serves as a hard constraint for brand assumptions.",
+      "back": "assumption-guardrails.md"
+    },
+    {
+      "front": "Under the 'Safety Boundary' family, what is Mirror's primary limitation?",
+      "back": "It reflects patterns but does not decide for the user."
+    },
+    {
+      "front": "The beta strategy intentionally avoids assuming a _____-first launch.",
+      "back": "US"
+    },
+    {
+      "front": "Klear Karma rejects the 'Old World' of wellness, which prioritizes category over _____.",
+      "back": "understanding the person"
+    },
+    {
+      "front": "What are 'resonance threads' in the context of Mirror's output?",
+      "back": "Themes identified during the seeker's reflection process."
+    },
+    {
+      "front": "Klear Karma requires explicit _____ before sharing context with practitioners.",
+      "back": "consent"
+    },
+    {
+      "front": "What does the 'Signal Lotus' color represent in the UI?",
+      "back": "Mirror state, AI handoff, and progress."
+    },
+    {
+      "front": "What weight of the Sora font is used for 'Emphasis'?",
+      "back": "Bold."
+    },
+    {
+      "front": "What weight of the Inter font is used for standard body text?",
+      "back": "Regular."
+    },
+    {
+      "front": "Define the 'Reflective Trust Field'.",
+      "back": "A dark, premium, app-native visual system built for trust."
+    },
+    {
+      "front": "Which visual texture describes the primary gradient of the Mirror fields?",
+      "back": "Deep violet vapor gradient."
+    },
+    {
+      "front": "Klear Karma positions itself against 'certainty-based' apps that overstate _____.",
+      "back": "authority or prediction"
+    },
+    {
+      "front": "What is the intended emotional outcome for a seeker after using Mirror?",
+      "back": "Feeling reflected before being sold to."
+    },
+    {
+      "front": "Mirror asks for lived context one _____ at a time.",
+      "back": "answer"
+    },
+    {
+      "front": "What is 'Protocol-Reviewed Commerce'?",
+      "back": "Marketplace listings that are profile-scoped and manually reviewed for trust."
+    },
+    {
+      "front": "Token grants in the ecosystem should scale around multiples of _____.",
+      "back": "369"
+    },
+    {
+      "front": "What is the 'Beachhead' audience for the Thailand launch?",
+      "back": "Tourists and spiritual wellness seekers in premium Thai islands."
+    },
+    {
+      "front": "Which internal group performs manual listing verification during the beta?",
+      "back": "The founder team."
+    },
+    {
+      "front": "The 'moat' of Klear Karma is trust, context, and _____ intent.",
+      "back": "paid"
+    },
+    {
+      "front": "According to the visual guidelines, where should the logo be placed?",
+      "back": "Centered with at least 1/4 of its width in clear space."
+    },
+    {
+      "front": "Klear Karma's voice is 'spiritually literate' but '_____ with claims'.",
+      "back": "careful"
+    },
+    {
+      "front": "What type of photography is explicitly forbidden in the visual guidelines?",
+      "back": "Stock faces and generic healer portraits."
+    },
+    {
+      "front": "The primary background color represents 'high-trust _____' in color psychology.",
+      "back": "seriousness"
+    },
+    {
+      "front": "What is the intended duration for the 'Paid Activation' KPI window?",
+      "back": "90 days."
+    },
+    {
+      "front": "Name one of the 'aspirational brands' associated with Klear Karma's persona.",
+      "back": "Aesop (or Oura/Headspace)."
+    },
+    {
+      "front": "What is the 'Secondary Goal' of the Welcome Email Sequence?",
+      "back": "To improve paid activation quality without fake urgency."
+    },
+    {
+      "front": "What is the 'Hero Object' used in the brand identity visuals?",
+      "back": "A reflective digital Mirror orb."
+    }
+  ]
+}

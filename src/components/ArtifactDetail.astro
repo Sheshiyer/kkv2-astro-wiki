@@ -1,0 +1,32 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  category?: string;
+  readingTime: number;
+  headings?: { depth: number; slug: string; text: string }[];
+}
+
+const { title, description = '', category = 'Wiki', readingTime, headings = [] } = Astro.props;
+const sectionCount = headings.filter((heading) => heading.depth <= 2).length;
+---
+
+<aside class="artifact-detail glass-panel">
+  <p class="eyebrow">Immersive brief</p>
+  <h2>{title}</h2>
+  {description && <p>{description}</p>}
+  <dl>
+    <div>
+      <dt>Track</dt>
+      <dd>{category}</dd>
+    </div>
+    <div>
+      <dt>Read</dt>
+      <dd>{readingTime} min</dd>
+    </div>
+    <div>
+      <dt>Sections</dt>
+      <dd>{sectionCount || 1}</dd>
+    </div>
+  </dl>
+</aside>

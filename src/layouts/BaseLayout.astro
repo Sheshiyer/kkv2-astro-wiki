@@ -1,0 +1,80 @@
+---
+import Navigation from '../components/Navigation.astro';
+import PageTransitionController from '../components/PageTransitionController.astro';
+import PixelMediaLayer from '../components/PixelMediaLayer.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
+import LanguageToggle from '../components/LanguageToggle.astro';
+import siteData from '../data/site-data.json';
+import type { Locale } from '../i18n';
+import { localizedPath } from '../i18n';
+import '../styles/global.css';
+import '../styles/immersive.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  locale: Locale;
+}
+
+const { title, description, locale } = Astro.props;
+const palette = siteData.palette || {};
+const brandVars = {
+  '--brand-primary': palette.primary?.hex || '#AA98D6',
+  '--brand-secondary': palette.secondary?.hex || '#F8F6F2',
+  '--brand-accent': palette.accent?.hex || '#E67A2E',
+  '--brand-support': palette.support?.hex || '#D9D3C1',
+  '--brand-signal': palette.signal?.hex || '#4CC8B2',
+  '--font-display': siteData.typography?.header?.font || 'Figtree',
+  '--font-body': siteData.typography?.body?.font || 'Inter',
+};
+const defaultTheme = siteData.defaultTheme || 'light';
+const pathname = Astro.url.pathname;
+---
+
+<!DOCTYPE html>
+<html lang={locale} data-theme={defaultTheme} data-template="immersive">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content={palette.primary?.hex || '#17131f'} />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <script is:inline>
+      const savedTheme = localStorage.getItem('theme');
+      const preferred = savedTheme || document.documentElement.dataset.theme || 'light';
+      document.documentElement.setAttribute('data-theme', preferred);
+    </script>
+  </head>
+  <body class="immersive-body" style={brandVars}>
+    <PageTransitionController />
+    <PixelMediaLayer />
+
+    <div class="immersive-shell">
+      <header class="immersive-topbar glass-panel">
+        <a href={localizedPath(locale, '/')} class="brand-lockup immersive-lockup">
+          <span class="brand-lockup__orb">✦</span>
+          <span>
+            <strong>{siteData.brandName}</strong>
+            <small>{siteData.tagline}</small>
+          </span>
+        </a>
+        <nav class="immersive-topbar__links" aria-label="Primary">
+          <a href={localizedPath(locale, '/')}>Portal</a>
+          <a href={localizedPath(locale, siteData.docsHomeHref || '/docs/index')}>Docs</a>
+          <a href={localizedPath(locale, siteData.heroSecondaryHref || '/docs/research/notebooklm-artifacts')}>NotebookLM</a>
+        </nav>
+        <LanguageToggle locale={locale} pathname={pathname} />
+      </header>
+
+      <aside class="immersive-sidebar">
+        <Navigation locale={locale} />
+      </aside>
+
+      <main class="immersive-content">
+        <slot />
+      </main>
+    </div>
+
+    <ThemeToggle />
+  </body>
+</html>

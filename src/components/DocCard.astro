@@ -1,0 +1,22 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  href: string;
+  eyebrow?: string;
+  icon?: string;
+  index?: number;
+}
+
+const { title, description = '', href, eyebrow = '', icon = '', index = 0 } = Astro.props;
+---
+
+<a class="immersive-doc-card reveal-in" href={href} style={`--card-index: ${index}`}>
+  <span class="immersive-doc-card__index">{String(index + 1).padStart(2, '0')}</span>
+  <span class="immersive-doc-card__icon">{icon || '✦'}</span>
+  <span class="immersive-doc-card__body">
+    {eyebrow && <small>{eyebrow}</small>}
+    <strong>{title}</strong>
+    {description && <em>{description}</em>}
+  </span>
+</a>

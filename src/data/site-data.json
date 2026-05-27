@@ -1,0 +1,187 @@
+{
+  "brandName": "Klear Karma",
+  "tagline": "Mirror-guided trust for seekers and verified practitioners",
+  "themeName": "Reflective Trust Field",
+  "defaultTheme": "dark",
+  "launchChannel": "organic",
+  "heroTitle": "Turn Reflection Into Trusted Support",
+  "heroSubtitle": "A dark, premium, app-native visual system built around Mirror fields, lotus geometry, token ledgers, and consent-safe practitioner context.",
+  "heroDescription": "Klear Karma brings together product narrative, visual direction, and launch-ready research in one review portal.",
+  "heroPrimaryHref": "/docs/product/overview",
+  "heroSecondaryHref": "/docs/research/notebooklm-artifacts",
+  "docsHomeHref": "/docs/index",
+  "heroImage": "",
+  "heroImageAlt": "",
+  "metrics": [
+    {
+      "label": "Brandmint outputs",
+      "value": "20"
+    },
+    {
+      "label": "Visual assets",
+      "value": "0"
+    },
+    {
+      "label": "NotebookLM artifacts",
+      "value": "23"
+    },
+    {
+      "label": "Reports surfaced",
+      "value": "3"
+    }
+  ],
+  "launchFacts": [
+    {
+      "label": "Launch channel",
+      "value": "organic"
+    },
+    {
+      "label": "Quality bar",
+      "value": "premium"
+    },
+    {
+      "label": "Notebook policy",
+      "value": "fresh-per-spec"
+    },
+    {
+      "label": "Image policy",
+      "value": "product-reference-only"
+    }
+  ],
+  "storyPillars": [
+    "Mirror before marketplace",
+    "Paid intent before generic leads",
+    "Consent-safe context before practitioner handoff",
+    "Protocol-reviewed commerce before product listings"
+  ],
+  "featuredDocs": [
+    {
+      "title": "Product Overview",
+      "description": "Hero product definition, positioning, and messaging stack for the current launch build.",
+      "href": "/docs/product/overview",
+      "icon": "\ud83d\udce6",
+      "eyebrow": "Product"
+    },
+    {
+      "title": "Visual Guidelines",
+      "description": "Palette, typography, art direction, and brand-system guardrails for the current run.",
+      "href": "/docs/brand/visual-guidelines",
+      "icon": "\ud83c\udfa8",
+      "eyebrow": "Brand System"
+    },
+    {
+      "title": "Campaign Copy",
+      "description": "Campaign narratives, key copy assets, and launch-ready messaging organized for review.",
+      "href": "/docs/marketing/campaign-copy",
+      "icon": "\ud83d\udcdd",
+      "eyebrow": "Campaign"
+    },
+    {
+      "title": "NotebookLM Artifacts",
+      "description": "Surfaced reports, infographics, decks, audio, and research tables produced during Wave 7.",
+      "href": "/docs/research/notebooklm-artifacts",
+      "icon": "\ud83e\udde0",
+      "eyebrow": "Research"
+    }
+  ],
+  "visualHighlights": [
+    {
+      "title": "Infographic \u2014 Landscape",
+      "description": "NotebookLM infographic surfaced directly into the media library.",
+      "href": "/docs/research/notebooklm-artifacts",
+      "image": "/notebooklm/infographic-landscape.png",
+      "eyebrow": "NotebookLM"
+    }
+  ],
+  "notebooklmHighlights": [
+    {
+      "title": "Beyond the Directory: Why Reflection is the New Standard in Spiritual Wellness",
+      "description": "For the premium seeker in transition, the path to support often begins with a structural paradox. At the moment of highest vulnerability\u2014carrying a l\u2026",
+      "href": "/docs/research/report-blog",
+      "downloadHref": "/notebooklm/report-blog.md",
+      "kind": "Report",
+      "image": ""
+    },
+    {
+      "title": "Infographic \u2014 Landscape",
+      "description": "NotebookLM visual summary artifact surfaced in the media library.",
+      "href": "/docs/research/notebooklm-artifacts",
+      "downloadHref": "/notebooklm/infographic-landscape.png",
+      "kind": "Infographic",
+      "image": "/notebooklm/infographic-landscape.png"
+    },
+    {
+      "title": "Detailed Deck \u2014 Full",
+      "description": "Presentation-ready NotebookLM export in PDF format.",
+      "href": "/docs/research/notebooklm-artifacts",
+      "downloadHref": "/notebooklm/deck-detailed-full.pdf",
+      "kind": "Deck",
+      "image": ""
+    },
+    {
+      "title": "Audio Brief \u2014 Short",
+      "description": "NotebookLM-generated audio briefing for listening review.",
+      "href": "/docs/research/notebooklm-artifacts",
+      "downloadHref": "/notebooklm/audio-brief-short.mp3",
+      "kind": "Audio",
+      "image": ""
+    }
+  ],
+  "publishedAtHuman": "May 27, 2026 at 01:30 PM",
+  "runLabel": "Latest kkv2-wiki-v2 launch build",
+  "palette": {
+    "primary": {
+      "name": "Mirror Black",
+      "hex": "#090711",
+      "role": "Primary background, spatial depth, high-trust seriousness"
+    },
+    "secondary": {
+      "name": "Karma Violet",
+      "hex": "#221245",
+      "role": "Secondary fields, Mirror gradients, app panels"
+    },
+    "accent": {
+      "name": "Quiet Gold",
+      "hex": "#D8B35A",
+      "role": "Token value, consent seals, practitioner trust highlights"
+    },
+    "support": {
+      "name": "Moon Glass",
+      "hex": "#D9D2C6",
+      "role": "Readable text, source cards, diagrams"
+    },
+    "signal": {
+      "name": "Signal Lotus",
+      "hex": "#8B5CF6",
+      "role": "Mirror state, AI handoff, activation and progress"
+    }
+  },
+  "typography": {
+    "header": {
+      "font": "Sora",
+      "weights": [
+        "Regular",
+        "SemiBold",
+        "Bold"
+      ],
+      "display_weight": "SemiBold",
+      "emphasis_weight": "Bold",
+      "case": "title case"
+    },
+    "body": {
+      "font": "Inter",
+      "weights": [
+        "Regular",
+        "Medium",
+        "SemiBold"
+      ]
+    },
+    "data": {
+      "font": "JetBrains Mono",
+      "weights": [
+        "Regular",
+        "Medium"
+      ]
+    }
+  }
+}

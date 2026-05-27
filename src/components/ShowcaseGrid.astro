@@ -1,0 +1,31 @@
+---
+import ArtifactCard from './ArtifactCard.astro';
+import DocCard from './DocCard.astro';
+
+interface ShowcaseItem {
+  title: string;
+  description?: string;
+  href: string;
+  eyebrow?: string;
+  icon?: string;
+  image?: string;
+  kind?: string;
+}
+
+interface Props {
+  items: ShowcaseItem[];
+  variant?: 'docs' | 'media' | 'artifacts';
+}
+
+const { items = [], variant = 'docs' } = Astro.props;
+---
+
+<div class={`showcase-grid showcase-grid--${variant}`}>
+  {items.map((item, index) =>
+    variant === 'docs' ? (
+      <DocCard {...item} index={index} />
+    ) : (
+      <ArtifactCard {...item} index={index} />
+    ),
+  )}
+</div>

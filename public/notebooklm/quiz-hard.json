@@ -1,0 +1,396 @@
+{
+  "title": "Wellness Quiz",
+  "questions": [
+    {
+      "question": "A generic wellness directory enters the Thailand market and offers lower session prices by taking a traditional $25\\%$ commission. How does Klear Karma\u2019s strategic 'Reflective Trust Field' positioning respond to this competitive threat?",
+      "answerOptions": [
+        {
+          "text": "By highlighting that its platform prioritizes context-aware support and trust formation over category-first price filtering.",
+          "isCorrect": true,
+          "rationale": "Klear Karma\u2019s wedge is providing context before search, meaning it competes on the depth of the seeker-practitioner match rather than price or supply volume."
+        },
+        {
+          "text": "By immediately implementing a $30\\%$ commission to prove higher brand value to investors.",
+          "isCorrect": false,
+          "rationale": "The source material specifically forbids assuming a $25-30\\%$ commission and states there is no consultation commission in the MVP."
+        },
+        {
+          "text": "By shifting the focus to high-volume lead generation for practitioners to offset the lower competitor prices.",
+          "isCorrect": false,
+          "rationale": "The strategy explicitly states that practitioners need better context and quality clients, not more generic leads or high-volume traffic."
+        },
+        {
+          "text": "By transitioning into a physical product brand to avoid direct digital marketplace competition.",
+          "isCorrect": false,
+          "rationale": "Klear Karma is strictly an app-native trust layer and is not to be assumed as a physical product or wellness catalog."
+        }
+      ],
+      "hint": "Consider the core moat of the platform compared to a standard directory."
+    },
+    {
+      "question": "Klear Karma defines a 'Paid-Activated User' as one who recharges at least $X$ amount within $Y$ days. Based on the Revenue Frame, what are the values for $X$ and $Y$?",
+      "text": "Klear Karma defines a 'Paid-Activated User' as one who recharges at least $X$ amount within $Y$ days. Based on the Revenue Frame, what are the values for $X$ and $Y$?",
+      "answerOptions": [
+        {
+          "text": "$X = 369$ tokens; $Y = 30$ days",
+          "isCorrect": false,
+          "rationale": "While 369 is the free grant amount, the activation metric is tied to the minimum local currency recharge anchor and a longer duration."
+        },
+        {
+          "text": "$X = 299$ local currency; $Y = 90$ days",
+          "isCorrect": true,
+          "rationale": "The primary paid activation is defined as a recharge of at least $299$ (THB or INR) within a $90$-day window of signup or interaction."
+        },
+        {
+          "text": "$X = 108$ tokens; $Y = 60$ days",
+          "isCorrect": false,
+          "rationale": "108 tokens is the cost of the opening flow, not the currency-based recharge anchor required for activation."
+        },
+        {
+          "text": "$X = 1099$ local currency; $Y = 180$ days",
+          "isCorrect": false,
+          "rationale": "1099 is the highest recharge anchor, but activation is triggered at the starting anchor level."
+        }
+      ],
+      "hint": "Look for the minimum recharge anchor and the standard quarterly assessment period."
+    },
+    {
+      "question": "In the 'Mirror-to-Recharge Loop,' which component serves as the 'paid intent engine' to validate the business model before marketplace fulfillment occurs?",
+      "answerOptions": [
+        {
+          "text": "The Token Ledger",
+          "isCorrect": false,
+          "rationale": "The ledger is the container for value, but it does not generate the underlying intent through reflection."
+        },
+        {
+          "text": "The Klear Karma Mirror",
+          "isCorrect": true,
+          "rationale": "Mirror is described as the paid-intent engine because it turns seeker context into a measurable signal of readiness to pay for support."
+        },
+        {
+          "text": "Verified Healer Portfolios",
+          "isCorrect": false,
+          "rationale": "While these provide the fulfillment, the 'intent' must be created before the seeker reaches the marketplace layer."
+        },
+        {
+          "text": "The Seeker Map Summary",
+          "isCorrect": false,
+          "rationale": "The summary is an output of the engine, but the engine itself is the agentic reflective guide."
+        }
+      ],
+      "hint": "Identify the specific feature that asks for lived context before category selection."
+    },
+    {
+      "question": "Why does the Brand Architecture place 'Internal Founder Strategy' as the absolute source of truth above the 'Public-Facing Brand Documentation'?",
+      "answerOptions": [
+        {
+          "text": "To allow for aggressive marketing claims in public while keeping the actual product clinically focused.",
+          "isCorrect": false,
+          "rationale": "The platform is strictly non-clinical, and the internal strategy actually constrains public claims to avoid overreaching."
+        },
+        {
+          "text": "Because the public layer is a filtered external layer derived from the controlled internal strategic frame.",
+          "isCorrect": true,
+          "rationale": "The Strategic Frame requires that public brand docs are a filtered layer of the internal strategy to ensure consistency and investor readiness."
+        },
+        {
+          "text": "To enable different pricing structures for Thailand and India that are hidden from public view.",
+          "isCorrect": false,
+          "rationale": "Pricing anchors like 299 are intended to be transparent to seekers in those markets, though they are local denomination anchors."
+        },
+        {
+          "text": "Because the brand archetype 'The Reflective Steward' requires a level of mystical secrecy.",
+          "isCorrect": false,
+          "rationale": "The voice guidelines state the brand should 'never be mystical for its own sake' and must remain commercially clear."
+        }
+      ],
+      "hint": "Think about the hierarchy of information in a startup preparing for investor scrutiny."
+    },
+    {
+      "question": "An investor questions why Klear Karma focuses on the Thailand and India markets simultaneously rather than a US-first launch. What is the most accurate strategic rebuttal based on the 'Launch Markets' context?",
+      "answerOptions": [
+        {
+          "text": "Thailand provides a beachhead in premium wellness tourism, while India offers existing cultural permission for symbolic context.",
+          "isCorrect": true,
+          "rationale": "The strategy identifies Thailand's tourism circles and India's cultural familiarity with spiritual reflection as specific strategic assets."
+        },
+        {
+          "text": "Marketing costs in the US are currently $10$ times higher than the target $600,000$ THB ARR milestone.",
+          "isCorrect": false,
+          "rationale": "While potentially true in reality, the source material focuses on founder-network fit and cultural permission rather than specific US ad spend comparisons."
+        },
+        {
+          "text": "The US market lacks verified practitioners capable of meeting the 'Protocol Review' standards.",
+          "isCorrect": false,
+          "rationale": "The source does not claim US practitioners are unqualified; it simply mandates a narrow focus to validate the beta first."
+        },
+        {
+          "text": "Token recharges are only technologically compatible with THB and INR payment gateways in the MVP.",
+          "isCorrect": false,
+          "rationale": "The choice is a strategic business decision based on beachheads, not a purely technical limitation of the token ledger."
+        }
+      ],
+      "hint": "Consider the specific advantages of founder-led networks and cultural attitudes toward spiritual wellness."
+    },
+    {
+      "question": "If the Mirror agent begins to provide definitive predictions about a seeker's career based on birth data, which 'Safety Envelope' rule has been violated?",
+      "answerOptions": [
+        {
+          "text": "The requirement to maintain consent boundaries during practitioner handoff.",
+          "isCorrect": false,
+          "rationale": "This rule refers to data privacy during the transition to a healer, not the nature of the Mirror's AI output."
+        },
+        {
+          "text": "The prohibition against deterministic astrology or spiritual-authority claims.",
+          "isCorrect": true,
+          "rationale": "Mirror must treat birth data as symbolic context and avoid claiming certainty, prediction, or spiritual authority."
+        },
+        {
+          "text": "The 'Reflective Steward' voice marker for spiritual literacy.",
+          "isCorrect": false,
+          "rationale": "Spiritual literacy is a positive voice attribute; the issue here is the overstepping of claim discipline."
+        },
+        {
+          "text": "The mandate to provide fallback data when AI is unavailable.",
+          "isCorrect": false,
+          "rationale": "This rule concerns system availability, not the semantic content of the AI's predictions."
+        }
+      ],
+      "hint": "Focus on the distinction between 'symbolic context' and 'certainty'."
+    },
+    {
+      "question": "The visual identity utilizes 'Mirror Black' ($\\#090711$) as the primary color. What psychological impact is this choice intended to convey to the Premium Seeker?",
+      "answerOptions": [
+        {
+          "text": "Seriousness, trust, and high-end quality.",
+          "isCorrect": true,
+          "rationale": "Mirror Black is used for primary backgrounds to establish spatial depth and high-trust seriousness, according to the Visual Strategy."
+        },
+        {
+          "text": "Calmness, softness, and accessibility.",
+          "isCorrect": false,
+          "rationale": "The strategy explicitly avoids 'wellness pastels' and 'Headspace's softness' in favor of a more serious, disciplined tone."
+        },
+        {
+          "text": "Luxury, creativity, and spiritual wisdom.",
+          "isCorrect": false,
+          "rationale": "These traits are associated with the secondary color, Karma Violet ($\\#221245$), rather than the primary black."
+        },
+        {
+          "text": "Action, progress, and AI activation.",
+          "isCorrect": false,
+          "rationale": "These are the psychological impacts of the signal color, Signal Lotus ($\\#8B5CF6$)."
+        }
+      ],
+      "hint": "Consider the difference between background 'depth' and accent 'vibrancy'."
+    },
+    {
+      "question": "In the Practitioner Revenue Frame, what is the 'Rough Payout Threshold' for practitioners and what additional verification is required?",
+      "answerOptions": [
+        {
+          "text": "$10,000$ to $15,000$ tokens; Requires completed profile plus KYC/payment verification.",
+          "isCorrect": true,
+          "rationale": "The Revenue Frame sets a clear threshold for token redemption and mandates identity/profile completion for payouts."
+        },
+        {
+          "text": "$369$ tokens; Requires only an invite-led referral from the founder network.",
+          "isCorrect": false,
+          "rationale": "369 is the seeker's free grant; the practitioner threshold is significantly higher to ensure sustained engagement."
+        },
+        {
+          "text": "$50$ completed consultations; Requires manual Protocol Council review.",
+          "isCorrect": false,
+          "rationale": "The threshold is measured in tokens (liquidity) rather than session count, and verification is tied to KYC standards."
+        },
+        {
+          "text": "$299$ local currency; Requires a signed investor narrative agreement.",
+          "isCorrect": false,
+          "rationale": "299 is the seeker's recharge anchor; practitioners earn and redeem tokens based on their consultation activity."
+        }
+      ],
+      "hint": "Look for the specific token range and the standard regulatory verification term."
+    },
+    {
+      "question": "Which specific 'Pain Point Analysis' insight justifies the use of a 'Consent-Safe Seeker Map' in the handoff to practitioners?",
+      "answerOptions": [
+        {
+          "text": "Seekers worry about privacy when sharing birth details or vulnerable context.",
+          "isCorrect": true,
+          "rationale": "The consent-safe map addresses the specific anxiety that seekers have regarding the sharing of sensitive data."
+        },
+        {
+          "text": "Practitioners are often overwhelmed by the administrative tasks of booking sessions.",
+          "isCorrect": false,
+          "rationale": "While possibly true, the core pain point identified in the source is the lack of quality context, not administrative burden."
+        },
+        {
+          "text": "Most wellness marketplaces have poor visual interfaces that lack 'spatial depth'.",
+          "isCorrect": false,
+          "rationale": "Visual depth is a brand choice for Klear Karma, but the pain point is functional privacy and trust, not aesthetic dissatisfaction."
+        },
+        {
+          "text": "Astrology apps are too difficult to use for users without technical backgrounds.",
+          "isCorrect": false,
+          "rationale": "The identified pain point for astrology apps is that they 'overclaim certainty,' not that they are technically complex."
+        }
+      ],
+      "hint": "Consider the emotional and security concerns of the 'Premium Seeker In Transition'."
+    },
+    {
+      "question": "Klear Karma's business model includes a $10\\%$ revenue share. To which segment of the ecosystem does this specific percentage apply?",
+      "answerOptions": [
+        {
+          "text": "Consultation fees for verified practitioners in the early growth phase.",
+          "isCorrect": false,
+          "rationale": "The source explicitly states there is 'No consultation commission in MVP or early growth'."
+        },
+        {
+          "text": "Marketplace product sales.",
+          "isCorrect": true,
+          "rationale": "While consultations are commission-free, marketplace product sales carry a $10\\%$ revenue share."
+        },
+        {
+          "text": "Token recharge transactions via THB and INR gateways.",
+          "isCorrect": false,
+          "rationale": "Token recharges are direct revenue anchors (e.g., 299, 599), not a commission-based percentage of a separate transaction."
+        },
+        {
+          "text": "Investor exit payouts after reaching $700,000$ THB ARR.",
+          "isCorrect": false,
+          "rationale": "The exit path involves the founders' equal $1/3$ ownership split, not a $10\\%$ revenue share."
+        }
+      ],
+      "hint": "Differentiate between service-based consultations and product-based commerce."
+    },
+    {
+      "question": "The 'Reflective Steward' voice persona is instructed to be 'calm under investor scrutiny.' Which content marker best illustrates this in the communications strategy?",
+      "answerOptions": [
+        {
+          "text": "Using 'Internal-first, premium, and specific' language in social media posts.",
+          "isCorrect": true,
+          "rationale": "An internal-first, premium tone demonstrates the 'grounded strategist' persona suitable for serious investment narratives."
+        },
+        {
+          "text": "Focusing on 'vanity reach' and signup volume to impress the founder network.",
+          "isCorrect": false,
+          "rationale": "The strategy explicitly rejects 'vanity reach' in favor of measuring paid activation (recharge)."
+        },
+        {
+          "text": "Using mystical and enigmatic phrasing to create intrigue in the LinkedIn feed.",
+          "isCorrect": false,
+          "rationale": "The voice must be 'never mystical for its own sake' and 'commercially clear' to satisfy investor scrutiny."
+        },
+        {
+          "text": "Promising $100\\%$ certain outcomes from the Mirror's AI reflection.",
+          "isCorrect": false,
+          "rationale": "Making guaranteed outcome claims is a hard constraint (prohibited) in the Assumption Guardrails."
+        }
+      ],
+      "hint": "Identify the tone that would appeal to a sophisticated financial backer."
+    },
+    {
+      "question": "A seeker uses $108$ free tokens for an opening flow. According to the 'Mirror Token Flow' value logic, what is the 'next logical step' the system should optimize for to validate the beta?",
+      "answerOptions": [
+        {
+          "text": "A repeat session with the Mirror using the remaining free balance.",
+          "isCorrect": false,
+          "rationale": "While useful, the 'primary paid activation' metric is specifically the first recharge, not the exhaustion of free tokens."
+        },
+        {
+          "text": "Recharge of at least $299$ local currency within $90$ days.",
+          "isCorrect": true,
+          "rationale": "The 'Mirror-to-Recharge Loop' identifies recharge after meaningful token use as the first proof point for the team."
+        },
+        {
+          "text": "Immediate booking of a 'Tier 3' practitioner consultation.",
+          "isCorrect": false,
+          "rationale": "The system allows for 'seeker readiness' to develop; the token recharge is the immediate signal of intent before the booking."
+        },
+        {
+          "text": "Onboarding the seeker into a referral program to gain $369$ additional tokens.",
+          "isCorrect": false,
+          "rationale": "Referral programs require separate approval and are not the primary metric being validated in the current beta."
+        }
+      ],
+      "hint": "Look for the first transaction that involves the seeker's own money."
+    },
+    {
+      "question": "Which 'Material & Texture' element is most closely associated with the brand's 'Consent Seal Overlays' and practitioner trust highlights?",
+      "answerOptions": [
+        {
+          "text": "Black mirrored glass",
+          "isCorrect": false,
+          "rationale": "This is the primary surface for the app interface and Mirror orb, not the accent material for seals."
+        },
+        {
+          "text": "Quiet Gold inlay",
+          "isCorrect": true,
+          "rationale": "Quiet Gold is the specific accent color used for token value, consent seals, and practitioner trust highlights."
+        },
+        {
+          "text": "Deep violet vapor gradient",
+          "isCorrect": false,
+          "rationale": "Vapor gradients are used for secondary fields and Mirror gradients, not for 'seals'."
+        },
+        {
+          "text": "Translucent app panels",
+          "isCorrect": false,
+          "rationale": "These provide the UI chrome but are not used specifically for the 'Trust' or 'Consent' highlights."
+        }
+      ],
+      "hint": "Identify the color and texture described as the 'accent' role."
+    },
+    {
+      "question": "When developing social media content for LinkedIn, the 'Content Strategy' emphasizes 'Investor-literate posts'. What is the primary 'Hook' suggested for this platform?",
+      "answerOptions": [
+        {
+          "text": "Why our first KPI is paid activation, not free signup volume.",
+          "isCorrect": true,
+          "rationale": "LinkedIn content is designed to be investor-literate, focusing on metrics like paid activation and founder-market fit."
+        },
+        {
+          "text": "What would change if reflection came before booking?",
+          "isCorrect": false,
+          "rationale": "This is a solution-oriented hook suggested for IG Reels, focusing on visual app sequences."
+        },
+        {
+          "text": "369 free tokens is not a gimmick. It is a test of meaningful use.",
+          "isCorrect": false,
+          "rationale": "This hook is assigned to IG Reels to show the token ledger visual sequence."
+        },
+        {
+          "text": "No consultation commission in MVP or early growth.",
+          "isCorrect": false,
+          "rationale": "This practitioner-focused hook is suggested for Twitter (X) as a short note."
+        }
+      ],
+      "hint": "Think about which hook addresses business-level KPIs and strategic moats."
+    },
+    {
+      "question": "If a seeker expresses a need for 'crisis support' during a Mirror session, how must the system respond according to the 'Product Specifications' edge cases?",
+      "answerOptions": [
+        {
+          "text": "By routing the seeker to a verified Tier 3 somatic practitioner immediately.",
+          "isCorrect": false,
+          "rationale": "Tiered practitioners are for spiritual wellness, not clinical crisis management."
+        },
+        {
+          "text": "By clarifying that Klear Karma is not a clinical service and routing away from spiritual guidance.",
+          "isCorrect": true,
+          "rationale": "The safety protocol requires Mirror to route away from spiritual guidance and make clear the platform is not for emergencies."
+        },
+        {
+          "text": "By using 108 tokens to generate a 'Seeker Map' for a human therapist.",
+          "isCorrect": false,
+          "rationale": "Mirror should not position itself as a pathway to clinical therapy or emergency services."
+        },
+        {
+          "text": "By suggesting a 'protocol-reviewed' meditation product to ground the seeker.",
+          "isCorrect": false,
+          "rationale": "A product sale is an inappropriate response to a crisis or clinical emergency."
+        }
+      ],
+      "hint": "Recall the strict boundaries between spiritual wellness and clinical authority."
+    }
+  ]
+}

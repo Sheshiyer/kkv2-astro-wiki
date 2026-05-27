@@ -1,0 +1,19 @@
+---
+import siteData from '../data/site-data.json';
+
+const mediaItems = [
+  siteData.heroImage,
+  ...(siteData.visualHighlights || []).map((item) => item.image),
+  ...(siteData.notebooklmHighlights || []).map((item) => item.image),
+].filter(Boolean).slice(0, 7);
+
+const fallbackCells = Array.from({ length: 7 });
+---
+
+<div class="pixel-media-layer" aria-hidden="true">
+  {mediaItems.length > 0
+    ? mediaItems.map((image, index) => (
+        <img src={image} alt="" loading="lazy" style={`--pixel-index: ${index}`} />
+      ))
+    : fallbackCells.map((_, index) => <span style={`--pixel-index: ${index}`} />)}
+</div>

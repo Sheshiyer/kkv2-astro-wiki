@@ -1,0 +1,255 @@
+{
+  "title": "Klear Karma Quiz",
+  "questions": [
+    {
+      "question": "Which brand archetype does Klear Karma embody to project its role as a grounded and trusted guide?",
+      "answerOptions": [
+        {
+          "text": "The Sage",
+          "isCorrect": false,
+          "rationale": "While the brand is spiritually literate and knowledgeable, it focuses more on stewardship and reflective strategy than pure wisdom seeking."
+        },
+        {
+          "text": "The Reflective Steward",
+          "isCorrect": true,
+          "rationale": "This archetype aligns with the brand's mission to provide grounded, reflective guidance and maintain the trust layer between seekers and practitioners."
+        },
+        {
+          "text": "The Caregiver",
+          "isCorrect": false,
+          "rationale": "The brand avoids the 'softness' typically associated with this archetype, opting instead for a serious and disciplined approach to wellness."
+        },
+        {
+          "text": "The Magician",
+          "isCorrect": false,
+          "rationale": "Klear Karma intentionally avoids mystical overclaiming and deterministic spiritual authority, which are hallmarks of this archetype."
+        }
+      ],
+      "hint": "Consider a title that combines the act of mirroring back thoughts with the responsibility of managing a trust-based ecosystem."
+    },
+    {
+      "question": "What is the initial grant of Mirror tokens provided to new users entering the Klear Karma beta?",
+      "answerOptions": [
+        {
+          "text": "108",
+          "isCorrect": false,
+          "rationale": "This number represents the estimated cost of the opening Mirror/chart flow, not the total initial grant."
+        },
+        {
+          "text": "299",
+          "isCorrect": false,
+          "rationale": "This is the starting anchor for local currency recharges, rather than the free starting balance."
+        },
+        {
+          "text": "369",
+          "isCorrect": true,
+          "rationale": "New users receive 369 free tokens, a number chosen to scale within the brand's symbolic and economic multiples."
+        },
+        {
+          "text": "1099",
+          "isCorrect": false,
+          "rationale": "This represents the highest tier for token recharge packages in local currency."
+        }
+      ],
+      "hint": "The starting balance is a multiple of the opening flow cost and follows a specific three-digit symbolic sequence mentioned in the revenue frame."
+    },
+    {
+      "question": "Which two specific markets are identified as the primary launch beachheads for Klear Karma?",
+      "answerOptions": [
+        {
+          "text": "United States and United Kingdom",
+          "isCorrect": false,
+          "rationale": "The brand's guardrails explicitly state not to assume a US-first launch or global scale before validating specific regional markets."
+        },
+        {
+          "text": "Thailand and India",
+          "isCorrect": true,
+          "rationale": "These markets are chosen for their premium wellness tourism and existing cultural permission for symbolic spiritual context."
+        },
+        {
+          "text": "Bali and Singapore",
+          "isCorrect": false,
+          "rationale": "While these are wellness hubs, the source material focuses on founder-led networks in different specific Asian territories."
+        },
+        {
+          "text": "Japan and South Korea",
+          "isCorrect": false,
+          "rationale": "These markets are not mentioned in the strategy, which prioritizes regions with high-trust founder relationship networks."
+        }
+      ],
+      "hint": "One country is noted for its premium island circles and the other for its founder-led spiritual wellness networks."
+    },
+    {
+      "question": "How does Klear Karma define a 'paid-activated user' for its strategic KPI tracking?",
+      "answerOptions": [
+        {
+          "text": "A user who signs up for the invite-led beta list",
+          "isCorrect": false,
+          "rationale": "Signup volume is considered a 'vanity metric' compared to the intent shown through token transactions."
+        },
+        {
+          "text": "A user who completes a healer consultation",
+          "isCorrect": false,
+          "rationale": "While this is a key milestone, activation is defined specifically by the financial commitment to the token economy."
+        },
+        {
+          "text": "A user who recharges at least 299 local currency within 90 days",
+          "isCorrect": true,
+          "rationale": "Paid activation is measured by a minimum recharge of 299 THB or INR within a three-month window of signup or interaction."
+        },
+        {
+          "text": "A user who spends all 369 free tokens",
+          "isCorrect": false,
+          "rationale": "Spending free tokens validates utility, but true activation requires the user to transition into a paying customer."
+        }
+      ],
+      "hint": "Focus on the specific local currency threshold required within a 90-day period."
+    },
+    {
+      "question": "In the Klear Karma visual system, which color is designated for the primary background to convey 'high-trust seriousness'?",
+      "answerOptions": [
+        {
+          "text": "Karma Violet (#221245)",
+          "isCorrect": false,
+          "rationale": "This color is used for secondary fields, Mirror gradients, and app panels, rather than the primary background."
+        },
+        {
+          "text": "Quiet Gold (#D8B35A)",
+          "isCorrect": false,
+          "rationale": "This is an accent color used for highlighting token value, consent seals, and practitioner trust."
+        },
+        {
+          "text": "Mirror Black (#090711)",
+          "isCorrect": true,
+          "rationale": "Mirror Black provides the spatial depth and seriousness required for a premium, high-trust interface."
+        },
+        {
+          "text": "Moon Glass (#D9D2C6)",
+          "isCorrect": false,
+          "rationale": "This supporting color is reserved for readable text, diagrams, and source cards to ensure legibility against dark backgrounds."
+        }
+      ],
+      "hint": "This color's name reflects the 'black mirrored glass' material that defines the app's interface language."
+    },
+    {
+      "question": "What is the primary 'moat' of Klear Karma according to its competitive positioning strategy?",
+      "answerOptions": [
+        {
+          "text": "A vast directory of practitioners",
+          "isCorrect": false,
+          "rationale": "The marketplace is described as the fulfillment layer, whereas the core differentiator lies in the pre-booking experience."
+        },
+        {
+          "text": "Trust formation and context-aware handoff",
+          "isCorrect": true,
+          "rationale": "The brand's competitive wedge is creating paid intent and trust through Mirror before the marketplace fulfillment begins."
+        },
+        {
+          "text": "Lower session prices for seekers",
+          "isCorrect": false,
+          "rationale": "The brand targets 'premium seekers' and focuses on quality and expertise rather than competing on price."
+        },
+        {
+          "text": "Proprietary AI therapy algorithms",
+          "isCorrect": false,
+          "rationale": "Guardrails strictly prohibit positioning the Mirror as a human therapist or clinical authority."
+        }
+      ],
+      "hint": "Think about the phase that occurs before a seeker ever sees a list of practitioners."
+    },
+    {
+      "question": "Which typography pairing is used for the header and body text in the brand configuration?",
+      "answerOptions": [
+        {
+          "text": "Sora for headers and Inter for body",
+          "isCorrect": true,
+          "rationale": "Sora provides a premium display feel for headers, while Inter ensures high readability for body content."
+        },
+        {
+          "text": "Montserrat for headers and Lato for body",
+          "isCorrect": false,
+          "rationale": "This is listed as a potential alternative palette, but it is not the primary choice for the current brand build."
+        },
+        {
+          "text": "Inter for headers and JetBrains Mono for body",
+          "isCorrect": false,
+          "rationale": "Inter is used for body text, and JetBrains Mono is specifically reserved for data-heavy sections like token ledgers."
+        },
+        {
+          "text": "Playfair Display for headers and Merriweather for body",
+          "isCorrect": false,
+          "rationale": "This serif-based pairing is an alternative option that contradicts the spatial, modern app-native aesthetic of the primary brand."
+        }
+      ],
+      "hint": "The header font starts with an 'S' and the body font is a common choice for clean, modern user interfaces."
+    },
+    {
+      "question": "True or False: In the MVP phase, Klear Karma takes a 25% commission on all practitioner consultations.",
+      "answerOptions": [
+        {
+          "text": "True",
+          "isCorrect": false,
+          "rationale": "The brand strategy specifically avoids consultation commissions during the MVP and early growth phases to build supply-side trust."
+        },
+        {
+          "text": "False",
+          "isCorrect": true,
+          "rationale": "There is no consultation commission in the MVP; instead, practitioners receive tokens, and a 10% share is only applied to marketplace product sales."
+        }
+      ],
+      "hint": "Check the 'Required Revenue Frame' for specific rules regarding how practitioners are paid and what fees the platform collects."
+    },
+    {
+      "question": "The primary seeker persona, 'The Premium Seeker In Transition,' is driven by which core emotional need?",
+      "answerOptions": [
+        {
+          "text": "Entertainment and curiosity",
+          "isCorrect": false,
+          "rationale": "This describes 'The Casual Explorer' rather than the primary persona who is seeking serious support."
+        },
+        {
+          "text": "Relief and discernment",
+          "isCorrect": true,
+          "rationale": "This persona seeks relief from anxiety and values the expertise and quality that allow them to trust a process."
+        },
+        {
+          "text": "Skepticism and validation",
+          "isCorrect": false,
+          "rationale": "While validation is important, the core driver is moving through a transition rather than proving a system wrong."
+        },
+        {
+          "text": "Deepening an existing mastery",
+          "isCorrect": false,
+          "rationale": "This motivation is more characteristic of 'The Devoted Practitioner' who is already committed to a practice."
+        }
+      ],
+      "hint": "This persona wants to feel 'seen' and seeks a safe space to explore a specific life pattern or blockage."
+    },
+    {
+      "question": "Which design principle is a 'hard constraint' for visual assets to avoid the appearance of a generic wellness brand?",
+      "answerOptions": [
+        {
+          "text": "Use soft pastel colors and chakra rainbows",
+          "isCorrect": false,
+          "rationale": "The visual guidelines specifically state to avoid 'wellness pastels' and 'chakra rainbows' in favor of a dark, premium palette."
+        },
+        {
+          "text": "No stock faces or generic healer portraits",
+          "isCorrect": true,
+          "rationale": "Art direction requires app-native spatial compositions and specifically forbids stock photography of faces or gurus."
+        },
+        {
+          "text": "Include physical product packaging and crystal photos",
+          "isCorrect": false,
+          "rationale": "The brand is app-native only; guardrails prohibit creating images of bottles, kits, or crystals as products."
+        },
+        {
+          "text": "Emphasize crowdfunding and backer reward tiers",
+          "isCorrect": false,
+          "rationale": "The brand thesis rejects the Kickstarter/crowdfunding aesthetic in favor of a serious investor-ready narrative."
+        }
+      ],
+      "hint": "Think about the photography direction and the specific types of images the brand refuses to use."
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  href: string;
+  eyebrow?: string;
+  image?: string;
+  kind?: string;
+  index?: number;
+}
+
+const { title, description = '', href, eyebrow = '', image = '', kind = '', index = 0 } = Astro.props;
+---
+
+<a class="artifact-card reveal-in" href={href} style={`--card-index: ${index}`}>
+  <div class="artifact-card__media">
+    {image ? <img src={image} alt={title} loading="lazy" /> : <span>{kind || eyebrow || 'Artifact'}</span>}
+  </div>
+  <div class="artifact-card__copy">
+    <p>{eyebrow || kind || 'NotebookLM'}</p>
+    <h3>{title}</h3>
+    {description && <span>{description}</span>}
+  </div>
+</a>
