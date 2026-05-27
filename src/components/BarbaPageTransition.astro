@@ -1,0 +1,137 @@
+---
+// Codrops-style page transitions using Barba.js + GSAP
+// See: https://tympanus.net/codrops/ for patterns
+---
+
+<script>
+  import barba from '@barba/core';
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  // Register ScrollTrigger plugin
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Check reduced motion preference
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!prefersReducedMotion) {
+    // Initialize Barba.js
+    barba.init({
+      transitions: [{
+        name: 'codrops-slide',
+        sync: false,
+        
+        leave(data) {
+          // Animate current page out
+          return gsap.to(data.current.container, {
+            opacity: 0,
+            y: -30,
+            duration: 0.4,
+            ease: 'power2.inOut'
+          });
+        },
+        
+        enter(data) {
+          // Animate new page in
+          gsap.set(data.next.container, { opacity: 0, y: 30 });
+          return gsap.to(data.next.container, {
+            opacity: 1,
+            y: 0,
+            duration: 0.5,
+            ease: 'power2.out'
+          });
+        }
+      },
+      {
+        name: 'codrops-fade',
+        from: { namespace: ['home'] },
+        to: { namespace: ['docs'] },
+        
+        leave(data) {
+          return gsap.to(data.current.container, {
+            opacity: 0,
+            scale: 0.98,
+            duration: 0.35,
+            ease: 'power2.in'
+          });
+        },
+        
+        enter(data) {
+          gsap.set(data.next.container, { opacity: 0, scale: 1.02 });
+          return gsap.to(data.next.container, {
+            opacity: 1,
+            scale: 1,
+            duration: 0.45,
+            ease: 'power2.out'
+          });
+        }
+      }],
+      
+      // Prevent transition on external links
+      prevent: ({ el }) => {
+        const href = el.getAttribute('href');
+        return !href || href.startsWith('http') || href.startsWith('#') || href.startsWith('mailto:');
+      },
+      
+      // Views for namespace detection
+      views: [{
+        namespace: 'home',
+        beforeEnter() {
+          // Reset scroll position
+          window.scrollTo(0, 0);
+        }
+      }, {
+        namespace: 'docs',
+        beforeEnter() {
+          window.scrollTo(0, 0);
+        }
+      }]
+    });
+
+    // Handle scroll-triggered animations after page transitions
+    barba.hooks.afterEnter(() => {
+      // Re-initialize scroll animations
+      ScrollTrigger.refresh();
+    });
+  }
+</script>
+
+<style is:global>
+  /* Barba.js wrapper styles */
+  [data-barba="container"] {
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  /* Ensure smooth transition between pages */
+  [data-barba="wrapper"] {
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+  /* Loading state */
+  .barba-loading {
+    cursor: wait;
+  }
+  
+  .barba-loading * {
+    pointer-events: none;
+  }
+  
+  /* Transition overlay */
+  .transition-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: var(--mirror-black, #090711);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .transition-overlay.is-active {
+    opacity: 1;
+  }
+</style>
+
+<div class="transition-overlay" id="transition-overlay"></div>

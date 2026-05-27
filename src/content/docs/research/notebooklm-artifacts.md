@@ -10,7 +10,7 @@ tags:
 sources: []
 lastUpdated: '2026-05-27'
 order: 1
-icon: 🧠
+icon: ""
 ---
 
 # NotebookLM Artifacts

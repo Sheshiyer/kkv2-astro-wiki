@@ -1,9 +1,12 @@
 ---
+// Note: Using Barba.js for page transitions instead of Astro ViewTransitions
 import Navigation from '../components/Navigation.astro';
 import PageTransitionController from '../components/PageTransitionController.astro';
+import BarbaPageTransition from '../components/BarbaPageTransition.astro';
 import PixelMediaLayer from '../components/PixelMediaLayer.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
 import LanguageToggle from '../components/LanguageToggle.astro';
+import WebGLBackground from '../components/WebGLBackground.astro';
 import siteData from '../data/site-data.json';
 import type { Locale } from '../i18n';
 import { localizedPath } from '../i18n';
@@ -14,9 +17,10 @@ interface Props {
   title: string;
   description?: string;
   locale: Locale;
+  fullWidth?: boolean;
 }
 
-const { title, description, locale } = Astro.props;
+const { title, description, locale, fullWidth = false } = Astro.props;
 const palette = siteData.palette || {};
 const brandVars = {
   '--brand-primary': palette.primary?.hex || '#AA98D6',
@@ -45,13 +49,16 @@ const pathname = Astro.url.pathname;
       document.documentElement.setAttribute('data-theme', preferred);
     </script>
   </head>
-  <body class="immersive-body" style={brandVars}>
+  <body class={`immersive-body ${fullWidth ? 'immersive-body--fullwidth' : ''}`} style={brandVars}>
+    <WebGLBackground />
     <PageTransitionController />
     <PixelMediaLayer />
 
-    <div class="immersive-shell">
+    <BarbaPageTransition />
+
+      <div class="immersive-shell" data-barba="wrapper">
       <header class="immersive-topbar glass-panel">
-        <a href={localizedPath(locale, '/')} class="brand-lockup immersive-lockup">
+        <a href={localizedPath(locale, '/')} class="brand-lockup immersive-lockup" data-barba-prevent="self">
           <svg class="brand-lockup__orb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
           </svg>
@@ -68,11 +75,13 @@ const pathname = Astro.url.pathname;
         <LanguageToggle locale={locale} pathname={pathname} />
       </header>
 
-      <aside class="immersive-sidebar">
-        <Navigation locale={locale} />
-      </aside>
+      {!fullWidth && (
+        <aside class="immersive-sidebar">
+          <Navigation locale={locale} />
+        </aside>
+      )}
 
-      <main class="immersive-content">
+      <main class={`immersive-content ${fullWidth ? 'immersive-content--fullwidth' : ''}`} data-barba="container" data-barba-namespace={fullWidth ? 'home' : 'docs'}>
         <slot />
       </main>
     </div>

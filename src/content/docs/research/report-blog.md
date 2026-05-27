@@ -11,7 +11,7 @@ sources:
 - report-blog.md
 lastUpdated: '2026-05-27'
 order: 10
-icon: 📚
+icon: ""
 ---
 
 # Beyond the Directory: Why Reflection is the New Standard in Spiritual Wellness

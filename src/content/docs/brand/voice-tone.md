@@ -11,7 +11,7 @@ sources:
 - voice-and-tone.json
 lastUpdated: '2026-05-27'
 order: 1
-icon: 🗣️
+icon: ""
 ---
 
 # Voice & Tone

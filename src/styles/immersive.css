@@ -84,6 +84,22 @@ body.immersive-body {
   min-width: 0;
 }
 
+/* Full-width home page layout */
+.immersive-body--fullwidth .immersive-shell {
+  grid-template-columns: 1fr;
+  max-width: 100%;
+  padding: 0;
+}
+
+.immersive-body--fullwidth .immersive-topbar {
+  padding: 0.9rem clamp(1rem, 3vw, 2rem);
+}
+
+.immersive-content--fullwidth {
+  width: 100%;
+  max-width: 100%;
+}
+
 .pixel-media-layer {
   position: fixed;
   inset: 0;

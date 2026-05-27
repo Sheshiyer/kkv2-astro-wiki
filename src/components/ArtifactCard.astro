@@ -61,8 +61,8 @@ const safeFormat = format || 'md';
 const formatLabel = formatLabels[safeFormat] || safeFormat.toUpperCase();
 ---
 
-<article class="artifact-card" data-type={type} data-featured={featured} style={`--card-index: ${index}; --type-bg: ${colors.bg}; --type-text: ${colors.text}`}>
-  <a href={href} class="artifact-card__link" download={format !== 'md' && format !== 'pdf' && format !== 'png' ? undefined : undefined}>
+<article class="artifact-card" data-artifact-id={id} data-type={type} data-featured={featured} style={`--card-index: ${index}; --type-bg: ${colors.bg}; --type-text: ${colors.text}`}>
+  <div class="artifact-card__link">
     <div class="artifact-card__preview">
       {thumbnail ? (
         <img src={thumbnail} alt={title} loading="lazy" class="artifact-card__image" />
@@ -76,6 +76,27 @@ const formatLabel = formatLabels[safeFormat] || safeFormat.toUpperCase();
       <span class="artifact-card__type-badge" style={`background: ${colors.bg}; color: ${colors.text}`}>
         {safeType}
       </span>
+      <div class="artifact-card__play-overlay">
+        <div class="artifact-card__play-button" style={`background: ${colors.text}`}>
+          {type === 'audio' ? (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+              <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" stroke="none"/>
+            </svg>
+          ) : type === 'video' ? (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+              <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" stroke="none"/>
+            </svg>
+          ) : (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          )}
+        </div>
+        <span class="artifact-card__play-label">
+          {type === 'audio' ? 'Listen' : type === 'video' ? 'Watch' : 'View'}
+        </span>
+      </div>
     </div>
     
     <div class="artifact-card__content">
@@ -88,7 +109,7 @@ const formatLabel = formatLabels[safeFormat] || safeFormat.toUpperCase();
         {size && <span class="artifact-card__size">{size}</span>}
       </div>
     </div>
-  </a>
+  </div>
 </article>
 
 <style>
@@ -197,5 +218,47 @@ const formatLabel = formatLabels[safeFormat] || safeFormat.toUpperCase();
     display: flex;
     align-items: center;
     gap: 4px;
+  }
+
+  .artifact-card__play-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    cursor: pointer;
+  }
+
+  .artifact-card:hover .artifact-card__play-overlay {
+    opacity: 1;
+  }
+
+  .artifact-card__play-button {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transform: scale(0.9);
+    transition: transform 0.2s ease;
+  }
+
+  .artifact-card:hover .artifact-card__play-button {
+    transform: scale(1);
+  }
+
+  .artifact-card__play-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #fff;
   }
 </style>

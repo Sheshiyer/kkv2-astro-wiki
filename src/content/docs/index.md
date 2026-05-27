@@ -10,7 +10,7 @@ tags:
 sources: []
 lastUpdated: '2026-05-27'
 order: 1
-icon: 🏠
+icon: ""
 ---
 
 # Launch Dossier Index
@@ -21,10 +21,6 @@ This dossier index summarizes the latest launch documentation build.
 
 - **Brand:** Klear Karma
 - **Tagline:** Mirror-guided trust for seekers and verified practitioners
-- **Run root:** `/Volumes/madara/2026/twc-vault/01-Projects/thoughtseed/klear-karma/kkv2-wiki-v2`
-- **Source outputs:** `/Volumes/madara/2026/twc-vault/01-Projects/thoughtseed/klear-karma/kkv2-wiki-v2/.brandmint/outputs`
-- **NotebookLM artifacts:** `/Volumes/madara/2026/twc-vault/01-Projects/thoughtseed/klear-karma/kkv2-wiki-v2/deliverables/notebooklm/artifacts`
-- **Published site:** `/Volumes/madara/2026/twc-vault/01-Projects/thoughtseed/klear-karma/kkv2-wiki-v2/wiki-site/dist`
 - **Structured outputs available:** 20
 - **NotebookLM artifacts surfaced:** 23
 
@@ -60,6 +56,6 @@ This dossier index summarizes the latest launch documentation build.
 
 ## Inventory Snapshot
 
-- **Source directory:** `/Volumes/madara/2026/twc-vault/01-Projects/thoughtseed/klear-karma/kkv2-wiki-v2/.brandmint/outputs`
+- **Source directory:** Internal build outputs
 - **Documents classified:** 20
 - **Agent groups available:** brand, foundation, marketing, persona

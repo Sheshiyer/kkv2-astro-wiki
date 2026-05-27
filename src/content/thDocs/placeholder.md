@@ -1,6 +1,6 @@
 ---
 title: Localization Placeholder
-description: Keeps the optional frDocs collection initialized when no localized pages exist.
+description: Keeps the optional thDocs collection initialized when no localized pages exist.
 category: general
 ---
 

@@ -1,0 +1,191 @@
+---
+// src/components/WebGLBackground.astro
+---
+
+<canvas id="webgl-bg" class="fixed inset-0 -z-10"></canvas>
+
+<script>
+  import * as THREE from 'three';
+  
+  // Check for reduced motion preference
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  
+  if (!prefersReducedMotion) {
+    const canvas = document.getElementById('webgl-bg') as HTMLCanvasElement;
+    
+    if (!canvas) {
+      console.warn('WebGL canvas not found');
+    } else {
+      // Scene setup
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+      const renderer = new THREE.WebGLRenderer({ 
+        canvas, 
+        alpha: true,
+        antialias: true 
+      });
+      
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setClearColor(0x000000, 0);
+      
+      // Create particle system
+      const particlesCount = 300;
+      const posArray = new Float32Array(particlesCount * 3);
+      const scaleArray = new Float32Array(particlesCount);
+      
+      for (let i = 0; i < particlesCount; i++) {
+        const i3 = i * 3;
+        // Spread particles in a sphere-like distribution
+        posArray[i3] = (Math.random() - 0.5) * 10;
+        posArray[i3 + 1] = (Math.random() - 0.5) * 10;
+        posArray[i3 + 2] = (Math.random() - 0.5) * 10;
+        
+        // Random scale for each particle
+        scaleArray[i] = Math.random();
+      }
+      
+      const particlesGeometry = new THREE.BufferGeometry();
+      particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+      particlesGeometry.setAttribute('aScale', new THREE.BufferAttribute(scaleArray, 1));
+      
+      // Create circular particle texture
+      const createParticleTexture = () => {
+        const canvas = document.createElement('canvas');
+        canvas.width = 32;
+        canvas.height = 32;
+        const ctx = canvas.getContext('2d')!;
+        
+        const gradient = ctx.createRadialGradient(16, 16, 0, 16, 16, 16);
+        gradient.addColorStop(0, 'rgba(216, 179, 90, 1)');
+        gradient.addColorStop(0.4, 'rgba(216, 179, 90, 0.5)');
+        gradient.addColorStop(1, 'rgba(216, 179, 90, 0)');
+        
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, 32, 32);
+        
+        return new THREE.CanvasTexture(canvas);
+      };
+      
+      const particlesMaterial = new THREE.PointsMaterial({
+        size: 0.03,
+        map: createParticleTexture(),
+        transparent: true,
+        opacity: 0.6,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false,
+        vertexColors: false,
+        color: new THREE.Color('#D8B35A')
+      });
+      
+      const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+      scene.add(particlesMesh);
+      
+      // Add some violet particles too
+      const violetParticlesCount = 150;
+      const violetPosArray = new Float32Array(violetParticlesCount * 3);
+      
+      for (let i = 0; i < violetParticlesCount; i++) {
+        const i3 = i * 3;
+        violetPosArray[i3] = (Math.random() - 0.5) * 8;
+        violetPosArray[i3 + 1] = (Math.random() - 0.5) * 8;
+        violetPosArray[i3 + 2] = (Math.random() - 0.5) * 8;
+      }
+      
+      const violetGeometry = new THREE.BufferGeometry();
+      violetGeometry.setAttribute('position', new THREE.BufferAttribute(violetPosArray, 3));
+      
+      const violetMaterial = new THREE.PointsMaterial({
+        size: 0.02,
+        map: createParticleTexture(),
+        transparent: true,
+        opacity: 0.4,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false,
+        color: new THREE.Color('#8B5CF6')
+      });
+      
+      const violetMesh = new THREE.Points(violetGeometry, violetMaterial);
+      scene.add(violetMesh);
+      
+      camera.position.z = 3;
+      
+      // Mouse interaction
+      let mouseX = 0;
+      let mouseY = 0;
+      let targetMouseX = 0;
+      let targetMouseY = 0;
+      
+      const onMouseMove = (event: MouseEvent) => {
+        targetMouseX = (event.clientX / window.innerWidth - 0.5) * 2;
+        targetMouseY = (event.clientY / window.innerHeight - 0.5) * 2;
+      };
+      
+      document.addEventListener('mousemove', onMouseMove);
+      
+      // Animation loop
+      let animationId: number;
+      
+      const animate = () => {
+        animationId = requestAnimationFrame(animate);
+        
+        // Smooth mouse following
+        mouseX += (targetMouseX - mouseX) * 0.05;
+        mouseY += (targetMouseY - mouseY) * 0.05;
+        
+        // Rotate gold particles
+        particlesMesh.rotation.y += 0.0005;
+        particlesMesh.rotation.x += 0.0003;
+        
+        // Subtle mouse influence on gold particles
+        particlesMesh.rotation.x += mouseY * 0.01;
+        particlesMesh.rotation.y += mouseX * 0.01;
+        
+        // Rotate violet particles in opposite direction
+        violetMesh.rotation.y -= 0.0003;
+        violetMesh.rotation.x -= 0.0002;
+        
+        // Subtle mouse influence on violet particles
+        violetMesh.rotation.x -= mouseY * 0.005;
+        violetMesh.rotation.y -= mouseX * 0.005;
+        
+        renderer.render(scene, camera);
+      };
+      
+      animate();
+      
+      // Resize handler
+      const onResize = () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      };
+      
+      window.addEventListener('resize', onResize);
+      
+      // Cleanup on page unload
+      window.addEventListener('beforeunload', () => {
+        cancelAnimationFrame(animationId);
+        document.removeEventListener('mousemove', onMouseMove);
+        window.removeEventListener('resize', onResize);
+        renderer.dispose();
+        particlesGeometry.dispose();
+        particlesMaterial.dispose();
+        violetGeometry.dispose();
+        violetMaterial.dispose();
+      });
+    }
+  }
+</script>
+
+<style>
+  #webgl-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+  }
+</style>

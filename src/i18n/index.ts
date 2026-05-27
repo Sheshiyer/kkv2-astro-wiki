@@ -1,9 +1,9 @@
-export type Locale = 'en' | 'fr';
+export type Locale = 'en' | 'th';
 
-export const LOCALES: Locale[] = ['en', 'fr'];
+export const LOCALES: Locale[] = ['en', 'th'];
 
 export function isLocale(value: string | undefined): value is Locale {
-  return value === 'en' || value === 'fr';
+  return value === 'en' || value === 'th';
 }
 
 export function normalizeLocale(value: string | undefined): Locale {
@@ -19,7 +19,7 @@ export function localizedPath(locale: Locale, path: string): string {
 
 export function switchLocalePath(pathname: string, targetLocale: Locale): string {
   const segments = pathname.split('/').filter(Boolean);
-  if (segments[0] === 'en' || segments[0] === 'fr') {
+  if (segments[0] === 'en' || segments[0] === 'th') {
     segments[0] = targetLocale;
     return `/${segments.join('/')}`;
   }
@@ -88,64 +88,64 @@ export const translations = {
       'research/notebooklm-artifacts': 'NotebookLM Artifacts',
     },
   },
-  fr: {
+  th: {
     shell: {
-      portalHome: 'Accueil du portail',
-      docsIndex: 'Index du wiki',
+      portalHome: 'หน้าแรกพอร์ทัล',
+      docsIndex: 'ดัชนีเอกสาร',
       notebooklm: 'NotebookLM',
-      portal: 'Portail',
-      onThisPage: 'Sur cette page',
-      minRead: 'min de lecture',
-      launchReadyPortal: 'Portail prêt pour le lancement',
-      freshBuild: 'Build récent',
-      openDocsIndex: 'Ouvrir l’index du wiki',
-      openResearchHub: 'Ouvrir le hub de recherche',
-      openSection: 'Ouvrir la section →',
-      reviewContext: 'Voir le contexte →',
-      openInWiki: 'Ouvrir dans le wiki →',
+      portal: 'พอร์ทัล',
+      onThisPage: 'ในหน้านี้',
+      minRead: 'นาทีในการอ่าน',
+      launchReadyPortal: 'พอร์ทัลพร้อมเปิดตัว',
+      freshBuild: 'เวอร์ชันล่าสุด',
+      openDocsIndex: 'เปิดดัชนีเอกสาร',
+      openResearchHub: 'เปิดศูนย์วิจัย',
+      openSection: 'เปิดส่วน →',
+      reviewContext: 'ตรวจสอบบริบท →',
+      openInWiki: 'เปิดในวิกิ →',
     },
     home: {
-      curatedLaunchTracks: 'Parcours de lancement',
-      homeHeading: 'Un portail de marque d’abord, mais toujours un vrai wiki',
-      homeBlurb: 'Parcourez le produit, la marque, la recherche et la campagne sans perdre l’accès profond aux documents.',
-      visualWorld: 'Univers visuel',
-      visualHeading: 'Utilisez les vraies surfaces de marque, pas seulement des cartes de documentation génériques',
-      knowledgeMap: 'Carte des connaissances',
-      knowledgeHeading: 'Parcourir le wiki par piste',
-      notebooklmSpotlight: 'Focus NotebookLM',
-      notebooklmHeading: 'Les artefacts de recherche restent proches du récit produit',
+      curatedLaunchTracks: 'แทร็กการเปิดตัว',
+      homeHeading: 'พอร์ทัลแบรนด์ก่อน แต่ยังคงเป็นวิกิที่แท้จริง',
+      homeBlurb: 'สำรวจผลิตภัณฑ์ แบรนด์ งานวิจัย และแคมเปญ โดยไม่สูญเสียการเข้าถึงเอกสารอย่างลึกซึ้ง',
+      visualWorld: 'โลกภาพ',
+      visualHeading: 'ใช้พื้นผิวแบรนด์จริง ไม่ใช่แค่การ์ดเอกสารทั่วไป',
+      knowledgeMap: 'แผนที่ความรู้',
+      knowledgeHeading: 'เรียกดูวิกิตามแทร็ก',
+      notebooklmSpotlight: 'โฟกัส NotebookLM',
+      notebooklmHeading: 'งานวิจัยและการเรียนรู้ยังคงอยู่ใกล้เรื่องราว',
     },
     categories: {
-      general: 'Portail & Recherche',
-      product: 'Produit',
-      brand: 'Système de marque',
-      audience: 'Audience',
-      marketing: 'Campagne',
+      general: 'พอร์ทัลและงานวิจัย',
+      product: 'ผลิตภัณฑ์',
+      brand: 'ระบบแบรนด์',
+      audience: 'กลุ่มเป้าหมาย',
+      marketing: 'แคมเปญ',
     },
     featureCardLabels: {
-      '/docs/product/overview': { title: 'Vue d’ensemble produit', eyebrow: 'Produit', description: 'Définition du produit hero, positionnement et socle de messaging pour le lancement actif.' },
-      '/docs/brand/visual-guidelines': { title: 'Lignes directrices visuelles', eyebrow: 'Système de marque', description: 'Palette, typographie, direction artistique et garde-fous de la marque pour le run actuel.' },
-      '/docs/marketing/campaign-copy': { title: 'Copy de campagne', eyebrow: 'Campagne', description: 'Narratifs de campagne, assets copy clés et messaging prêt pour le lancement.' },
-      '/docs/research/notebooklm-artifacts': { title: 'Artefacts NotebookLM', eyebrow: 'Recherche', description: 'Rapports, infographies, decks, audio et tables de recherche issus de Wave 7.' },
+      '/docs/product/overview': { title: 'ภาพรวมผลิตภัณฑ์', eyebrow: 'ผลิตภัณฑ์', description: 'คำนิยามผลิตภัณฑ์หลัก การวางตำแหน่ง และกลุ่มข้อความสำหรับการสร้างการเปิดตัวปัจจุบัน' },
+      '/docs/brand/visual-guidelines': { title: 'แนวทางภาพ', eyebrow: 'ระบบแบรนด์', description: 'จานสี ตัวอักษร ทิศทางศิลป์ และข้อกำหนดแบรนด์สำหรับรอบปัจจุบัน' },
+      '/docs/marketing/campaign-copy': { title: 'คำโฆษณาแคมเปญ', eyebrow: 'แคมเปญ', description: 'เรื่องราวแคมเปญ เนื้อหาสำคัญ และข้อความพร้อมเปิดตัว' },
+      '/docs/research/notebooklm-artifacts': { title: 'งานวิจัย NotebookLM', eyebrow: 'งานวิจัย', description: 'รายงาน อินโฟกราฟิก สไลด์ เสียง และตารางงานวิจัยจาก Wave 7' },
     },
     docTitles: {
-      'index': 'Index du dossier de lancement',
-      'getting-started/quickstart': 'Démarrage rapide',
-      'product/overview': 'Vue d’ensemble produit',
-      'product/features': 'Fonctionnalités produit',
-      'product/specifications': 'Spécifications produit',
-      'brand/voice-tone': 'Voix & ton',
-      'brand/visual-guidelines': 'Lignes directrices visuelles',
-      'brand/visual-assets': 'Bibliothèque visuelle',
-      'audience/primary-persona': 'Persona principal',
-      'audience/secondary-personas': 'Personas secondaires',
-      'market/competitive-landscape': 'Paysage concurrentiel',
-      'marketing/campaign-copy': 'Copy de campagne',
-      'marketing/email-templates': 'Templates email',
-      'marketing/social-content': 'Contenu social',
-      'marketing/video-scripts': 'Scripts vidéo',
-      'marketing/ad-creative': 'Création publicitaire',
-      'research/notebooklm-artifacts': 'Artefacts NotebookLM',
+      'index': 'ดัชนีเอกสารการเปิดตัว',
+      'getting-started/quickstart': 'เริ่มต้นใช้งาน',
+      'product/overview': 'ภาพรวมผลิตภัณฑ์',
+      'product/features': 'คุณสมบัติผลิตภัณฑ์',
+      'product/specifications': 'ข้อกำหนดผลิตภัณฑ์',
+      'brand/voice-tone': 'เสียงและโทน',
+      'brand/visual-guidelines': 'แนวทางภาพ',
+      'brand/visual-assets': 'คลังสินทรัพย์ภาพ',
+      'audience/primary-persona': 'เป้าหมายหลัก',
+      'audience/secondary-personas': 'เป้าหมายรอง',
+      'market/competitive-landscape': 'ภูมิทัศน์การแข่งขัน',
+      'marketing/campaign-copy': 'คำโฆษณาแคมเปญ',
+      'marketing/email-templates': 'เทมเพลตอีเมล',
+      'marketing/social-content': 'เนื้อหาโซเชียล',
+      'marketing/video-scripts': 'บทสคริปต์วิดีโอ',
+      'marketing/ad-creative': 'สร้างสรรค์โฆษณา',
+      'research/notebooklm-artifacts': 'งานวิจัย NotebookLM',
     },
   },
 } as const;

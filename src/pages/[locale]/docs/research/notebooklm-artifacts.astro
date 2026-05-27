@@ -2,12 +2,13 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import ArtifactBrowser from '../../../../components/ArtifactBrowser.astro';
+import ArtifactPlayer from '../../../../components/ArtifactPlayer.astro';
 import artifactsData from '../../../../data/artifacts.json';
 import { normalizeLocale, t } from '../../../../i18n';
-import { hasFrDocs } from '../../../../i18n/fr-docs';
+import { hasThDocs } from '../../../../i18n/th-docs';
 
 export async function getStaticPaths() {
-  const locales = ['en', 'fr'];
+  const locales = ['en', 'th'];
   return locales.map((locale) => ({
     params: { locale, slug: 'research/notebooklm-artifacts' },
     props: { locale },
@@ -54,6 +55,8 @@ const artifacts = artifactsData.artifacts.map(artifact => ({
       showFilters={true}
       showSearch={true}
     />
+
+    <ArtifactPlayer artifacts={artifacts} />
   </section>
 </BaseLayout>
 

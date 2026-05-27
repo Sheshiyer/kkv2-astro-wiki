@@ -11,7 +11,7 @@ sources:
 - competitor-analysis.json
 lastUpdated: '2026-05-27'
 order: 3
-icon: 🥊
+icon: ""
 ---
 
 # Competitive Landscape

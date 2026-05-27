@@ -11,7 +11,7 @@ sources:
 - report-study-guide.md
 lastUpdated: '2026-05-27'
 order: 12
-icon: 📚
+icon: ""
 ---
 
 # Klear Karma Comprehensive Study Guide

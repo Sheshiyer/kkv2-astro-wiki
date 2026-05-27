@@ -11,7 +11,7 @@ sources:
 - report-briefing.md
 lastUpdated: '2026-05-27'
 order: 11
-icon: 📚
+icon: ""
 ---
 
 # Klear Karma Brand Intelligence Report: Mirror-Guided Trust Systems

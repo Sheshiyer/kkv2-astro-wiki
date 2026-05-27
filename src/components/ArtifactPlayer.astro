@@ -1,0 +1,559 @@
+---
+interface Props {
+  artifacts: Array<{
+    id: string;
+    title: string;
+    description: string;
+    type: string;
+    format: string;
+    href: string;
+    thumbnail?: string;
+    duration?: string;
+    size?: string;
+  }>;
+}
+
+const { artifacts } = Astro.props;
+
+// Serialize artifacts for client-side access
+const artifactsJson = JSON.stringify(artifacts);
+---
+
+<div class="artifact-player" id="artifact-player" data-artifacts={artifactsJson}>
+  <div class="artifact-player__backdrop" id="player-backdrop"></div>
+  <div class="artifact-player__modal" id="player-modal">
+    <div class="artifact-player__header">
+      <h3 class="artifact-player__title" id="player-title"></h3>
+      <button class="artifact-player__close" id="player-close" aria-label="Close player">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="artifact-player__content" id="player-content">
+      <!-- Content injected here -->
+    </div>
+    <div class="artifact-player__info" id="player-info"></div>
+  </div>
+</div>
+
+<script>
+  (() => {
+    const player = document.getElementById('artifact-player');
+    const backdrop = document.getElementById('player-backdrop');
+    const modal = document.getElementById('player-modal');
+    const content = document.getElementById('player-content');
+    const title = document.getElementById('player-title');
+    const info = document.getElementById('player-info');
+    const closeBtn = document.getElementById('player-close');
+    
+    if (!player || !backdrop || !modal || !content) return;
+    
+    const artifacts = JSON.parse(player.dataset.artifacts || '[]');
+    
+    function openPlayer(artifactId: string) {
+      const artifact = artifacts.find((a: any) => a.id === artifactId);
+      if (!artifact) return;
+      
+      title.textContent = artifact.title;
+      info.textContent = artifact.description;
+      content.innerHTML = '';
+      
+      // Build player based on type
+      switch (artifact.type) {
+        case 'audio':
+          content.innerHTML = `
+            <div class="audio-player">
+              <div class="audio-player__visualizer">
+                <div class="audio-player__waveform">
+                  ${Array.from({length: 40}, (_, i) => 
+                    `<div class="audio-player__bar" style="--bar-height: ${20 + Math.random() * 80}%"></div>`
+                  ).join('')}
+                </div>
+              </div>
+              <audio controls class="audio-player__native" src="${artifact.href}">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          `;
+          break;
+          
+        case 'video':
+          content.innerHTML = `
+            <div class="video-player">
+              <video controls class="video-player__native" src="${artifact.href}" poster="${artifact.thumbnail || ''}">
+                Your browser does not support the video element.
+              </video>
+            </div>
+          `;
+          break;
+          
+        case 'infographic':
+        case 'deck':
+          if (artifact.format === 'png') {
+            content.innerHTML = `
+              <div class="image-viewer">
+                <img src="${artifact.href}" alt="${artifact.title}" class="image-viewer__img" />
+              </div>
+            `;
+          } else if (artifact.format === 'pdf') {
+            content.innerHTML = `
+              <div class="pdf-viewer">
+                <embed src="${artifact.href}" type="application/pdf" class="pdf-viewer__embed" />
+                <a href="${artifact.href}" target="_blank" class="pdf-viewer__fallback">
+                  Open PDF in new tab
+                </a>
+              </div>
+            `;
+          }
+          break;
+          
+        case 'report':
+          if (artifact.format === 'md') {
+            content.innerHTML = `
+              <div class="markdown-viewer">
+                <div class="markdown-viewer__loading">Loading document...</div>
+              </div>
+            `;
+            fetch(artifact.href)
+              .then(r => r.text())
+              .then(text => {
+                content.innerHTML = `
+                  <div class="markdown-viewer">
+                    <pre class="markdown-viewer__content">${escapeHtml(text)}</pre>
+                  </div>
+                `;
+              })
+              .catch(() => {
+                content.innerHTML = `
+                  <div class="markdown-viewer markdown-viewer--error">
+                    <p>Unable to load document. <a href="${artifact.href}" target="_blank">Open in new tab</a></p>
+                  </div>
+                `;
+              });
+          }
+          break;
+          
+        case 'table':
+          if (artifact.format === 'csv') {
+            content.innerHTML = `
+              <div class="csv-viewer">
+                <div class="csv-viewer__loading">Loading table...</div>
+              </div>
+            `;
+            fetch(artifact.href)
+              .then(r => r.text())
+              .then(text => {
+                const rows = text.split('\n').filter(row => row.trim());
+                const headers = rows[0]?.split(',').map(h => h.trim()) || [];
+                const dataRows = rows.slice(1);
+                
+                content.innerHTML = `
+                  <div class="csv-viewer">
+                    <table class="csv-viewer__table">
+                      <thead>
+                        <tr>${headers.map(h => `<th>${escapeHtml(h)}</th>`).join('')}</tr>
+                      </thead>
+                      <tbody>
+                        ${dataRows.map(row => {
+                          const cells = row.split(',').map(c => c.trim());
+                          return `<tr>${cells.map(c => `<td>${escapeHtml(c)}</td>`).join('')}</tr>`;
+                        }).join('')}
+                      </tbody>
+                    </table>
+                  </div>
+                `;
+              })
+              .catch(() => {
+                content.innerHTML = `
+                  <div class="csv-viewer csv-viewer--error">
+                    <p>Unable to load table. <a href="${artifact.href}" target="_blank">Download CSV</a></p>
+                  </div>
+                `;
+              });
+          }
+          break;
+          
+        default:
+          content.innerHTML = `
+            <div class="artifact-player__fallback">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="48" height="48">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+              </svg>
+              <p>This artifact type cannot be previewed inline.</p>
+              <a href="${artifact.href}" target="_blank" class="artifact-player__download">Open in new tab</a>
+            </div>
+          `;
+      }
+      
+      player.classList.add('is-active');
+      document.body.style.overflow = 'hidden';
+      
+      // Auto-play audio/video
+      const media = content.querySelector('audio, video') as HTMLMediaElement;
+      if (media) {
+        media.play().catch(() => {});
+      }
+    }
+    
+    function closePlayer() {
+      // Stop any playing media
+      const media = content.querySelector('audio, video') as HTMLMediaElement;
+      if (media) {
+        media.pause();
+        media.currentTime = 0;
+      }
+      
+      player.classList.remove('is-active');
+      document.body.style.overflow = '';
+      content.innerHTML = '';
+    }
+    
+    function escapeHtml(text: string): string {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+    
+    // Listen for clicks on artifact cards
+    document.addEventListener('click', (e) => {
+      const card = (e.target as HTMLElement).closest('.artifact-card');
+      if (card) {
+        const artifactId = card.getAttribute('data-artifact-id');
+        if (artifactId) {
+          e.preventDefault();
+          openPlayer(artifactId);
+        }
+      }
+    });
+    
+    closeBtn?.addEventListener('click', closePlayer);
+    backdrop?.addEventListener('click', closePlayer);
+    
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && player.classList.contains('is-active')) {
+        closePlayer();
+      }
+    });
+  })();
+</script>
+
+<style is:global>
+  .artifact-player {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .artifact-player.is-active {
+    pointer-events: all;
+    opacity: 1;
+  }
+  
+  .artifact-player__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+  }
+  
+  .artifact-player__modal {
+    position: relative;
+    width: 90vw;
+    max-width: 1200px;
+    max-height: 90vh;
+    background: var(--color-bg-secondary, #1a1625);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .artifact-player.is-active .artifact-player__modal {
+    transform: scale(1);
+  }
+  
+  .artifact-player__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+  }
+  
+  .artifact-player__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text-primary, #fff);
+    margin: 0;
+    padding-right: 24px;
+    line-height: 1.3;
+  }
+  
+  .artifact-player__close {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: var(--color-text-secondary, #a0a0a0);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+  }
+  
+  .artifact-player__close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+  }
+  
+  .artifact-player__close svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .artifact-player__content {
+    flex: 1;
+    overflow: auto;
+    padding: 0;
+    min-height: 0;
+  }
+  
+  .artifact-player__info {
+    padding: 16px 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.875rem;
+    color: var(--color-text-secondary, #a0a0a0);
+    flex-shrink: 0;
+  }
+  
+  /* Audio Player */
+  .audio-player {
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+  
+  .audio-player__visualizer {
+    width: 100%;
+    max-width: 600px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .audio-player__waveform {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .audio-player__bar {
+    flex: 1;
+    background: linear-gradient(to top, var(--color-accent, #D8B35A), transparent);
+    border-radius: 2px;
+    height: var(--bar-height, 50%);
+    animation: audioBar 1s ease-in-out infinite;
+    animation-delay: calc(var(--i, 0) * 0.05s);
+    opacity: 0.6;
+  }
+  
+  @keyframes audioBar {
+    0%, 100% { transform: scaleY(0.8); }
+    50% { transform: scaleY(1.2); }
+  }
+  
+  .audio-player__native {
+    width: 100%;
+    max-width: 600px;
+    height: 48px;
+    border-radius: 8px;
+  }
+  
+  audio::-webkit-media-controls-panel {
+    background: var(--color-bg-tertiary, #2a2435);
+  }
+  
+  /* Video Player */
+  .video-player {
+    width: 100%;
+    background: #000;
+  }
+  
+  .video-player__native {
+    width: 100%;
+    max-height: 70vh;
+    display: block;
+  }
+  
+  /* Image Viewer */
+  .image-viewer {
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    background: var(--color-bg-tertiary, #2a2435);
+  }
+  
+  .image-viewer__img {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+  
+  /* PDF Viewer */
+  .pdf-viewer {
+    width: 100%;
+    height: 70vh;
+    position: relative;
+  }
+  
+  .pdf-viewer__embed {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  .pdf-viewer__fallback {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg-tertiary, #2a2435);
+    color: var(--color-text-secondary, #a0a0a0);
+  }
+  
+  /* Markdown Viewer */
+  .markdown-viewer {
+    padding: 24px;
+    max-height: 70vh;
+    overflow: auto;
+  }
+  
+  .markdown-viewer__content {
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-text-primary, #fff);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  .markdown-viewer__loading {
+    text-align: center;
+    padding: 40px;
+    color: var(--color-text-secondary, #a0a0a0);
+  }
+  
+  .markdown-viewer--error {
+    text-align: center;
+    padding: 40px;
+  }
+  
+  .markdown-viewer--error a {
+    color: var(--color-accent, #D8B35A);
+  }
+  
+  /* CSV Viewer */
+  .csv-viewer {
+    padding: 24px;
+    overflow: auto;
+    max-height: 70vh;
+  }
+  
+  .csv-viewer__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+  }
+  
+  .csv-viewer__table th,
+  .csv-viewer__table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .csv-viewer__table th {
+    background: rgba(255, 255, 255, 0.05);
+    font-weight: 600;
+    color: var(--color-text-primary, #fff);
+    position: sticky;
+    top: 0;
+  }
+  
+  .csv-viewer__table td {
+    color: var(--color-text-secondary, #a0a0a0);
+  }
+  
+  .csv-viewer__table tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+  }
+  
+  /* Fallback */
+  .artifact-player__fallback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 24px;
+    gap: 16px;
+    color: var(--color-text-secondary, #a0a0a0);
+    text-align: center;
+  }
+  
+  .artifact-player__download {
+    padding: 12px 24px;
+    background: var(--color-accent, #D8B35A);
+    color: #000;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: opacity 0.2s ease;
+  }
+  
+  .artifact-player__download:hover {
+    opacity: 0.9;
+  }
+  
+  @media (max-width: 768px) {
+    .artifact-player__modal {
+      width: 100vw;
+      max-height: 100vh;
+      border-radius: 0;
+    }
+    
+    .artifact-player__header {
+      padding: 16px;
+    }
+    
+    .artifact-player__title {
+      font-size: 1rem;
+    }
+  }
+</style>

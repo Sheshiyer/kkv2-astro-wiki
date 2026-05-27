@@ -11,7 +11,7 @@ sources:
 - visual-identity-core.json
 lastUpdated: '2026-05-27'
 order: 2
-icon: 🎨
+icon: ""
 ---
 
 # Visual Guidelines

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import ScrollReveal from '../components/ScrollReveal.astro';
 import ArtifactDetail from '../components/ArtifactDetail.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import TableOfContents from '../components/TableOfContents.astro';
@@ -34,16 +35,20 @@ const readingTime = Math.max(1, Math.ceil(wordCount / 210));
     </div>
 
     <div class="immersive-doc-grid">
-      <article class="immersive-doc-panel glass-panel reveal-in">
-        <div class="prose portal-prose">
-          <slot />
-        </div>
-      </article>
+      <ScrollReveal delay={0.1}>
+        <article class="immersive-doc-panel glass-panel">
+          <div class="prose portal-prose">
+            <slot />
+          </div>
+        </article>
+      </ScrollReveal>
 
-      <div class="immersive-doc-rail reveal-in">
-        <ArtifactDetail title={title} description={description} category={category} readingTime={readingTime} headings={headings} />
-        {headings.length > 0 && <TableOfContents headings={headings} locale={locale} />}
-      </div>
+      <ScrollReveal delay={0.2}>
+        <div class="immersive-doc-rail">
+          <ArtifactDetail title={title} description={description} category={category} readingTime={readingTime} headings={headings} />
+          {headings.length > 0 && <TableOfContents headings={headings} locale={locale} />}
+        </div>
+      </ScrollReveal>
     </div>
   </section>
 </BaseLayout>

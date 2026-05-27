@@ -13,9 +13,9 @@ const docs = defineCollection({
   schema: docSchema,
 });
 
-const frDocs = defineCollection({
+const thDocs = defineCollection({
   type: 'content',
   schema: docSchema,
 });
 
-export const collections = { docs, frDocs };
+export const collections = { docs, thDocs };
