@@ -19,7 +19,7 @@
     },
     {
       "label": "Visual assets",
-      "value": "0"
+      "value": "23"
     },
     {
       "label": "NotebookLM artifacts",
@@ -59,28 +59,28 @@
       "title": "Product Overview",
       "description": "Hero product definition, positioning, and messaging stack for the current launch build.",
       "href": "/docs/product/overview",
-      "icon": "\ud83d\udce6",
+      "icon": "",
       "eyebrow": "Product"
     },
     {
       "title": "Visual Guidelines",
       "description": "Palette, typography, art direction, and brand-system guardrails for the current run.",
       "href": "/docs/brand/visual-guidelines",
-      "icon": "\ud83c\udfa8",
+      "icon": "",
       "eyebrow": "Brand System"
     },
     {
       "title": "Campaign Copy",
       "description": "Campaign narratives, key copy assets, and launch-ready messaging organized for review.",
       "href": "/docs/marketing/campaign-copy",
-      "icon": "\ud83d\udcdd",
+      "icon": "",
       "eyebrow": "Campaign"
     },
     {
       "title": "NotebookLM Artifacts",
       "description": "Surfaced reports, infographics, decks, audio, and research tables produced during Wave 7.",
       "href": "/docs/research/notebooklm-artifacts",
-      "icon": "\ud83e\udde0",
+      "icon": "",
       "eyebrow": "Research"
     }
   ],
@@ -90,6 +90,20 @@
       "description": "NotebookLM infographic surfaced directly into the media library.",
       "href": "/docs/research/notebooklm-artifacts",
       "image": "/notebooklm/infographic-landscape.png",
+      "eyebrow": "NotebookLM"
+    },
+    {
+      "title": "Infographic \u2014 Portrait",
+      "description": "Vertical-format visual summary optimized for mobile viewing.",
+      "href": "/docs/research/notebooklm-artifacts",
+      "image": "/notebooklm/infographic-portrait.png",
+      "eyebrow": "NotebookLM"
+    },
+    {
+      "title": "Infographic \u2014 Square",
+      "description": "Square-format visual summary optimized for social sharing.",
+      "href": "/docs/research/notebooklm-artifacts",
+      "image": "/notebooklm/infographic-square.png",
       "eyebrow": "NotebookLM"
     }
   ],

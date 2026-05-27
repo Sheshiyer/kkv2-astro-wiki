@@ -9,11 +9,24 @@ interface Props {
 }
 
 const { title, description = '', href, eyebrow = '', icon = '', index = 0 } = Astro.props;
+
+function containsEmoji(str: string): boolean {
+  const emojiRegex = /[\u{1F300}-\u{1F9FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]/u;
+  return emojiRegex.test(str);
+}
 ---
 
 <a class="immersive-doc-card reveal-in" href={href} style={`--card-index: ${index}`}>
   <span class="immersive-doc-card__index">{String(index + 1).padStart(2, '0')}</span>
-  <span class="immersive-doc-card__icon">{icon || '✦'}</span>
+  <span class="immersive-doc-card__icon">
+    {icon && !containsEmoji(icon) ? (
+      <span>{icon}</span>
+    ) : (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+      </svg>
+    )}
+  </span>
   <span class="immersive-doc-card__body">
     {eyebrow && <small>{eyebrow}</small>}
     <strong>{title}</strong>

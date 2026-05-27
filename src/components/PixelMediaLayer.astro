@@ -1,19 +1,64 @@
 ---
-import siteData from '../data/site-data.json';
-
-const mediaItems = [
-  siteData.heroImage,
-  ...(siteData.visualHighlights || []).map((item) => item.image),
-  ...(siteData.notebooklmHighlights || []).map((item) => item.image),
-].filter(Boolean).slice(0, 7);
-
-const fallbackCells = Array.from({ length: 7 });
+/**
+ * PixelMediaLayer
+ * 
+ * Abstract background layer using CSS gradients.
+ * No images, no infographics, no photos - just subtle color and motion.
+ * 
+ * Design rule: Backgrounds support, never compete.
+ */
 ---
 
 <div class="pixel-media-layer" aria-hidden="true">
-  {mediaItems.length > 0
-    ? mediaItems.map((image, index) => (
-        <img src={image} alt="" loading="lazy" style={`--pixel-index: ${index}`} />
-      ))
-    : fallbackCells.map((_, index) => <span style={`--pixel-index: ${index}`} />)}
+  <div class="pixel-media-layer__mesh"></div>
+  <div class="pixel-media-layer__noise"></div>
 </div>
+
+<style>
+  .pixel-media-layer {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .pixel-media-layer__mesh {
+    position: absolute;
+    inset: -50%;
+    background: 
+      radial-gradient(ellipse at 20% 30%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 70%, rgba(216, 179, 90, 0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, rgba(34, 18, 69, 0.4) 0%, transparent 70%),
+      radial-gradient(ellipse at 70% 20%, rgba(139, 92, 246, 0.05) 0%, transparent 40%);
+    animation: mesh-rotate 120s linear infinite;
+  }
+
+  @keyframes mesh-rotate {
+    0% {
+      transform: rotate(0deg) scale(1.5);
+    }
+    50% {
+      transform: rotate(180deg) scale(1.7);
+    }
+    100% {
+      transform: rotate(360deg) scale(1.5);
+    }
+  }
+
+  .pixel-media-layer__noise {
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 128px 128px;
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    .pixel-media-layer__mesh {
+      animation: none;
+    }
+  }
+</style>

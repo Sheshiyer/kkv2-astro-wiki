@@ -1,0 +1,268 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-05-27",
+  "totalCount": 23,
+  "byType": {
+    "report": 3,
+    "infographic": 3,
+    "deck": 4,
+    "audio": 3,
+    "video": 2,
+    "table": 3,
+    "flashcard": 2,
+    "quiz": 2,
+    "mindMap": 1
+  },
+  "artifacts": [
+    {
+      "id": "report-blog",
+      "title": "Beyond the Directory: Why Reflection is the New Standard in Spiritual Wellness",
+      "description": "Blog-style report exploring the structural paradox of seeking support and why reflection precedes marketplace trust.",
+      "type": "report",
+      "format": "md",
+      "href": "/notebooklm/report-blog.md",
+      "size": "~15KB",
+      "featured": true
+    },
+    {
+      "id": "report-briefing",
+      "title": "Klear Karma Executive Briefing",
+      "description": "Concise strategic overview for stakeholders covering product positioning, market context, and launch readiness.",
+      "type": "report",
+      "format": "md",
+      "href": "/notebooklm/report-briefing.md",
+      "size": "~12KB",
+      "featured": true
+    },
+    {
+      "id": "report-study-guide",
+      "title": "Klear Karma Study Guide",
+      "description": "Comprehensive reference document for internal teams covering brand narrative, visual system, and messaging framework.",
+      "type": "report",
+      "format": "md",
+      "href": "/notebooklm/report-study-guide.md",
+      "size": "~18KB",
+      "featured": true
+    },
+    {
+      "id": "infographic-landscape",
+      "title": "Klear Karma Landscape Infographic",
+      "description": "Visual summary of the brand ecosystem, trust architecture, and user journey in landscape format.",
+      "type": "infographic",
+      "format": "png",
+      "href": "/notebooklm/infographic-landscape.png",
+      "thumbnail": "/notebooklm/infographic-landscape.png",
+      "size": "~2MB",
+      "featured": true
+    },
+    {
+      "id": "infographic-portrait",
+      "title": "Klear Karma Portrait Infographic",
+      "description": "Vertical-format visual summary optimized for mobile viewing and social sharing.",
+      "type": "infographic",
+      "format": "png",
+      "href": "/notebooklm/infographic-portrait.png",
+      "thumbnail": "/notebooklm/infographic-portrait.png",
+      "size": "~1.8MB",
+      "featured": false
+    },
+    {
+      "id": "infographic-square",
+      "title": "Klear Karma Square Infographic",
+      "description": "Square-format visual summary optimized for social media posts and thumbnails.",
+      "type": "infographic",
+      "format": "png",
+      "href": "/notebooklm/infographic-square.png",
+      "thumbnail": "/notebooklm/infographic-square.png",
+      "size": "~1.5MB",
+      "featured": false
+    },
+    {
+      "id": "deck-detailed-full",
+      "title": "Detailed Presentation — Full Version",
+      "description": "Comprehensive presentation deck covering all aspects of Klear Karma for detailed review and stakeholder meetings.",
+      "type": "deck",
+      "format": "pdf",
+      "href": "/notebooklm/deck-detailed-full.pdf",
+      "thumbnail": "/notebooklm/infographic-landscape.png",
+      "size": "~5MB",
+      "featured": true
+    },
+    {
+      "id": "deck-detailed-short",
+      "title": "Detailed Presentation — Short Version",
+      "description": "Condensed version of the detailed deck for quick review and email sharing.",
+      "type": "deck",
+      "format": "pdf",
+      "href": "/notebooklm/deck-detailed-short.pdf",
+      "thumbnail": "/notebooklm/infographic-landscape.png",
+      "size": "~3MB",
+      "featured": false
+    },
+    {
+      "id": "deck-presenter-full",
+      "title": "Presenter Deck — Full Version",
+      "description": "Speaker-ready presentation with notes and timing for live presentations and pitches.",
+      "type": "deck",
+      "format": "pdf",
+      "href": "/notebooklm/deck-presenter-full.pdf",
+      "thumbnail": "/notebooklm/infographic-landscape.png",
+      "size": "~6MB",
+      "featured": true
+    },
+    {
+      "id": "deck-presenter-short",
+      "title": "Presenter Deck — Short Version",
+      "description": "Condensed presenter deck for 5-minute pitches and elevator presentations.",
+      "type": "deck",
+      "format": "pdf",
+      "href": "/notebooklm/deck-presenter-short.pdf",
+      "thumbnail": "/notebooklm/infographic-landscape.png",
+      "size": "~3.5MB",
+      "featured": false
+    },
+    {
+      "id": "audio-brief-short",
+      "title": "Audio Brief — Short",
+      "description": "5-minute audio summary of Klear Karma's value proposition and market positioning.",
+      "type": "audio",
+      "format": "mp3",
+      "href": "/notebooklm/audio-brief-short.mp3",
+      "duration": "~5 min",
+      "size": "~8MB",
+      "featured": true
+    },
+    {
+      "id": "audio-debate",
+      "title": "Audio Debate — Stakeholder Perspectives",
+      "description": "Simulated debate exploring different stakeholder viewpoints on Klear Karma's approach to trust and verification.",
+      "type": "audio",
+      "format": "mp3",
+      "href": "/notebooklm/audio-debate.mp3",
+      "duration": "~12 min",
+      "size": "~18MB",
+      "featured": false
+    },
+    {
+      "id": "audio-deep-dive-long",
+      "title": "Audio Deep Dive — Full Exploration",
+      "description": "In-depth audio exploration of Klear Karma's architecture, philosophy, and implementation strategy.",
+      "type": "audio",
+      "format": "mp3",
+      "href": "/notebooklm/audio-deep-dive-long.mp3",
+      "duration": "~45 min",
+      "size": "~69MB",
+      "featured": true
+    },
+    {
+      "id": "video-brief",
+      "title": "Video Brief",
+      "description": "Short-form video introducing Klear Karma's core concept and user journey.",
+      "type": "video",
+      "format": "mp4",
+      "href": "/notebooklm/video-brief.mp4",
+      "duration": "~3 min",
+      "size": "~15MB",
+      "featured": true
+    },
+    {
+      "id": "video-explainer",
+      "title": "Video Explainer",
+      "description": "Detailed animated explanation of how Klear Karma works for seekers and practitioners.",
+      "type": "video",
+      "format": "mp4",
+      "href": "/notebooklm/video-explainer.mp4",
+      "duration": "~8 min",
+      "size": "~35MB",
+      "featured": true
+    },
+    {
+      "id": "table-competitive",
+      "title": "Competitive Analysis Table",
+      "description": "Structured comparison of Klear Karma against alternative approaches in the spiritual wellness space.",
+      "type": "table",
+      "format": "csv",
+      "href": "/notebooklm/table-competitive.csv",
+      "rows": 12,
+      "size": "~3KB",
+      "featured": false
+    },
+    {
+      "id": "table-persona",
+      "title": "User Persona Data Table",
+      "description": "Detailed user persona breakdowns with demographics, psychographics, and journey stages.",
+      "type": "table",
+      "format": "csv",
+      "href": "/notebooklm/table-persona.csv",
+      "rows": 8,
+      "size": "~2KB",
+      "featured": false
+    },
+    {
+      "id": "table-product",
+      "title": "Product Feature Comparison Table",
+      "description": "Feature matrix comparing Klear Karma's capabilities across different user scenarios.",
+      "type": "table",
+      "format": "csv",
+      "href": "/notebooklm/table-product.csv",
+      "rows": 15,
+      "size": "~4KB",
+      "featured": false
+    },
+    {
+      "id": "flashcards-detailed",
+      "title": "Detailed Flashcard Set",
+      "description": "Comprehensive flashcards covering brand vocabulary, key concepts, and messaging points for team onboarding.",
+      "type": "flashcard",
+      "format": "json",
+      "href": "/notebooklm/flashcards-detailed.json",
+      "cards": 48,
+      "size": "~8KB",
+      "featured": false
+    },
+    {
+      "id": "flashcards-standard",
+      "title": "Standard Flashcard Set",
+      "description": "Core flashcards covering essential Klear Karma concepts for quick reference.",
+      "type": "flashcard",
+      "format": "json",
+      "href": "/notebooklm/flashcards-standard.json",
+      "cards": 24,
+      "size": "~4KB",
+      "featured": false
+    },
+    {
+      "id": "quiz-hard",
+      "title": "Advanced Knowledge Quiz",
+      "description": "Challenging quiz testing deep understanding of Klear Karma's architecture and philosophy.",
+      "type": "quiz",
+      "format": "json",
+      "href": "/notebooklm/quiz-hard.json",
+      "questions": 20,
+      "size": "~6KB",
+      "featured": false
+    },
+    {
+      "id": "quiz-medium",
+      "title": "Standard Knowledge Quiz",
+      "description": "Moderate-difficulty quiz covering core Klear Karma concepts and brand narrative.",
+      "type": "quiz",
+      "format": "json",
+      "href": "/notebooklm/quiz-medium.json",
+      "questions": 15,
+      "size": "~5KB",
+      "featured": false
+    },
+    {
+      "id": "mind-map",
+      "title": "Klear Karma Concept Mind Map",
+      "description": "Interactive mind map connecting core concepts, user journeys, and brand pillars.",
+      "type": "mindMap",
+      "format": "json",
+      "href": "/notebooklm/mind-map.json",
+      "nodes": 32,
+      "size": "~10KB",
+      "featured": true
+    }
+  ]
+}

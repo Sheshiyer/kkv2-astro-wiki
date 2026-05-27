@@ -1,24 +1,201 @@
 ---
 interface Props {
+  id: string;
   title: string;
-  description?: string;
+  description: string;
+  type: string;
+  format: string;
   href: string;
-  eyebrow?: string;
-  image?: string;
-  kind?: string;
+  thumbnail?: string;
+  duration?: string;
+  size?: string;
+  featured?: boolean;
   index?: number;
 }
 
-const { title, description = '', href, eyebrow = '', image = '', kind = '', index = 0 } = Astro.props;
+const { id, title, description, type, format, href, thumbnail, duration, size, featured = false, index = 0 } = Astro.props;
+
+// Type-specific icons
+const typeIcons: Record<string, string> = {
+  report: 'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z',
+  infographic: 'M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z',
+  deck: 'M2 3h20v14H2zM12 17v4M8 21h8',
+  audio: 'M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3zM19 10v2a7 7 0 0 1-14 0v-2',
+  video: 'M23 7l-7 5 7 5V7zM2 7h14v10H2z',
+  table: 'M3 3h18v18H3zM3 9h18M3 15h18M9 3v18',
+  flashcard: 'M4 3h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM12 8v8',
+  quiz: 'M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11',
+  mindMap: 'M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 16a6 6 0 1 1 6-6 6 6 0 0 1-6 6z'
+};
+
+const safeType = type || 'report';
+const iconPath = typeIcons[safeType] || typeIcons.report;
+
+// Type colors
+const typeColors: Record<string, { bg: string; text: string }> = {
+  report: { bg: 'rgba(139, 92, 246, 0.15)', text: '#8B5CF6' },
+  infographic: { bg: 'rgba(34, 197, 94, 0.15)', text: '#22c55e' },
+  deck: { bg: 'rgba(59, 130, 246, 0.15)', text: '#3b82f6' },
+  audio: { bg: 'rgba(245, 158, 11, 0.15)', text: '#f59e0b' },
+  video: { bg: 'rgba(239, 68, 68, 0.15)', text: '#ef4444' },
+  table: { bg: 'rgba(14, 165, 233, 0.15)', text: '#0ea5e9' },
+  flashcard: { bg: 'rgba(168, 85, 247, 0.15)', text: '#a855f7' },
+  quiz: { bg: 'rgba(236, 72, 153, 0.15)', text: '#ec4899' },
+  mindMap: { bg: 'rgba(20, 184, 166, 0.15)', text: '#14b8a6' }
+};
+
+const colors = typeColors[safeType] || typeColors.report;
+
+// Format labels
+const formatLabels: Record<string, string> = {
+  md: 'Markdown',
+  pdf: 'PDF',
+  png: 'PNG Image',
+  mp3: 'MP3 Audio',
+  mp4: 'MP4 Video',
+  csv: 'CSV Table',
+  json: 'JSON Data'
+};
+
+const safeFormat = format || 'md';
+const formatLabel = formatLabels[safeFormat] || safeFormat.toUpperCase();
 ---
 
-<a class="artifact-card reveal-in" href={href} style={`--card-index: ${index}`}>
-  <div class="artifact-card__media">
-    {image ? <img src={image} alt={title} loading="lazy" /> : <span>{kind || eyebrow || 'Artifact'}</span>}
-  </div>
-  <div class="artifact-card__copy">
-    <p>{eyebrow || kind || 'NotebookLM'}</p>
-    <h3>{title}</h3>
-    {description && <span>{description}</span>}
-  </div>
-</a>
+<article class="artifact-card" data-type={type} data-featured={featured} style={`--card-index: ${index}; --type-bg: ${colors.bg}; --type-text: ${colors.text}`}>
+  <a href={href} class="artifact-card__link" download={format !== 'md' && format !== 'pdf' && format !== 'png' ? undefined : undefined}>
+    <div class="artifact-card__preview">
+      {thumbnail ? (
+        <img src={thumbnail} alt={title} loading="lazy" class="artifact-card__image" />
+      ) : (
+        <div class="artifact-card__icon-wrapper" style={`background: ${colors.bg}`}>
+          <svg viewBox="0 0 24 24" fill="none" stroke={colors.text} stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="artifact-card__icon">
+            <path d={iconPath} />
+          </svg>
+        </div>
+      )}
+      <span class="artifact-card__type-badge" style={`background: ${colors.bg}; color: ${colors.text}`}>
+        {safeType}
+      </span>
+    </div>
+    
+    <div class="artifact-card__content">
+      <h3 class="artifact-card__title">{title}</h3>
+      <p class="artifact-card__description">{description}</p>
+      
+      <div class="artifact-card__meta">
+        <span class="artifact-card__format">{formatLabel}</span>
+        {duration && <span class="artifact-card__duration">{duration}</span>}
+        {size && <span class="artifact-card__size">{size}</span>}
+      </div>
+    </div>
+  </a>
+</article>
+
+<style>
+  .artifact-card {
+    background: var(--color-bg-secondary);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .artifact-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+  
+  .artifact-card__link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .artifact-card__preview {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: var(--color-bg-tertiary);
+    overflow: hidden;
+  }
+  
+  .artifact-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .artifact-card:hover .artifact-card__image {
+    transform: scale(1.05);
+  }
+  
+  .artifact-card__icon-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .artifact-card__icon {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .artifact-card__type-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .artifact-card__content {
+    padding: 16px;
+  }
+  
+  .artifact-card__title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+    color: var(--color-text-primary);
+  }
+  
+  .artifact-card__description {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    margin: 0 0 12px 0;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .artifact-card__meta {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-size: 0.75rem;
+    color: var(--color-text-tertiary);
+  }
+  
+  .artifact-card__format {
+    padding: 2px 8px;
+    background: var(--color-bg-tertiary);
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  
+  .artifact-card__duration,
+  .artifact-card__size {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+</style>

@@ -1,0 +1,261 @@
+---
+import ArtifactCard from './ArtifactCard.astro';
+import type { Locale } from '../i18n';
+
+interface Artifact {
+  id: string;
+  title: string;
+  description: string;
+  type: string;
+  format: string;
+  href: string;
+  thumbnail?: string;
+  duration?: string;
+  size?: string;
+  featured?: boolean;
+}
+
+interface Props {
+  artifacts: Artifact[];
+  locale: Locale;
+  showFilters?: boolean;
+  showSearch?: boolean;
+}
+
+const { artifacts, locale, showFilters = true, showSearch = true } = Astro.props;
+
+// Group artifacts by type
+const types = [...new Set(artifacts.map(a => a.type))];
+const typeLabels: Record<string, string> = {
+  report: 'Reports',
+  infographic: 'Infographics',
+  deck: 'Decks',
+  audio: 'Audio',
+  video: 'Video',
+  table: 'Tables',
+  flashcard: 'Flashcards',
+  quiz: 'Quizzes',
+  mindMap: 'Mind Maps'
+};
+---
+
+<div class="artifact-browser" data-locale={locale}>
+  {showSearch && (
+    <div class="artifact-browser__search">
+      <input
+        type="search"
+        placeholder="Search artifacts..."
+        class="artifact-browser__search-input"
+        id="artifact-search"
+        aria-label="Search artifacts"
+      />
+      <svg class="artifact-browser__search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="M21 21l-4.35-4.35"/>
+      </svg>
+    </div>
+  )}
+
+  {showFilters && types.length > 1 && (
+    <div class="artifact-browser__filters">
+      <button class="artifact-browser__filter is-active" data-filter="all">
+        All <span class="artifact-browser__count">{artifacts.length}</span>
+      </button>
+      {types.map(type => (
+        <button class="artifact-browser__filter" data-filter={type}>
+          {typeLabels[type] || type}
+          <span class="artifact-browser__count">{artifacts.filter(a => a.type === type).length}</span>
+        </button>
+      ))}
+    </div>
+  )}
+
+  <div class="artifact-browser__grid">
+    {artifacts.map((artifact, index) => (
+      <ArtifactCard
+        id={artifact.id}
+        title={artifact.title}
+        description={artifact.description}
+        type={artifact.type}
+        format={artifact.format}
+        href={artifact.href}
+        thumbnail={artifact.thumbnail}
+        duration={artifact.duration}
+        size={artifact.size}
+        featured={artifact.featured}
+        index={index}
+      />
+    ))}
+  </div>
+
+  {artifacts.length === 0 && (
+    <div class="artifact-browser__empty">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+        <line x1="16" y1="13" x2="8" y2="13"/>
+        <line x1="16" y1="17" x2="8" y2="17"/>
+        <polyline points="10 9 9 9 8 9"/>
+      </svg>
+      <p>No artifacts found.</p>
+    </div>
+  )}
+</div>
+
+<script>
+  // Client-side filtering
+  const browser = document.querySelector('.artifact-browser');
+  if (browser) {
+    const searchInput = browser.querySelector('#artifact-search');
+    const filterButtons = browser.querySelectorAll('[data-filter]');
+    const cards = browser.querySelectorAll('.artifact-card');
+
+    function filterArtifacts() {
+      const searchTerm = (searchInput as HTMLInputElement)?.value.toLowerCase() || '';
+      const activeFilter = browser.querySelector('[data-filter].is-active');
+      const typeFilter = activeFilter?.getAttribute('data-filter') || 'all';
+
+      cards.forEach(card => {
+        const title = card.querySelector('.artifact-card__title')?.textContent?.toLowerCase() || '';
+        const description = card.querySelector('.artifact-card__description')?.textContent?.toLowerCase() || '';
+        const type = card.getAttribute('data-type') || '';
+
+        const matchesSearch = !searchTerm || title.includes(searchTerm) || description.includes(searchTerm);
+        const matchesType = typeFilter === 'all' || type === typeFilter;
+
+        (card as HTMLElement).style.display = matchesSearch && matchesType ? '' : 'none';
+      });
+    }
+
+    searchInput?.addEventListener('input', filterArtifacts);
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('is-active'));
+        button.classList.add('is-active');
+        filterArtifacts();
+      });
+    });
+  }
+</script>
+
+<style>
+  .artifact-browser {
+    width: 100%;
+  }
+
+  .artifact-browser__search {
+    position: relative;
+    margin-bottom: 24px;
+  }
+
+  .artifact-browser__search-input {
+    width: 100%;
+    padding: 12px 16px 12px 48px;
+    background: var(--color-bg-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+  }
+
+  .artifact-browser__search-input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+  }
+
+  .artifact-browser__search-input::placeholder {
+    color: var(--color-text-tertiary);
+  }
+
+  .artifact-browser__search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    color: var(--color-text-tertiary);
+    pointer-events: none;
+  }
+
+  .artifact-browser__filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  .artifact-browser__filter {
+    padding: 8px 16px;
+    background: var(--color-bg-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .artifact-browser__filter:hover {
+    background: var(--color-bg-tertiary);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .artifact-browser__filter.is-active {
+    background: var(--color-accent-subtle);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .artifact-browser__count {
+    padding: 2px 8px;
+    background: var(--color-bg-tertiary);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .artifact-browser__filter.is-active .artifact-browser__count {
+    background: var(--color-accent);
+    color: var(--color-bg-primary);
+  }
+
+  .artifact-browser__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  @media (max-width: 640px) {
+    .artifact-browser__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .artifact-browser__empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 64px 24px;
+    color: var(--color-text-tertiary);
+    text-align: center;
+  }
+
+  .artifact-browser__empty svg {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 16px;
+    opacity: 0.5;
+  }
+
+  .artifact-browser__empty p {
+    font-size: 1rem;
+    margin: 0;
+  }
+</style>

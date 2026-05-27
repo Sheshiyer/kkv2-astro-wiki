@@ -1,0 +1,101 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import ArtifactBrowser from '../../../../components/ArtifactBrowser.astro';
+import artifactsData from '../../../../data/artifacts.json';
+import { normalizeLocale, t } from '../../../../i18n';
+import { hasFrDocs } from '../../../../i18n/fr-docs';
+
+export async function getStaticPaths() {
+  const locales = ['en', 'fr'];
+  return locales.map((locale) => ({
+    params: { locale, slug: 'research/notebooklm-artifacts' },
+    props: { locale },
+  }));
+}
+
+const { locale: routeLocale } = Astro.props;
+const locale = normalizeLocale(routeLocale);
+const copy = t(locale);
+
+// Transform artifacts data for the browser
+const artifacts = artifactsData.artifacts.map(artifact => ({
+  id: artifact.id,
+  title: artifact.title,
+  description: artifact.description,
+  type: artifact.type,
+  format: artifact.format,
+  href: artifact.href,
+  thumbnail: artifact.thumbnail,
+  duration: artifact.duration,
+  size: artifact.size,
+  featured: artifact.featured,
+}));
+---
+
+<BaseLayout
+  title="NotebookLM Artifacts — Klear Karma"
+  description="Browse all 23 NotebookLM-generated artifacts including reports, infographics, decks, audio, video, tables, flashcards, quizzes, and mind maps."
+  locale={locale}
+>
+  <section class="artifact-page">
+    <div class="artifact-page__header">
+      <p class="eyebrow">{copy.categories.research || 'Research'}</p>
+      <h1>NotebookLM Artifacts</h1>
+      <p class="artifact-page__description">
+        Browse all {artifactsData.totalCount} generated artifacts from the Wave 7 NotebookLM processing.
+        Each artifact is a first-class publishable output.
+      </p>
+    </div>
+
+    <ArtifactBrowser
+      artifacts={artifacts}
+      locale={locale}
+      showFilters={true}
+      showSearch={true}
+    />
+  </section>
+</BaseLayout>
+
+<style>
+  .artifact-page {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: var(--space-24) var(--space-8);
+  }
+
+  .artifact-page__header {
+    margin-bottom: var(--space-16);
+  }
+
+  .artifact-page__header .eyebrow {
+    color: var(--color-accent);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-4);
+  }
+
+  .artifact-page__header h1 {
+    font-size: var(--text-h1);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-4) 0;
+    line-height: 1.15;
+  }
+
+  .artifact-page__description {
+    font-size: var(--text-body-lg);
+    color: var(--color-text-secondary);
+    max-width: 72ch;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .artifact-page {
+      padding: var(--space-12) var(--space-4);
+    }
+  }
+</style>

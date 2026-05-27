@@ -11,6 +11,11 @@ interface Props {
 
 const { locale } = Astro.props;
 const copy = t(locale);
+
+function containsEmoji(str: string): boolean {
+  const emojiRegex = /[\u{1F300}-\u{1F9FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]/u;
+  return emojiRegex.test(str);
+}
 const docs = await getCollection('docs');
 const frDocs = locale === 'fr' && hasFrDocs ? await getCollection('frDocs') : [];
 const frDocsBySlug = new Map(frDocs.map((entry) => [entry.slug, entry]));
@@ -65,7 +70,7 @@ const sortedCategories = Object.entries(categories).sort(([a], [b]) => {
         {categoryDocs.map((doc) => (
           <li>
             <a href={localizedPath(locale, `/docs/${doc.slug}`)} class="nav-link">
-              {doc.data.icon && <span class="nav-link__icon">{doc.data.icon}</span>}
+              {doc.data.icon && !containsEmoji(doc.data.icon) && <span class="nav-link__icon">{doc.data.icon}</span>}
               <span>
                 <strong>{localizedDocTitle(locale, doc.slug, doc.data.title)}</strong>
                 {doc.data.description && <small>{doc.data.description}</small>}

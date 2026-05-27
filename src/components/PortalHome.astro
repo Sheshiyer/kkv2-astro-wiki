@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ShowcaseGrid from './ShowcaseGrid.astro';
+import IngestionFlow from './IngestionFlow.astro';
 import siteData from '../data/site-data.json';
 import type { Locale } from '../i18n';
 import { localizedDocTitle, localizedFeature, localizedPath, t } from '../i18n';
@@ -13,6 +14,12 @@ interface Props {
 
 const { locale } = Astro.props;
 const copy = t(locale);
+
+// Helper to detect emoji characters
+function containsEmoji(str: string): boolean {
+  const emojiRegex = /[\u{1F300}-\u{1F9FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]/u;
+  return emojiRegex.test(str);
+}
 const docs = await getCollection('docs');
 const frDocs = locale === 'fr' && hasFrDocs ? await getCollection('frDocs') : [];
 const frDocsBySlug = new Map(frDocs.map((entry) => [entry.slug, entry]));
@@ -130,6 +137,8 @@ const orderedCategories = Object.entries(categories).sort(([a], [b]) => {
       </section>
     )}
 
+    <IngestionFlow locale={locale} />
+
     <section class="immersive-section">
       <div class="section-heading reveal-in">
         <p class="eyebrow">{copy.home.curatedLaunchTracks}</p>
@@ -161,7 +170,7 @@ const orderedCategories = Object.entries(categories).sort(([a], [b]) => {
                 {categoryDocs.map((doc) => (
                   <li>
                     <a href={localizedPath(locale, `/docs/${doc.slug}`)}>
-                      {doc.data.icon && <span>{doc.data.icon} </span>}
+                      {doc.data.icon && !containsEmoji(doc.data.icon) && <span>{doc.data.icon} </span>}
                       {localizedDocTitle(locale, doc.slug, doc.data.title)}
                     </a>
                   </li>

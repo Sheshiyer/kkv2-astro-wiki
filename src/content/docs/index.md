@@ -31,32 +31,32 @@ This dossier index summarizes the latest launch documentation build.
 ## Primary Sections
 
 ### Overview
-- [Index](index.md)
+- [Index](/en/docs/index)
 
 ### product
-- [Overview](product/overview.md)
-- [Features](product/features.md)
-- [Specifications](product/specifications.md)
+- [Overview](/en/docs/product/overview)
+- [Features](/en/docs/product/features)
+- [Specifications](/en/docs/product/specifications)
 
 ### brand
-- [Voice Tone](brand/voice-tone.md)
-- [Visual Guidelines](brand/visual-guidelines.md)
-- [Visual Assets](brand/visual-assets.md)
+- [Voice Tone](/en/docs/brand/voice-tone)
+- [Visual Guidelines](/en/docs/brand/visual-guidelines)
+- [Visual Assets](/en/docs/brand/visual-assets)
 
 ### audience
-- [Primary Persona](audience/primary-persona.md)
-- [Secondary Personas](audience/secondary-personas.md)
-- [Competitive Landscape](market/competitive-landscape.md)
+- [Primary Persona](/en/docs/audience/primary-persona)
+- [Secondary Personas](/en/docs/audience/secondary-personas)
+- [Competitive Landscape](/en/docs/market/competitive-landscape)
 
 ### marketing
-- [Campaign Copy](marketing/campaign-copy.md)
-- [Email Templates](marketing/email-templates.md)
-- [Social Content](marketing/social-content.md)
-- [Video Scripts](marketing/video-scripts.md)
-- [Ad Creative](marketing/ad-creative.md)
+- [Campaign Copy](/en/docs/marketing/campaign-copy)
+- [Email Templates](/en/docs/marketing/email-templates)
+- [Social Content](/en/docs/marketing/social-content)
+- [Video Scripts](/en/docs/marketing/video-scripts)
+- [Ad Creative](/en/docs/marketing/ad-creative)
 
 ### general
-- [Notebooklm Artifacts](research/notebooklm-artifacts.md)
+- [NotebookLM Artifacts](/en/docs/research/notebooklm-artifacts)
 
 ## Inventory Snapshot
 

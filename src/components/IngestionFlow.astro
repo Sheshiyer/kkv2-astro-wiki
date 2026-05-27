@@ -1,0 +1,218 @@
+---
+import siteData from '../data/site-data.json';
+import artifactsData from '../data/artifacts.json';
+
+interface Props {
+  locale?: string;
+}
+
+const { locale = 'en' } = Astro.props;
+
+const steps = [
+  {
+    number: '01',
+    title: 'Source Documents',
+    description: 'Brand config, guardrails, and source context',
+    count: '8',
+    icon: 'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'
+  },
+  {
+    number: '02',
+    title: 'Brandmint Waves',
+    description: 'Multi-wave processing pipeline',
+    count: siteData.metrics?.find(m => m.label === 'Brandmint outputs')?.value || '20',
+    icon: 'M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'
+  },
+  {
+    number: '03',
+    title: 'NotebookLM Sources',
+    description: 'Structured research inputs',
+    count: '24',
+    icon: 'M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z'
+  },
+  {
+    number: '04',
+    title: 'Generated Artifacts',
+    description: 'Reports, decks, audio, visuals',
+    count: artifactsData.totalCount?.toString() || '23',
+    icon: 'M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z'
+  },
+  {
+    number: '05',
+    title: 'Published Wiki',
+    description: 'Astro site on Vercel',
+    count: 'Live',
+    icon: 'M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 16a6 6 0 1 1 6-6 6 6 0 0 1-6 6z'
+  }
+];
+---
+
+<section class="ingestion-flow" aria-labelledby="ingestion-heading">
+  <div class="ingestion-flow__header">
+    <p class="eyebrow">Pipeline</p>
+    <h2 id="ingestion-heading">From Source to Artifact</h2>
+    <p class="ingestion-flow__description">
+      See how brand documents become structured intelligence through an automated pipeline.
+    </p>
+  </div>
+
+  <div class="ingestion-flow__steps">
+    {steps.map((step, index) => (
+      <div class="ingestion-flow__step" style={`--step-index: ${index}`}>
+        <div class="ingestion-flow__connector" aria-hidden="true"></div>
+        
+        <div class="ingestion-flow__card">
+          <div class="ingestion-flow__number">{step.number}</div>
+          <svg class="ingestion-flow__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d={step.icon} />
+          </svg>
+          
+          <h3>{step.title}</h3>
+          <p>{step.description}</p>
+          
+          <span class="ingestion-flow__count">{step.count}</span>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .ingestion-flow {
+    padding: var(--space-24) 0;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .ingestion-flow__header {
+    text-align: center;
+    margin-bottom: var(--space-16);
+  }
+
+  .ingestion-flow__header .eyebrow {
+    color: var(--color-accent);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-4);
+  }
+
+  .ingestion-flow__header h2 {
+    font-size: var(--text-h2);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-4) 0;
+  }
+
+  .ingestion-flow__description {
+    font-size: var(--text-body-lg);
+    color: var(--color-text-secondary);
+    max-width: 60ch;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .ingestion-flow__steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-8);
+    position: relative;
+  }
+
+  .ingestion-flow__step {
+    position: relative;
+    opacity: 0;
+    animation: step-in 0.5s ease forwards;
+    animation-delay: calc(var(--step-index) * 0.1s);
+  }
+
+  @keyframes step-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .ingestion-flow__connector {
+    position: absolute;
+    top: 40px;
+    left: 100%;
+    width: calc(100% - 40px);
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-accent), transparent);
+    opacity: 0.3;
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .ingestion-flow__step:not(:last-child) .ingestion-flow__connector {
+      display: block;
+    }
+  }
+
+  .ingestion-flow__card {
+    background: var(--color-bg-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: var(--space-6);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .ingestion-flow__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+    border-color: rgba(216, 179, 90, 0.2);
+  }
+
+  .ingestion-flow__number {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: var(--space-3);
+    letter-spacing: 0.1em;
+  }
+
+  .ingestion-flow__icon {
+    width: 32px;
+    height: 32px;
+    margin: 0 auto var(--space-3);
+    color: var(--color-accent);
+  }
+
+  .ingestion-flow__card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-2) 0;
+  }
+
+  .ingestion-flow__card p {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    margin: 0 0 var(--space-3) 0;
+    line-height: 1.5;
+  }
+
+  .ingestion-flow__count {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--color-accent-subtle);
+    color: var(--color-accent);
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ingestion-flow__step {
+      animation: none;
+      opacity: 1;
+    }
+  }
+</style>
