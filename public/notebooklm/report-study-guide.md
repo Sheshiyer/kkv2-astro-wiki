@@ -1,139 +1,164 @@
 # Klear Karma Comprehensive Study Guide
 
-This study guide provides an exhaustive overview of the Klear Karma platform, a Mirror-guided spiritual wellness marketplace and tokenized trust layer. It is designed to facilitate a deep understanding of the brand's unique positioning, technical specifications, and strategic objectives as it prepares for beta launch in Thailand and India.
+This study guide provides a detailed synthesis of the Klear Karma platform, a Mirror-guided spiritual wellness marketplace and tokenized trust layer. It covers the brand’s core thesis, technical specifications of the Mirror engine, the token economy, strategic launch objectives, and visual identity.
 
 ---
 
-## 1. Executive Summary and Brand Thesis
+## I. Concept and Brand Thesis
 
-Klear Karma is defined as a **Mirror-guided trust layer** for healing seekers and verified practitioners. It distinguishes itself from generic wellness marketplaces by prioritizing reflection and context before commercial transactions or practitioner searches.
+Klear Karma is positioned as a "Mirror-guided trust layer" for healing seekers and verified practitioners. The platform's fundamental philosophy is **reflection before transaction**, challenging the "category-first" approach of traditional wellness directories that prioritize price and availability over human context.
+
+### The Brand Thesis: The Reflective Steward
+Klear Karma operates under the archetype of the **Reflective Steward**. This persona is characterized as a grounded strategist who is spiritually literate, commercially clear, consent-first, and meticulous regarding claims.
 
 ### The Core Loop
-The platform operates on a specific sequential logic:
-1.  **Mirror creates intent:** Users engage in a reflective process.
-2.  **Tokens prove utility:** Users spend digital tokens to navigate the experience.
-3.  **Practitioners fulfill support:** High-context, consent-safe handoffs occur.
-4.  **Protocol-reviewed commerce emerges:** Trusted transactions follow.
-5.  **User repetition validates the protocol:** Sustained utility proves the business model.
-
-### Key Strategic Pillars
-*   **Archetype:** The Reflective Steward.
-*   **Voice:** A grounded reflective strategist—spiritually literate, commercially clear, and consent-first.
-*   **The Wedge:** Creating paid intent through reflection (Mirror) before the marketplace appears.
-*   **Launch Focus:** Invite-led beta in Thailand and India, targeting premium wellness seekers and founder networks.
+The platform's business model and user experience follow a five-step sequential logic:
+1.  **Mirror Creates Intent:** Structured reflection generates measurable seeker context.
+2.  **Tokens Prove Utility:** The exchange of tokens validates the value of the reflection.
+3.  **Practitioners Fulfill Support:** Verified experts provide high-context sessions.
+4.  **Protocol-Reviewed Commerce Emerges:** High-trust transactions follow the established trust loop.
+5.  **User Repetition Validates the Protocol:** Sustained utility proves the business model.
 
 ---
 
-## 2. Product Specifications: The Mirror Engine
+## II. The Mirror Engine: Product Specifications
 
-The "Mirror" is the central "paid-intent engine" of the Klear Karma ecosystem. It is an agentic, app-native reflective guide that collects lived context.
+The **Klear Karma Mirror** is an app-native, agentic digital guide. It is not a deterministic chatbot or a physical product, but a reflective interface designed to turn seeker context into a "consent-safe seeker map."
 
-### Mirror Functionality
-*   **Process:** Asks for lived context one answer at a time, summarizes the input, and requests confirmation or refinement before moving forward.
-*   **Output:** Generates a "seeker map" summary, resonance threads, support modality weights, suggested next actions, and a consent-safe healer preview.
-*   **Safety Boundaries:** Mirror uses symbolic context (such as optional birth data) for reflection. It **never** claims clinical authority, medical diagnosis, deterministic fate, or spiritual authority.
+### Functional Mechanism
+*   **Refine-and-Confirm Pace:** Mirror asks one primary question at a time, summarizes the input, and asks for user confirmation or refinement before moving deeper.
+*   **Outputs:**
+    *   **Seeker Map Summary:** A structured overview of the user's current internal state.
+    *   **Resonance Threads:** Identification of recurring life patterns or themes.
+    *   **Support Modality Weights:** Suggestions on the types of support (e.g., somatic, energy work) that may best fit the context.
+    *   **Suggested Next Action:** Clear steps for the user to take.
+    *   **Consent-Safe Healer Preview:** A restricted look at practitioners matching the seeker's map.
 
-### The Seeker Map
-The seeker map turns a seeker's internal reflections into a structured data set. This map moves to a practitioner only with the seeker’s explicit consent, ensuring the practitioner receives high-quality context rather than a generic lead.
+### The Safety Envelope (Hard Constraints)
+The Mirror engine is strictly governed by a safety protocol to avoid overclaiming:
+*   **Reflective Language:** Must use terms like "may," "could," or "resonates" rather than deterministic "truths."
+*   **Non-Clinical Status:** Mirror is not a clinician, therapist, or spiritual authority.
+*   **Crisis Routing:** The system is programmed to detect clinical or emergency language and route users away from spiritual guidance to appropriate crisis resources.
 
 ---
 
-## 3. The Token Economy (Tokenomics)
+## III. The Token Economy (Tokenomics)
 
-Klear Karma utilizes a tokenized system to measure user intent and validate utility.
+Klear Karma uses a tokenized system to measure user intent and validate platform utility.
 
 ### Token Values and Anchors
-| Action/Item | Token Value |
+| Action/Item | Value/Cost |
 | :--- | :--- |
 | **New User Free Grant** | 369 tokens |
-| **Opening Mirror/Chart Flow Cost** | ~108 tokens |
-| **Scaling Multiples** | Token grants scale around 369 multiples |
-| **Payout Threshold (Practitioners)** | 10,000 to 15,000 tokens |
+| **Opening Mirror/Chart Flow** | ~108 tokens |
+| **Standard Recharge Anchor** | 299 units |
+| **Intermediate Recharge Anchor** | 599 units |
+| **Premium Recharge Anchor** | 799 units |
+| **Strategic Recharge Anchor** | 1099 units |
 
-### Revenue and Activation
-The platform defines **Paid Activation** as a user recharging at least **299 units** of local currency within 90 days of signup.
-*   **Recharge Anchors:** 299, 599, 799, and 1099.
-*   **Currencies:** THB (Thailand) and INR (India). These are local-denomination anchors, not FX-equivalent packages.
-*   **Commissions:** There is **no consultation commission** in the MVP or early growth phase. Marketplace product sales carry a 10% revenue share.
-
----
-
-## 4. Market Strategy and Operations
-
-### Beta Launch Framework
-*   **Markets:** Thailand (premium wellness and spiritual tourism) and India (founder networks and existing cultural permission for spiritual reflection).
-*   **Beachhead Audience:** Tourists and seekers in premium Thai islands and urban India networks.
-*   **KPI Targets:** 1,000 paid-activated users, 200 repeat purchasers, and 50 completed healer consultations.
-*   **Milestone Target:** 600,000 to 700,000 THB Annual Recurring Revenue (ARR).
-
-### Ownership and Leadership
-The project valuation is 450,000 THB, split equally among three founders:
-*   **Shesh Narayan Iyer:** Owns technology, mobile app, and technical setup.
-*   **Sahil Sahaparwal:** Owns marketing, distribution, and on-ground activations.
-*   **Mathis:** Owns investor path, company registration, and payment integrations.
+### Key Economic Definitions
+*   **Paid Activation:** A user is considered "paid-activated" if they recharge at least **299** units of local currency (THB or INR) within **90 days** of their initial interaction.
+*   **Currency Logic:** Thailand users pay in THB; India users pay in INR. These are local-denomination anchors, not FX-equivalent packages.
+*   **Commission Structure:** There is **no consultation commission** in the MVP or early growth phase. Marketplace product sales carry a 10% revenue share.
+*   **Practitioner Payout:** The threshold is roughly 10,000 to 15,000 tokens and requires a completed profile and KYC/payment verification.
 
 ---
 
-## 5. Visual Identity and Guidelines
+## IV. Strategic Framework and Operations
 
-The "Reflective Trust Field" visual system is designed to convey seriousness and high-trust.
+### Launch Markets: The "Narrow Wedge"
+*   **Thailand:** Focusing on premium wellness and spiritual tourism, specifically in premium island ecosystems.
+*   **India:** Leveraging founder-led networks where there is deep cultural permission for symbolic reflection and spiritual discovery.
+
+### Primary Audience Personas
+1.  **The Premium Seeker in Transition:** An individual seeking a human-centered, personalized approach to wellness, valuing restraint (Aesop) and data-backed ritual (Oura).
+2.  **The Regional Expert (Practitioner):** Established practitioners (10+ years) who need high-context, quality clients rather than generic lead volume.
+
+### Strategic KPIs (Milestones)
+*   **Investor Milestone Target:** 600,000 to 700,000 THB ARR.
+*   **User Target:** 1,000 paid-activated users.
+*   **Activity Target:** 200 repeat purchasers and 50 completed healer consultations.
+
+### Leadership and Ownership
+The project valuation is 450,000 THB, split equally among:
+*   **Shesh Narayan Iyer:** Technology, mobile app, technical setup.
+*   **Sahil Sahaparwal:** Marketing, distribution, on-ground activations.
+*   **Mathis:** Investor path, company registration, payment integrations.
+
+---
+
+## V. Visual Identity: The Reflective Trust Field
+
+The visual system is designed to convey seriousness, depth, and high-trust through a dark, spatial, premium interface.
 
 ### Color Palette
 *   **Mirror Black (#090711):** Primary background for spatial depth and seriousness.
-*   **Karma Violet (#221245):** Secondary fields and app panel gradients.
+*   **Karma Violet (#221245):** Secondary fields and reflective app gradients.
 *   **Quiet Gold (#D8B35A):** Highlights for token value, consent seals, and practitioner trust.
-*   **Moon Glass (#D9D2C6):** Used for readable text and diagrams.
-*   **Signal Lotus (#8B5CF6):** Indicates AI state, handoff, and progress.
+*   **Moon Glass (#D9D2C6):** Readable text, diagrams, and source cards.
+*   **Signal Lotus (#8B5CF6):** Activation states and progress indicators.
 
 ### Materials and Geometry
-*   **Textures:** Black mirrored glass, deep violet vapor gradients, and quiet gold inlay.
-*   **Shapes:** Minimalist lotus geometry with four token nodes.
+*   **Materials:** Black mirrored glass, deep violet vapor gradients, and quiet gold inlay.
+*   **Geometry:** Minimalist lotus geometry with four token nodes.
+*   **Elements:** Translucent app panels and reflective orbital rings.
 
 ---
 
-## 6. Short-Answer Practice Questions
+## VI. Short-Answer Practice Questions
 
-1.  **What is the primary difference between Klear Karma and generic wellness marketplaces?**
-    *Answer:* Klear Karma prioritizes reflection through "Mirror" before browsing categories or pricing, whereas generic marketplaces lead with category and price.
-2.  **Define a "Paid-Activated User" according to the strategic KPI set.**
-    *Answer:* A user who recharges at least 299 (THB or INR) within 90 days of signup or interaction.
-3.  **What is the starting token balance for a new user?**
-    *Answer:* 369 tokens.
-4.  **What are the two primary launch markets?**
-    *Answer:* Thailand and India.
-5.  **What is the specific cost (roughly) of the opening Mirror/chart flow?**
-    *Answer:* 108 tokens.
-6.  **Does Klear Karma take a commission on practitioner consultations during the MVP phase?**
-    *Answer:* No.
-7.  **Identify the three components of the "Reflective Steward" voice.**
-    *Answer:* Spiritually literate, commercially clear, and consent-first.
-8.  **What is the "moat" of the Klear Karma platform?**
-    *Answer:* Trust formation and context-aware handoff, rather than the marketplace itself.
-9.  **What material is used for the "Seal" in the visual identity?**
-    *Answer:* Quiet gold on black mirrored glass.
-10. **What is the practitioner payout threshold?**
-    *Answer:* 10,000 to 15,000 tokens (requires KYC and completed profile).
+1.  **What is the core promise of the Klear Karma pre-launch campaign?**
+    *Answer: "Reflect before you browse."*
+2.  **How many free tokens does a new user receive upon joining the beta?**
+    *Answer: 369 tokens.*
+3.  **What is the primary business signal Klear Karma tracks instead of free signup volume?**
+    *Answer: Token recharge after meaningful Mirror use (Paid Activation).*
+4.  **Identify the two countries targeted for the initial launch.**
+    *Answer: Thailand and India.*
+5.  **What specific material represents the "Seal" in the platform's visual identity?**
+    *Answer: Quiet gold on black mirrored glass.*
+6.  **What is the rough cost in tokens for a user to complete the opening Mirror flow?**
+    *Answer: Approximately 108 tokens.*
+7.  **Under what condition is a user's private context shared with a practitioner?**
+    *Answer: Only with the user's explicit consent via the Consent Seal mechanism.*
+8.  **What is the revenue share percentage for marketplace product sales?**
+    *Answer: 10%.*
+9.  **Which founder is responsible for the technical setup and mobile app technology?**
+    *Answer: Shesh Narayan Iyer.*
+10. **What must the system do if it detects clinical or crisis-related language?**
+    *Answer: Route the user away from spiritual guidance toward emergency or clinical resources.*
+11. **Define "Paid Activation" in the context of Klear Karma's KPIs.**
+    *Answer: A user who recharges at least 299 units of local currency within 90 days of signup or interaction.*
+12. **What are the three components of the "Reflective Steward" voice?**
+    *Answer: Spiritually literate, commercially clear, and consent-first.*
+13. **Why does Klear Karma avoid "category-first" browsing?**
+    *Answer: Because it prioritizes transactional efficiency over the nuance of the seeker's experience, forcing them to filter and guess before being understood.*
+14. **What is the practitioner payout threshold?**
+    *Answer: 10,000 to 15,000 tokens.*
+15. **What typography is used for technical data within the app?**
+    *Answer: JetBrains Mono.*
 
 ---
 
-## 7. Essay Prompts for Deeper Exploration
+## VII. Essay Prompts for Deeper Exploration
 
-1.  **The Ethics of Symbolic Context:** Analyze why Klear Karma enforces strict guardrails against making clinical, deterministic, or "spiritual authority" claims. How does the use of "symbolic context" rather than "certainty" serve the "Premium Seeker in Transition" persona?
-2.  **Tokenization as a Validation Tool:** Discuss how the token economy (369/108/299) acts as a filter for user intent. Why is "recharge after meaningful use" a more valuable KPI for investors than "vanity reach" or total signups?
-3.  **The Seeker-Practitioner Handoff:** Evaluate the significance of the "consent-safe seeker map." How does providing structured context before a session benefit both the seeker’s privacy and the practitioner’s ability to provide high-quality support?
-4.  **Market-Specific Strategy:** Compare the strategic "wedges" for Thailand and India. Why are these markets prioritized over a US-first launch, and how do their local cultural contexts support the Klear Karma model?
+1.  **The Shift from Commodity to Trust:** Discuss how Klear Karma’s "Mirror-guided trust layer" attempts to solve the "structural paradox" found in traditional wellness marketplaces. How does the "reflect before you browse" philosophy change the relationship between the seeker and the practitioner?
+2.  **Tokenomics as a Filter for Intent:** Analyze the strategic decision to prioritize "Paid Activation" (recharge) over "Vanity Reach" (signups). How does the token economy (369/108/299) function as a verification tool for both user intent and platform utility?
+3.  **The Ethics of Symbolic Context:** Evaluate the importance of the safety guardrails placed on the Mirror engine. Why is the distinction between "symbolic context" and "clinical/spiritual authority" critical for maintaining the brand’s integrity in the spiritual wellness space?
+4.  **Market-Specific Entry Strategy:** Compare the launch strategies for Thailand and India. How do the different "wedges" (e.g., premium tourism in Thailand vs. founder networks in India) leverage existing cultural permissions to establish the platform's credibility?
 
 ---
 
-## 8. Glossary of Important Terms
+## VIII. Glossary of Important Terms
 
-*   **Consent Seal:** A visual and protocol-based overlay (Quiet Gold) that represents the user's explicit permission to share specific seeker-map data with a practitioner.
-*   **Karma Violet:** The secondary brand color (#221245) representing luxury, creativity, and wisdom within the app interface.
-*   **Mirror:** The agentic onboarding and reflective guide that summarizes seeker context to create paid intent.
-*   **Mirror Black:** The primary background color (#090711) signifying seriousness, depth, and trust.
-*   **Protocol Review:** The process by which profile-scoped products and practitioner listings are manually reviewed by founders during beta to ensure trust and quality.
-*   **Quiet Gold:** The accent color (#D8B35A) used to signify value, sophistication, and token-related data.
-*   **Reflective Steward:** The brand archetype; a grounded strategist who is spiritually literate but remains commercially clear and calm.
-*   **Seeker Map:** A digital summary generated by Mirror that outlines resonance threads and support modality weights based on a user’s lived context.
-*   **Signal Lotus:** A specific color/icon system (#8B5CF6) used to indicate the state of the AI, the handoff process, or user progress.
-*   **Token Ledger Chip:** The digital container within the mobile UI that displays the user’s current token balance and transaction history.
+*   **Consent Seal:** A visual and protocol-based overlay (Quiet Gold) representing the seeker's explicit permission to share specific seeker-map data with a practitioner.
+*   **Karma Violet:** The secondary brand color (#221245) used for reflective gradients and app panels, signifying luxury and wisdom.
+*   **Mirror:** The app-native, agentic guide that summarizes seeker context to create paid intent through structured reflection.
+*   **Mirror Black:** The primary background color (#090711) used to establish depth and seriousness.
+*   **Paid-Activated User:** A user who has recharged their ledger with at least 299 local currency units within 90 days of their initial interaction.
+*   **Protocol Review:** The manual review process by which profile-scoped products and practitioner listings are vetted by founders during the beta phase to ensure trust and quality.
+*   **Quiet Gold:** The accent color (#D8B35A) signifying value, sophistication, and token-related data highlights.
+*   **Reflective Steward:** The core brand archetype; a persona that is spiritually literate but commercially clear and grounded.
+*   **Seeker Map:** A digital summary generated by the Mirror that outlines a seeker’s resonance threads and suggested support modalities based on lived context.
+*   **Signal Lotus:** A color/icon system (#8B5CF6) used to indicate AI state, handoff progress, or user activation.
+*   **Token Ledger Chip:** The digital container within the mobile interface that displays a user's token balance and transaction history.

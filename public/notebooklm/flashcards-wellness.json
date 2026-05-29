@@ -1,0 +1,301 @@
+{
+  "title": "Wellness Flashcards",
+  "cards": [
+    {
+      "front": "What is the primary brand archetype for Klear Karma?",
+      "back": "The Reflective Steward"
+    },
+    {
+      "front": "Name the three core components of the Klear Karma 'Reflective Steward' voice.",
+      "back": "Spiritually literate, commercially clear, and consent-first."
+    },
+    {
+      "front": "What is the primary background color name and its specific HEX code?",
+      "back": "Mirror Black (#090711)"
+    },
+    {
+      "front": "Which accent color is used to signify token value and consent seals in the app interface?",
+      "back": "Quiet Gold (#D8B35A)"
+    },
+    {
+      "front": "Klear Karma's visual system utilizes 'Moon Glass' ($#D9D2C6$) specifically for what purpose?",
+      "back": "Readable text, source cards, and diagrams."
+    },
+    {
+      "front": "What is the specific HEX code and name for the color indicating Mirror state and AI progress?",
+      "back": "Signal Lotus (#8B5CF6)"
+    },
+    {
+      "front": "Name the specific typeface assigned for technical data and JetBrains Mono usage.",
+      "back": "JetBrains Mono"
+    },
+    {
+      "front": "Which fonts are designated for 'Header' and 'Body' text respectively?",
+      "back": "Sora for headers and Inter for body text."
+    },
+    {
+      "front": "How many free Mirror tokens are granted to a new user upon signup?",
+      "back": "369"
+    },
+    {
+      "front": "What is the approximate token cost for a user to complete the opening Mirror flow?",
+      "back": "108"
+    },
+    {
+      "front": "Identify the four specific local currency recharge anchors used for paid activation.",
+      "back": "299, 599, 799, and 1099"
+    },
+    {
+      "front": "Define 'Paid Activation' within the Klear Karma strategic framework.",
+      "back": "A user recharging at least 299 units within 90 days of signup or interaction."
+    },
+    {
+      "front": "What is the primary business metric for Klear Karma's first proof point?",
+      "back": "Recharge after meaningful token use (not signup volume)."
+    },
+    {
+      "front": "According to the 'Revenue Frame,' what is the revenue share percentage for marketplace product sales?",
+      "back": "$10\\%$"
+    },
+    {
+      "front": "What is the token payout threshold range for verified practitioners?",
+      "back": "10,000 to 15,000 tokens"
+    },
+    {
+      "front": "Name the two primary launch markets for the controlled beta.",
+      "back": "Thailand and India"
+    },
+    {
+      "front": "What is the specific ARR target for the first investor milestone?",
+      "back": "600,000 to 700,000 THB"
+    },
+    {
+      "front": "Identify the three primary strategic KPIs for the current launch build.",
+      "back": "1,000 paid-activated users, 200 repeat purchasers, and 50 completed healer consultations."
+    },
+    {
+      "front": "What is the current established product valuation for Klear Karma?",
+      "back": "450,000 THB"
+    },
+    {
+      "front": "Founder Role: Who owns technology, mobile app development, and the admin dashboard?",
+      "back": "Shesh Narayan Iyer"
+    },
+    {
+      "front": "Founder Role: Who is responsible for marketing, distribution, and on-ground activations?",
+      "back": "Sahil Sahaparwal"
+    },
+    {
+      "front": "Founder Role: Who manages the investor path, company registration, and payment integrations?",
+      "back": "Mathis"
+    },
+    {
+      "front": "What is the core 'Brand Thesis' regarding the relationship between reflection and transaction?",
+      "back": "Reflection must occur before transaction (Reflect Before You Browse)."
+    },
+    {
+      "front": "In the 'Old World' vs. 'New World' framing, what is the primary failure of current wellness marketplaces?",
+      "back": "Category-first browsing that leads with price and availability over understanding."
+    },
+    {
+      "front": "What does the 'Mirror' generate to summarize a seeker's context for a practitioner?",
+      "back": "A consent-safe seeker map."
+    },
+    {
+      "front": "How does Klear Karma's 'Protocol-Reviewed Commerce' differ from a generic shop tab?",
+      "back": "Product listings are profile-scoped and manually reviewed by founders during beta."
+    },
+    {
+      "front": "The 'Premium Seeker In Transition' archetype identifies with which three aspirational brands?",
+      "back": "Aesop, Oura, and Headspace (specifically its discipline)."
+    },
+    {
+      "front": "What is the primary emotional driver for the 'Premium Seeker In Transition' looking for peace?",
+      "back": "Relief"
+    },
+    {
+      "front": "Which specific pain point involves seekers worrying about sharing birth details or vulnerable context?",
+      "back": "Privacy and data boundaries"
+    },
+    {
+      "front": "Name the three adjacent competitors or 'alternatives' that Klear Karma must out-position.",
+      "back": "Generic wellness directories, spiritual content apps, and appointment marketplaces."
+    },
+    {
+      "front": "What is Klear Karma\u2019s unique 'wedge' in the competitive landscape?",
+      "back": "Mirror creates paid intent before the marketplace appears."
+    },
+    {
+      "front": "List the five 'Flatlay Objects' defined in the brand configuration for app visualization.",
+      "back": "Mirror mobile screen, 369 token balance card, 108 token opening flow receipt, consent-safe healer preview panel, and protocol review status seal."
+    },
+    {
+      "front": "What physical form-factors (e.g., kits, bottles, candles) are explicitly forbidden in the product specs?",
+      "back": "None; Klear Karma is a mobile app and digital Mirror object only."
+    },
+    {
+      "front": "Which material is used for the 'Seal' geometry in the hero image specification?",
+      "back": "Quiet Gold on black mirrored glass."
+    },
+    {
+      "front": "Describe the specific geometry of the Klear Karma 'Seal.'",
+      "back": "Minimal lotus geometry with four token nodes."
+    },
+    {
+      "front": "Identify the Send Window for the 'Announcement' email in the pre-launch sequence.",
+      "back": "Beta invitation window (date pending)."
+    },
+    {
+      "front": "What is the core theme for 'Week 3' of the Social Content Engine calendar?",
+      "back": "Token utility (explaining 369/108/299 logic)."
+    },
+    {
+      "front": "Social Content Engine: Which platform is targeted for 'short founder-led notes on the trust loop'?",
+      "back": "Twitter"
+    },
+    {
+      "front": "In the influencer outreach strategy, what is the 'Value Hook' offered to creators?",
+      "back": "Exclusive early access to Mirror-guided reflection and consent-safe handoff."
+    },
+    {
+      "front": "What is the primary goal of the 'Launch Email Sequence' on Day 2?",
+      "back": "Explain how tokens prove intent and define paid activation."
+    },
+    {
+      "front": "Safety Boundary: How must 'Mirror' handle a seeker in a clinical or mental health crisis?",
+      "back": "Route immediately away from spiritual guidance and state Klear Karma is not a clinical service."
+    },
+    {
+      "front": "What 'Safety Envelope' rule governs the use of birth data within the Mirror engine?",
+      "back": "It is treated as symbolic context, never as deterministic certainty or fate."
+    },
+    {
+      "front": "Regarding practitioner consultations, what is the commission policy during the MVP phase?",
+      "back": "Zero consultation commission."
+    },
+    {
+      "front": "What is the name of the secondary brand color (#221245) used for app panels?",
+      "back": "Karma Violet"
+    },
+    {
+      "front": "Which term describes the process where seekers control exactly what context is shared with a practitioner?",
+      "back": "Consent-safe handoff"
+    },
+    {
+      "front": "What is the 'Strategic Insight' regarding the Premium Seeker's willingness to pay?",
+      "back": "They value expertise and quality and are ready to invest in a clear, actionable plan."
+    },
+    {
+      "front": "Identify the primary 'Regional Wedge' for the India market focus.",
+      "back": "Existing cultural permission for symbolic context and astrology-adjacent reflection."
+    },
+    {
+      "front": "What is the 'Beachhead' audience for the Thailand launch?",
+      "back": "Tourists and spiritual wellness seekers in premium Thai islands."
+    },
+    {
+      "front": "Identify the 'Loyalty Logic' for both seekers and practitioners in the Klear Karma community.",
+      "back": "Focus on trust, safety, and authentic guidance over commodified spirituality."
+    },
+    {
+      "front": "What is the 'Hook' for the Item 1 Campaign Video Script?",
+      "back": "Most wellness marketplaces ask for a category before they understand what you are carrying."
+    },
+    {
+      "front": "Name the specific 'Lingo' markers of the Reflective Steward voice.",
+      "back": "Mirror, Tokens, Consent, Practitioner, and Protocol Review."
+    },
+    {
+      "front": "What is the 'Primary Goal' of the Welcome Email Sequence?",
+      "back": "Help users understand Mirror, tokens, and consent boundaries before recharge."
+    },
+    {
+      "front": "How does token staking function for marketplace listing submissions in the beta?",
+      "back": "Approved listings refund tokens; rejected listings provide a partial refund."
+    },
+    {
+      "front": "According to the 'Safety Envelope,' what linguistic terms are mandatory for claims?",
+      "back": "Reflective language such as 'may,' 'could,' 'resonates,' or 'patterns.'"
+    },
+    {
+      "front": "What is the 'Tone Marker' associated with 'Readiness to Act' in the brand voice?",
+      "back": "Quiet seriousness."
+    },
+    {
+      "front": "Identify the 'failed alternative' involving apps that overstate authority or prediction.",
+      "back": "Certainty-based spiritual apps."
+    },
+    {
+      "front": "In the Seeker Journey, what happens during 'Step 3' of usage?",
+      "back": "The opening flow uses $\\sim 108$ tokens to create a consent-safe seeker map."
+    },
+    {
+      "front": "What is the 'Commercial Value Prop' for the Klear Karma internal team?",
+      "back": "Recharge after meaningful token use provides a validated paid activation signal."
+    },
+    {
+      "front": "Social Content Engine: What media is paired with the 'Problem Agitation' soundbyte on Day 1?",
+      "back": "A simple Mirror-before-marketplace diagram."
+    },
+    {
+      "front": "What is the 'Final CTA' on the campaign page?",
+      "back": "Join the controlled beta when invited and use Mirror before choosing practitioner support."
+    },
+    {
+      "front": "What specific 'Terms Status' must be approved before publication of the campaign?",
+      "back": "Public support, refund, and availability terms."
+    },
+    {
+      "front": "Identify the 'Regional Expert' practitioner persona's primary concern.",
+      "back": "Cultural appropriation and dilution of traditional practices."
+    },
+    {
+      "front": "What is the 'Technical Benchmark' for Mirror's fallback state when AI is unavailable?",
+      "back": "Manual-state data or a fallback summary."
+    },
+    {
+      "front": "According to 'Competitive Notes,' what is the primary differentiator from generic directories?",
+      "back": "Klear Karma competes on context and trust formation rather than supply and filters."
+    },
+    {
+      "front": "What is the sent time for the 'How tokens prove intent' launch email?",
+      "back": "Day 2, morning."
+    },
+    {
+      "front": "The 'Premium Seeker' persona seeks a sense of _____ from the stress of modern life.",
+      "back": "Relief"
+    },
+    {
+      "front": "Identify the sending window for the 'Vip List' segment announcement email.",
+      "back": "Beta invitation window."
+    },
+    {
+      "front": "The current strategy for the Thailand and India beta is described as being 'intentionally ____.'",
+      "back": "Narrow"
+    },
+    {
+      "front": "What is the 'Urgency' factor cited in the Campaign Video Script?",
+      "back": "The beta stays narrow to validate utility and quality before broad scaling."
+    },
+    {
+      "front": "Which founder owns the exit/investor path and healer/vendor relationships?",
+      "back": "Mathis"
+    },
+    {
+      "front": "What is the 'Subhead' for the Press Release copy?",
+      "back": "The internal launch plan centers on Mirror-led reflection, tokenized intent, and consent-safe practitioner handoff."
+    },
+    {
+      "front": "In 'The Modern Hybrid Practitioner' persona, what is a key pain point?",
+      "back": "Marketplace saturation and the difficulty of standing out in unverified spaces."
+    },
+    {
+      "front": "What 'Psychographic' value is shared across both seekers and practitioners?",
+      "back": "Trust and safety over convenience."
+    },
+    {
+      "front": "Identify the 'Anti-Persona' who leads with a desire for quick shopping.",
+      "back": "The Casual Browser"
+    }
+  ]
+}

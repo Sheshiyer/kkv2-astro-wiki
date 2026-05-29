@@ -3,33 +3,36 @@
     "name": "Klear Karma",
     "children": [
       {
-        "name": "Core Identity",
+        "name": "Identity & Core Purpose",
         "children": [
+          {
+            "name": "The Reflective Steward Archetype"
+          },
           {
             "name": "Mirror-Guided Trust Layer"
           },
           {
-            "name": "Reflective Steward Archetype"
+            "name": "Tokenized Spiritual Wellness Marketplace"
           },
           {
-            "name": "Tokenized Wellness Marketplace"
+            "name": "Reflection Before Transaction Philosophy"
           }
         ]
       },
       {
-        "name": "Hero Product: Mirror",
+        "name": "The Mirror Engine",
         "children": [
           {
-            "name": "Reflective AI Interface"
+            "name": "Agentic Onboarding Guide"
+          },
+          {
+            "name": "Seeker Map Summary"
+          },
+          {
+            "name": "Resonance Thread Mapping"
           },
           {
             "name": "Consent-Safe Seeker Map"
-          },
-          {
-            "name": "Paid Intent Engine"
-          },
-          {
-            "name": "Symbolic Context Focus"
           }
         ]
       },
@@ -37,50 +40,36 @@
         "name": "Token Economy",
         "children": [
           {
-            "name": "369 Free Welcome Tokens"
+            "name": "369 Free Mirror Tokens"
           },
           {
             "name": "108 Token Opening Flow"
           },
           {
-            "name": "Local Recharge Anchors (THB/INR)"
+            "name": "Recharge Anchors (299 to 1099)"
           },
           {
-            "name": "299 Minimum Paid Activation"
+            "name": "Local Currency (THB and INR)"
+          },
+          {
+            "name": "Paid Activation KPI"
           }
         ]
       },
       {
-        "name": "Marketplace Ecosystem",
+        "name": "Market & Launch Strategy",
         "children": [
           {
-            "name": "Verified Practitioners"
-          },
-          {
-            "name": "Protocol-Reviewed Commerce"
-          },
-          {
-            "name": "No Session Commission (MVP)"
-          },
-          {
-            "name": "High-Context Handoff"
-          }
-        ]
-      },
-      {
-        "name": "Launch Strategy",
-        "children": [
-          {
-            "name": "Thailand and India Focus"
+            "name": "Launch Markets: Thailand and India"
           },
           {
             "name": "Invite-Led Controlled Beta"
           },
           {
-            "name": "Founder-Led Networks"
+            "name": "Premium Seeker In Transition"
           },
           {
-            "name": "Target: Premium Seekers in Transition"
+            "name": "Verified Practitioner Network"
           }
         ]
       },
@@ -88,37 +77,40 @@
         "name": "Visual Identity",
         "children": [
           {
+            "name": "Reflective Trust Field Theme"
+          },
+          {
             "name": "Mirror Black & Karma Violet"
           },
           {
-            "name": "Quiet Gold Accents"
+            "name": "Quiet Gold Geometry"
           },
           {
-            "name": "Lotus Geometry"
+            "name": "Black Mirrored Glass Interface"
           },
           {
-            "name": "Spatial App Interface"
+            "name": "Minimal Lotus Geometry"
           }
         ]
       },
       {
-        "name": "Safety Guardrails",
+        "name": "Safety & Guardrails",
         "children": [
           {
-            "name": "No Clinical Claims"
+            "name": "No Clinical Authority"
           },
           {
-            "name": "Explicit Consent Protocol"
+            "name": "Symbolic Context Not Certainty"
           },
           {
-            "name": "Non-Deterministic Language"
+            "name": "Consent-Safe Handoff"
           },
           {
-            "name": "Privacy-First Data Boundaries"
+            "name": "Protocol-Reviewed Commerce"
           }
         ]
       }
     ]
   },
-  "note_id": "d3177b91-da0a-4e11-b311-069d8e4d7609"
+  "note_id": "1dbde764-223d-4124-89a8-4e283f0acfff"
 }

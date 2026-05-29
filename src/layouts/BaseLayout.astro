@@ -20,66 +20,106 @@ interface Props {
 
 const { title, description, locale, fullWidth = false } = Astro.props;
 const palette = siteData.palette || {};
-const brandVars = {
-  '--brand-primary': palette.primary?.hex || '#AA98D6',
-  '--brand-secondary': palette.secondary?.hex || '#F8F6F2',
-  '--brand-accent': palette.accent?.hex || '#E67A2E',
-  '--brand-support': palette.support?.hex || '#D9D3C1',
-  '--brand-signal': palette.signal?.hex || '#4CC8B2',
-  '--font-display': siteData.typography?.header?.font || 'Figtree',
-  '--font-body': siteData.typography?.body?.font || 'Inter',
-};
-const defaultTheme = siteData.defaultTheme || 'light';
-const pathname = Astro.url.pathname;
 ---
 
 <!DOCTYPE html>
-<html lang={locale} data-theme={defaultTheme} data-template="immersive">
+<html lang={locale} data-theme={siteData.defaultTheme}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content={palette.primary?.hex || '#17131f'} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
-    <script is:inline>
-      const savedTheme = localStorage.getItem('theme');
-      const preferred = savedTheme || document.documentElement.dataset.theme || 'light';
-      document.documentElement.setAttribute('data-theme', preferred);
-    </script>
+    <meta name="theme-color" content={palette.primary?.hex || '#17131f'}>
   </head>
-  <body class={`immersive-body ${fullWidth ? 'immersive-body--fullwidth' : ''}`} style={brandVars}>
+  <body class:indexed="immersive-body">
     <WebGLBackground />
-    <PageTransitionController />
-    <PixelMediaLayer />
-
-      <div class="immersive-shell">
+    <div class="immersive-shell">
       <header class="immersive-topbar glass-panel">
-        <a href={localizedPath(locale, '/')} class="brand-lockup immersive-lockup">
-          <img src="/logo.png" alt="Klear Karma" class="brand-lockup__logo" width="32" height="32" />
-          <span>
+        <a href={localizedPath(locale, '/')} class="brand-lockup">
+          <img src="/logo.png" alt="Logo" width="32" height="32">
+          <span class="brand-text">
             <strong>{siteData.brandName}</strong>
             <small>{siteData.tagline}</small>
           </span>
         </a>
-        <nav class="immersive-topbar__links" aria-label="Primary">
+
+        <button class="hamburger" id="menu-toggle">
+          <span class="line"></span>
+        </button>
+
+        <nav class="immersive-topbar__links">
           <a href={localizedPath(locale, '/')}>Portal</a>
-          <a href={localizedPath(locale, siteData.docsHomeHref || '/docs/index')}>Docs</a>
-          <a href={localizedPath(locale, siteData.heroSecondaryHref || '/docs/research/notebooklm-artifacts')}>NotebookLM</a>
+          <a href={localizedPath(locale, siteData.docsHomeHref)}>Docs</a>
+          <a href={localizedPath(locale, siteData.heroSecondaryHref || '/docs/research/notebooklm-artifacts')}">NotebookLM</a>
         </nav>
-        <LanguageToggle locale={locale} pathname={pathname} />
       </header>
 
       {!fullWidth && (
-        <aside class="immersive-sidebar">
+        <aside class="immersive-sidebar" id="sidebar">
           <Navigation locale={locale} />
         </aside>
       )}
 
-      <main class={`immersive-content ${fullWidth ? 'immersive-content--fullwidth' : ''}`}>
+      <main class="immersive-content">
         <slot />
       </main>
     </div>
 
     <ThemeToggle />
+    <ThemeToggle locale={locale} />
+
+    <script>
+      const toggle = document.getElementById('menu-toggle');
+      const sidebar = document.getElementById('sidebar');
+      const body = document.body;
+
+      toggle.addEventListener('click', () => {
+        body.classList.toggle('sidebar-open');
+      });
+
+      // Close on link click
+      sidebar?.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => document.body.classList.remove('sidebar-open'));
+      });
+    </script>
+
+    <style>
+      .immersive-body {
+        min-height: 100vh;
+      }
+      
+      .hamburger {
+        display: none;
+        appearance: none;
+        background: none;
+        border: none;
+        padding: 0.5rem;
+        cursor: pointer;
+      }
+
+      .hamburger span {
+        display: block;
+        width: 1.5rem;
+        height: 2px;
+        background: currentColor;
+        margin-block: 4px;
+      }
+
+      @media (max-width: 768px) {
+        .immersive-sidebar {
+          position: fixed;
+          left: -100%;
+          width: 280px;
+          transform: translateX(0);
+          height: 100vh;
+          transition: left 0.3s;
+          z-index: 1000;
+        }
+        body.sidebar-open { overflow: hidden; }
+        .sidebar-open .immersive-sidebar {
+          left: 0;
+        }
+      }
+    </style>
   </body>
 </html>
