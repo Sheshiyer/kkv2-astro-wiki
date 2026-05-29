@@ -8,7 +8,7 @@ tags:
 - assets
 - gallery
 sources: []
-lastUpdated: '2026-05-27'
+lastUpdated: '2026-05-29'
 order: 3
 icon: ""
 ---
@@ -23,23 +23,29 @@ _No generated visual assets were mapped for this run._
 
 ## NotebookLM Infographics
 
-### Infographic — Landscape
+### Reflection Before Transaction
 
-![Infographic — Landscape](/notebooklm/infographic-landscape.png)
+Visual explanation of how Klear Karma's reflection-first architecture creates trust before commerce.
 
-- **Type:** Infographic
-- **Download:** [infographic-landscape.png](/notebooklm/infographic-landscape.png)
-
-### Infographic — Portrait
-
-![Infographic — Portrait](/notebooklm/infographic-portrait.png)
+![Reflection Before Transaction](/notebooklm/infographic-reflection.png)
 
 - **Type:** Infographic
-- **Download:** [infographic-portrait.png](/notebooklm/infographic-portrait.png)
+- **Download:** [infographic-reflection.png](/notebooklm/infographic-reflection.png)
 
-### Infographic — Square
+### Brand Strategy Overview
 
-![Infographic — Square](/notebooklm/infographic-square.png)
+High-level visual mapping of brand positioning, target personas, and market differentiation strategy.
+
+![Brand Strategy Overview](/notebooklm/infographic-brand-strategy.png)
 
 - **Type:** Infographic
-- **Download:** [infographic-square.png](/notebooklm/infographic-square.png)
+- **Download:** [infographic-brand-strategy.png](/notebooklm/infographic-brand-strategy.png)
+
+### Spiritual Wellness Journey
+
+Visual representation of the complete user journey from first reflection to practitioner connection.
+
+![Spiritual Wellness Journey](/notebooklm/infographic-wellness.png)
+
+- **Type:** Infographic
+- **Download:** [infographic-wellness.png](/notebooklm/infographic-wellness.png)

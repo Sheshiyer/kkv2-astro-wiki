@@ -104,6 +104,10 @@ body.immersive-body {
   max-width: 100%;
 }
 
+.immersive-body--fullwidth .immersive-home {
+  padding: 0 clamp(1rem, 3vw, 2rem);
+}
+
 .pixel-media-layer {
   position: fixed;
   inset: 0;

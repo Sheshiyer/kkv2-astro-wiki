@@ -86,57 +86,57 @@
   ],
   "visualHighlights": [
     {
-      "title": "Infographic \u2014 Landscape",
-      "description": "NotebookLM infographic surfaced directly into the media library.",
+      "title": "Reflection Before Transaction",
+      "description": "Visual explanation of how Klear Karma's reflection-first architecture creates trust before commerce.",
       "href": "/docs/research/notebooklm-artifacts",
-      "image": "/notebooklm/infographic-landscape.png",
+      "image": "/notebooklm/infographic-reflection.png",
       "eyebrow": "NotebookLM"
     },
     {
-      "title": "Infographic \u2014 Portrait",
-      "description": "Vertical-format visual summary optimized for mobile viewing.",
+      "title": "Brand Strategy Overview",
+      "description": "High-level visual mapping of brand positioning, target personas, and market differentiation.",
       "href": "/docs/research/notebooklm-artifacts",
-      "image": "/notebooklm/infographic-portrait.png",
+      "image": "/notebooklm/infographic-brand-strategy.png",
       "eyebrow": "NotebookLM"
     },
     {
-      "title": "Infographic \u2014 Square",
-      "description": "Square-format visual summary optimized for social sharing.",
+      "title": "Spiritual Wellness Journey",
+      "description": "Visual representation of the complete user journey from first reflection to practitioner connection.",
       "href": "/docs/research/notebooklm-artifacts",
-      "image": "/notebooklm/infographic-square.png",
+      "image": "/notebooklm/infographic-wellness.png",
       "eyebrow": "NotebookLM"
     }
   ],
   "notebooklmHighlights": [
     {
-      "title": "Beyond the Directory: Why Reflection is the New Standard in Spiritual Wellness",
-      "description": "For the premium seeker in transition, the path to support often begins with a structural paradox. At the moment of highest vulnerability\u2014carrying a l\u2026",
-      "href": "/docs/research/report-blog",
-      "downloadHref": "/notebooklm/report-blog.md",
+      "title": "Beyond the Directory: Why Reflection is the New Standard",
+      "description": "Deep dive into the structural paradox of wellness marketplaces and why reflection must precede transaction.",
+      "href": "/docs/research/notebooklm-artifacts",
+      "downloadHref": "/notebooklm/report-beyond-directory.md",
       "kind": "Report",
       "image": ""
     },
     {
-      "title": "Infographic \u2014 Landscape",
-      "description": "NotebookLM visual summary artifact surfaced in the media library.",
+      "title": "Reflection Before Transaction",
+      "description": "Visual explanation of how Klear Karma's reflection-first architecture creates trust before commerce.",
       "href": "/docs/research/notebooklm-artifacts",
-      "downloadHref": "/notebooklm/infographic-landscape.png",
+      "downloadHref": "/notebooklm/infographic-reflection.png",
       "kind": "Infographic",
-      "image": "/notebooklm/infographic-landscape.png"
+      "image": "/notebooklm/infographic-reflection.png"
     },
     {
-      "title": "Detailed Deck \u2014 Full",
-      "description": "Presentation-ready NotebookLM export in PDF format.",
+      "title": "Klear Karma Mirror Presentation",
+      "description": "Focused presentation on the Mirror component\u2014Klear Karma's AI-powered reflection engine.",
       "href": "/docs/research/notebooklm-artifacts",
-      "downloadHref": "/notebooklm/deck-detailed-full.pdf",
+      "downloadHref": "/notebooklm/deck-mirror.pdf",
       "kind": "Deck",
       "image": ""
     },
     {
-      "title": "Audio Brief \u2014 Short",
-      "description": "NotebookLM-generated audio briefing for listening review.",
+      "title": "Klear Karma and Reflection Before Transaction",
+      "description": "In-depth audio exploration (80 minutes) of the reflection-first philosophy.",
       "href": "/docs/research/notebooklm-artifacts",
-      "downloadHref": "/notebooklm/audio-brief-short.mp3",
+      "downloadHref": "/notebooklm/audio-reflection.mp3",
       "kind": "Audio",
       "image": ""
     }

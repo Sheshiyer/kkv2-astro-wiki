@@ -8,7 +8,7 @@ tags:
 - notebooklm
 - artifacts
 sources: []
-lastUpdated: '2026-05-27'
+lastUpdated: '2026-05-29'
 order: 1
 icon: ""
 ---
@@ -30,155 +30,158 @@ NotebookLM outputs are treated as first-class publish artifacts in this Wave 8 b
 
 ## Reports
 
-### [Beyond the Directory: Why Reflection is the New Standard in Spiritual Wellness](/docs/research/report-blog)
+### [Beyond the Directory: Why Reflection is the New Standard](/docs/research/report-beyond-directory)
 
-For the premium seeker in transition, the path to support often begins with a structural paradox. At the moment of highest vulnerability—carrying a l…
+Deep dive into the structural paradox of wellness marketplaces and why reflection must precede transaction. Explores the Mirror as a paid intent engine.
 
-- **Docs page:** [/docs/research/report-blog](/docs/research/report-blog)
-- **Raw artifact path:** `/notebooklm/report-blog.md`
+- **Docs page:** [/docs/research/report-beyond-directory](/docs/research/report-beyond-directory)
+- **Raw artifact path:** `/notebooklm/report-beyond-directory.md`
 
-### [Klear Karma Brand Intelligence Report: Mirror-Guided Trust Systems](/docs/research/report-briefing)
+### [Brand Intelligence Report: Klear Karma](/docs/research/report-intelligence)
 
-**Brand Thesis: The Reflective Steward** Klear Karma is not a directory; it is a tokenized trust-and-guidance layer for seekers and verified practiti…
+Comprehensive brand analysis covering market positioning, trust architecture, and competitive differentiation in the spiritual wellness space.
 
-- **Docs page:** [/docs/research/report-briefing](/docs/research/report-briefing)
-- **Raw artifact path:** `/notebooklm/report-briefing.md`
+- **Docs page:** [/docs/research/report-intelligence](/docs/research/report-intelligence)
+- **Raw artifact path:** `/notebooklm/report-intelligence.md`
 
 ### [Klear Karma Comprehensive Study Guide](/docs/research/report-study-guide)
 
-This study guide provides an exhaustive overview of the Klear Karma platform, a Mirror-guided spiritual wellness marketplace and tokenized trust laye…
+Complete reference document covering product philosophy, user journeys, trust mechanics, and implementation strategy.
 
 - **Docs page:** [/docs/research/report-study-guide](/docs/research/report-study-guide)
 - **Raw artifact path:** `/notebooklm/report-study-guide.md`
 
 ## Infographics
 
-### Infographic — Landscape
+### Reflection Before Transaction
 
-![Infographic — Landscape](/notebooklm/infographic-landscape.png)
+Visual explanation of how Klear Karma's reflection-first architecture creates trust before commerce.
 
-- **Download:** [infographic-landscape.png](/notebooklm/infographic-landscape.png)
+![Reflection Before Transaction](/notebooklm/infographic-reflection.png)
 
-### Infographic — Portrait
+- **Download:** [infographic-reflection.png](/notebooklm/infographic-reflection.png)
 
-![Infographic — Portrait](/notebooklm/infographic-portrait.png)
+### Brand Strategy Overview
 
-- **Download:** [infographic-portrait.png](/notebooklm/infographic-portrait.png)
+High-level visual mapping of brand positioning, target personas, and market differentiation strategy.
 
-### Infographic — Square
+![Brand Strategy Overview](/notebooklm/infographic-brand-strategy.png)
 
-![Infographic — Square](/notebooklm/infographic-square.png)
+- **Download:** [infographic-brand-strategy.png](/notebooklm/infographic-brand-strategy.png)
 
-- **Download:** [infographic-square.png](/notebooklm/infographic-square.png)
+### Spiritual Wellness Journey
+
+Visual representation of the complete user journey from first reflection to practitioner connection.
+
+![Spiritual Wellness Journey](/notebooklm/infographic-wellness.png)
+
+- **Download:** [infographic-wellness.png](/notebooklm/infographic-wellness.png)
 
 ## Decks
 
-### Detailed Deck — Full
+### Klear Karma Mirror Presentation
 
-Presentation-ready NotebookLM export in PDF format.
+Focused presentation on the Mirror component—Klear Karma's AI-powered reflection engine and paid intent system.
 
-- **Download:** [deck-detailed-full.pdf](/notebooklm/deck-detailed-full.pdf)
+- **Download:** [deck-mirror.pdf](/notebooklm/deck-mirror.pdf)
 
-### Detailed Deck — Short
+### The Klear Karma Mirror Deep Dive
 
-Presentation-ready NotebookLM export in PDF format.
+Extended presentation exploring Mirror mechanics, safety protocols, and trust architecture in detail.
 
-- **Download:** [deck-detailed-short.pdf](/notebooklm/deck-detailed-short.pdf)
+- **Download:** [deck-the-mirror.pdf](/notebooklm/deck-the-mirror.pdf)
 
-### Presenter Deck — Full
+### Klear Karma Trust Protocol
 
-Presentation-ready NotebookLM export in PDF format.
+Technical presentation on consent-safe handoff, tokenized utility, and practitioner verification systems.
 
-- **Download:** [deck-presenter-full.pdf](/notebooklm/deck-presenter-full.pdf)
+- **Download:** [deck-trust-protocol.pdf](/notebooklm/deck-trust-protocol.pdf)
 
-### Presenter Deck — Short
+### Trust Protocol — Extended
 
-Presentation-ready NotebookLM export in PDF format.
+Expanded version covering advanced trust mechanisms, verification layers, and safety envelope design.
 
-- **Download:** [deck-presenter-short.pdf](/notebooklm/deck-presenter-short.pdf)
+- **Download:** [deck-trust-protocol-2.pdf](/notebooklm/deck-trust-protocol-2.pdf)
 
 ## Audio Briefings
 
-### Audio Brief — Short
+### Klear Karma and Reflection Before Transaction
 
-NotebookLM-generated audio briefing for listening review.
+In-depth audio exploration (80 minutes) of the reflection-first philosophy and its implementation in Klear Karma's architecture.
 
-- **Download:** [audio-brief-short.mp3](/notebooklm/audio-brief-short.mp3)
+- **Duration:** ~80 min
+- **Download:** [audio-reflection.mp3](/notebooklm/audio-reflection.mp3)
 
-### Audio Debate
+### Reflection Before Transaction at Klear Karma
 
-NotebookLM-generated audio briefing for listening review.
+Medium-length audio (37 minutes) discussing the trust architecture and how reflection precedes marketplace transactions.
 
-- **Download:** [audio-debate.mp3](/notebooklm/audio-debate.mp3)
+- **Duration:** ~37 min
+- **Download:** [audio-transaction.mp3](/notebooklm/audio-transaction.mp3)
 
-### Audio Deep Dive — Long
+### Klear Karma Mirrors Your Spiritual Needs
 
-NotebookLM-generated audio briefing for listening review.
+Short audio brief (3 minutes) on how the Mirror system reflects and validates seeker intent.
 
-- **Download:** [audio-deep-dive-long.mp3](/notebooklm/audio-deep-dive-long.mp3)
+- **Duration:** ~3 min
+- **Download:** [audio-mirrors.mp3](/notebooklm/audio-mirrors.mp3)
 
 ## Data Tables
 
-### Competitive Table
+### Competitive Analysis
 
-CSV export with 4 rows and 9 columns.
+Structured comparison of Klear Karma against traditional directories, booking platforms, and wellness marketplaces.
 
-- **Rows:** 4
-- **Columns:** Brand, Target Market, Market Position, Key Features, Pricing, Strengths, Weaknesses, Unique Differentiators, Source
 - **Download:** [table-competitive.csv](/notebooklm/table-competitive.csv)
 
-### Persona Table
+### Customer Persona Matrix
 
-CSV export with 5 rows and 5 columns.
+Detailed persona breakdowns for Premium Seekers in Transition, Reflective Stewards, and Bridge Builders.
 
-- **Rows:** 5
-- **Columns:** Attribute Category, Details, Marketing Implications, Content Approach, Source
-- **Download:** [table-persona.csv](/notebooklm/table-persona.csv)
+- **Download:** [table-personas.csv](/notebooklm/table-personas.csv)
 
-### Product Table
+### Product Features vs. Benefits
 
-CSV export with 7 rows and 5 columns.
+Feature matrix mapping technical capabilities to user benefits and trust outcomes.
 
-- **Rows:** 7
-- **Columns:** Feature Name, Description, Customer Benefit, Differentiator, Source
-- **Download:** [table-product.csv](/notebooklm/table-product.csv)
+- **Download:** [table-product-features.csv](/notebooklm/table-product-features.csv)
 
 ## Flashcards
 
-### Flashcards — Detailed
+### Wellness Flashcard Set
 
-NotebookLM flashcard deck with 74 cards.
+Comprehensive flashcards covering spiritual wellness concepts, trust mechanics, and Klear Karma vocabulary.
 
-- **Items:** 74
-- **Download:** [flashcards-detailed.json](/notebooklm/flashcards-detailed.json)
+- **Items:** 24
+- **Download:** [flashcards-wellness.json](/notebooklm/flashcards-wellness.json)
 
-### Flashcards — Standard
+### Klear Karma Flashcard Set
 
-NotebookLM flashcard deck with 77 cards.
+Core flashcards for team onboarding covering product features, brand narrative, and user journeys.
 
-- **Items:** 77
-- **Download:** [flashcards-standard.json](/notebooklm/flashcards-standard.json)
+- **Items:** 18
+- **Download:** [flashcards-klear-karma.json](/notebooklm/flashcards-klear-karma.json)
 
 ## Quizzes
 
-### Quiz — Hard
+### Karma Quiz
 
-NotebookLM quiz set with 15 questions.
+Knowledge quiz testing understanding of Klear Karma's core philosophy and trust architecture.
 
-- **Items:** 15
-- **Download:** [quiz-hard.json](/notebooklm/quiz-hard.json)
+- **Items:** 25
+- **Download:** [quiz-karma.json](/notebooklm/quiz-karma.json)
 
-### Quiz — Medium
+### Klear Karma Knowledge Quiz
 
-NotebookLM quiz set with 10 questions.
+Comprehensive quiz covering product features, user personas, and implementation strategy.
 
-- **Items:** 10
-- **Download:** [quiz-medium.json](/notebooklm/quiz-medium.json)
+- **Items:** 22
+- **Download:** [quiz-klear-karma.json](/notebooklm/quiz-klear-karma.json)
 
 ## Mind Maps
 
-### Mind Map
+### Klear Karma Concept Map
 
-NotebookLM mind-map export.
+Interactive mind map connecting trust mechanics, reflection philosophy, and marketplace architecture.
 
 - **Download:** [mind-map.json](/notebooklm/mind-map.json)
