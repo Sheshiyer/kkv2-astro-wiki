@@ -61,9 +61,7 @@ const safeFormat = format || 'md';
 const formatLabel = formatLabels[safeFormat] || safeFormat.toUpperCase();
 ---
 
-<article class="artifact-card" data-artifact-id={id} data-type={type} data-featured={featured} style={`--card-index: ${index}; --type-bg: ${colors.bg}; --type-text: ${colors.text}`}>  
-  <button type="button" class="artifact-card__link" aria-label={`Open ${title}`}>
-  <div class="artifact-card__link">
+<article class="artifact-card" data-artifact-id={id} data-type={type} data-featured={featured} style={`--card-index: ${index}; --type-bg: ${colors.bg}; --type-text: ${colors.text}`} tabindex="0" role="button" aria-label={`Open ${title}`}>
     <div class="artifact-card__preview">
       {thumbnail ? (
         <img src={thumbnail} alt={title} loading="lazy" class="artifact-card__image" />
@@ -110,8 +108,7 @@ const formatLabel = formatLabels[safeFormat] || safeFormat.toUpperCase();
         {size && <span class="artifact-card__size">{size}</span>}
       </div>
     </div>
-  </button>
-</article>
+  </article>
 
 <style>
   .artifact-card {
@@ -120,11 +117,17 @@ const formatLabel = formatLabels[safeFormat] || safeFormat.toUpperCase();
     overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     border: 1px solid rgba(255, 255, 255, 0.05);
+    cursor: pointer;
   }
   
   .artifact-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  .artifact-card:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
   }
   
   .artifact-card__link {

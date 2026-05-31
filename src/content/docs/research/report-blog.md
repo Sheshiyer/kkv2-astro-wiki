@@ -18,7 +18,7 @@ icon: ""
 
 For the premium seeker in transition, the path to support often begins with a structural paradox. At the moment of highest vulnerability—carrying a l…
 
-- **Raw artifact path:** `/notebooklm/report-blog.md`
+- **Raw artifact path:** `https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/artifacts/report-blog.md`
 
 ## Imported Report
 

@@ -18,7 +18,7 @@ icon: ""
 
 This study guide provides an exhaustive overview of the Klear Karma platform, a Mirror-guided spiritual wellness marketplace and tokenized trust laye…
 
-- **Raw artifact path:** `/notebooklm/report-study-guide.md`
+- **Raw artifact path:** `https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/artifacts/report-study-guide.md`
 
 ## Imported Report
 

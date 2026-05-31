@@ -1,51 +1,51 @@
 {
   "brandName": "Klear Karma",
-  "tagline": "Mirror-guided trust for seekers and verified practitioners",
+  "tagline": "Mirror-guided trust for seekers and verified practitioners.",
   "themeName": "Reflective Trust Field",
   "defaultTheme": "dark",
   "launchChannel": "organic",
-  "heroTitle": "Turn Reflection Into Trusted Support",
-  "heroSubtitle": "A dark, premium, app-native visual system built around Mirror fields, lotus geometry, token ledgers, and consent-safe practitioner context.",
-  "heroDescription": "Klear Karma brings together product narrative, visual direction, and launch-ready research in one review portal.",
+  "heroTitle": "The trust layer between seekers and practitioners.",
+  "heroSubtitle": "A tokenized reflection protocol that helps people articulate what they need before they choose who helps them.",
+  "heroDescription": "Klear Karma is not a directory. It is a consent-safe system of context handoff designed for the wellness space.",
   "heroPrimaryHref": "/docs/product/overview",
-  "heroSecondaryHref": "/docs/research/notebooklm-artifacts",
+  "heroSecondaryHref": "/docs/founder/vision",
   "docsHomeHref": "/docs/index",
   "heroImage": "",
   "heroImageAlt": "",
   "metrics": [
     {
-      "label": "Brandmint outputs",
-      "value": "20"
+      "label": "Verified practitioners (target)",
+      "value": "4"
     },
     {
-      "label": "Visual assets",
-      "value": "23"
+      "label": "Artifact files",
+      "value": "42"
     },
     {
-      "label": "NotebookLM artifacts",
-      "value": "23"
+      "label": "Wiki pages",
+      "value": "60"
     },
     {
-      "label": "Reports surfaced",
+      "label": "Token packages",
       "value": "3"
     }
   ],
   "launchFacts": [
     {
-      "label": "Launch channel",
-      "value": "organic"
+      "label": "Phase",
+      "value": "Pre-launch / Verification"
     },
     {
-      "label": "Quality bar",
-      "value": "premium"
+      "label": "Monthly burn",
+      "value": "$460 USD"
     },
     {
-      "label": "Notebook policy",
-      "value": "fresh-per-spec"
+      "label": "Build pipeline",
+      "value": "Source → Brandmint → NotebookLM → Wiki"
     },
     {
-      "label": "Image policy",
-      "value": "product-reference-only"
+      "label": "Primary market",
+      "value": "Thailand → India"
     }
   ],
   "storyPillars": [
@@ -56,6 +56,13 @@
   ],
   "featuredDocs": [
     {
+      "title": "Founder Letter",
+      "description": "The personal story and mission behind Klear Karma — why reflection must come before transaction.",
+      "href": "/docs/founder/vision",
+      "icon": "",
+      "eyebrow": "Vision"
+    },
+    {
       "title": "Product Overview",
       "description": "Hero product definition, positioning, and messaging stack for the current launch build.",
       "href": "/docs/product/overview",
@@ -63,18 +70,11 @@
       "eyebrow": "Product"
     },
     {
-      "title": "Visual Guidelines",
-      "description": "Palette, typography, art direction, and brand-system guardrails for the current run.",
-      "href": "/docs/brand/visual-guidelines",
+      "title": "Business Model",
+      "description": "Three-stream revenue model, unit economics, cost structure, and break-even projection.",
+      "href": "/docs/founder/business-model",
       "icon": "",
-      "eyebrow": "Brand System"
-    },
-    {
-      "title": "Campaign Copy",
-      "description": "Campaign narratives, key copy assets, and launch-ready messaging organized for review.",
-      "href": "/docs/marketing/campaign-copy",
-      "icon": "",
-      "eyebrow": "Campaign"
+      "eyebrow": "Strategy"
     },
     {
       "title": "NotebookLM Artifacts",
@@ -86,63 +86,63 @@
   ],
   "visualHighlights": [
     {
-      "title": "Reflection Before Transaction",
-      "description": "Visual explanation of how Klear Karma's reflection-first architecture creates trust before commerce.",
-      "href": "/docs/research/notebooklm-artifacts",
-      "image": "/notebooklm/infographic-reflection.png",
-      "eyebrow": "NotebookLM"
+      "title": "Kindness Cipher",
+      "description": "Kindness is not sentiment. It is a cryptographic event limited by attention.",
+      "href": "/docs/founder/vision",
+      "image": "https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/brand/campaign-trust-1.jpg",
+      "eyebrow": "Founder"
     },
     {
-      "title": "Brand Strategy Overview",
-      "description": "High-level visual mapping of brand positioning, target personas, and market differentiation.",
-      "href": "/docs/research/notebooklm-artifacts",
-      "image": "/notebooklm/infographic-brand-strategy.png",
-      "eyebrow": "NotebookLM"
+      "title": "Mirror Context Brand Kit",
+      "description": "Premium brand visual system with Mirror fields, lotus geometry, and trust seals.",
+      "href": "/docs/brand/visual-guidelines",
+      "image": "https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/brand/2A-mirror-context-brand-kit-reused-v1.png",
+      "eyebrow": "Brand System"
     },
     {
-      "title": "Spiritual Wellness Journey",
-      "description": "Visual representation of the complete user journey from first reflection to practitioner connection.",
-      "href": "/docs/research/notebooklm-artifacts",
-      "image": "/notebooklm/infographic-wellness.png",
-      "eyebrow": "NotebookLM"
+      "title": "Marketplace Surface",
+      "description": "App screenshot showcasing the Mirror flow and practitioner browse experience.",
+      "href": "/docs/product/overview",
+      "image": "https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/brand/APP-SCREENSHOT-app-flow-reused-v1.jpg",
+      "eyebrow": "Product"
     }
   ],
   "notebooklmHighlights": [
     {
-      "title": "Beyond the Directory: Why Reflection is the New Standard",
+      "title": "Why Wellness Marketplaces Must Put Reflection First",
       "description": "Deep dive into the structural paradox of wellness marketplaces and why reflection must precede transaction.",
       "href": "/docs/research/notebooklm-artifacts",
-      "downloadHref": "/notebooklm/report-beyond-directory.md",
+      "downloadHref": "https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/artifacts/Thesis_%20Why%20Wellness%20Marketplaces%20Must%20Put%20Reflection%20Before%20Transaction.md",
       "kind": "Report",
-      "image": ""
+      "image": "https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/brand/PITCH-HERO-investor-mirror-hero-reused-v1.png"
     },
     {
-      "title": "Reflection Before Transaction",
-      "description": "Visual explanation of how Klear Karma's reflection-first architecture creates trust before commerce.",
+      "title": "Five Layers of Reflective Trust",
+      "description": "Visual framework showing the five interconnected layers that create trust in the Klear Karma ecosystem.",
       "href": "/docs/research/notebooklm-artifacts",
-      "downloadHref": "/notebooklm/infographic-reflection.png",
+      "downloadHref": "https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/artifacts/Five%20Layers%20of%20Reflective%20Trust.png",
       "kind": "Infographic",
-      "image": "/notebooklm/infographic-reflection.png"
+      "image": "https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/artifacts/Five%20Layers%20of%20Reflective%20Trust.png"
     },
     {
-      "title": "Klear Karma Mirror Presentation",
-      "description": "Focused presentation on the Mirror component\u2014Klear Karma's AI-powered reflection engine.",
+      "title": "Klear Karma Trust Protocol",
+      "description": "Comprehensive presentation on the trust protocol and verification framework for practitioners.",
       "href": "/docs/research/notebooklm-artifacts",
-      "downloadHref": "/notebooklm/deck-mirror.pdf",
+      "downloadHref": "https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/artifacts/Klear%20Karma%20Trust%20Protocol.pdf",
       "kind": "Deck",
-      "image": ""
+      "image": "https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/brand/2B-consent-seal-reused-v1.png"
     },
     {
-      "title": "Klear Karma and Reflection Before Transaction",
-      "description": "In-depth audio exploration (80 minutes) of the reflection-first philosophy.",
+      "title": "Tokenized Intent and the Mirror Interface",
+      "description": "Audio exploration of how Mirror uses tokenized intent to validate seeker readiness before connection.",
       "href": "/docs/research/notebooklm-artifacts",
-      "downloadHref": "/notebooklm/audio-reflection.mp3",
+      "downloadHref": "https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/artifacts/Tokenized%20intent%20and%20the%20Mirror%20interface.mp3",
       "kind": "Audio",
-      "image": ""
+      "image": "https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/brand/3B-mirror-hero-product-reused-v1.png"
     }
   ],
-  "publishedAtHuman": "May 27, 2026 at 01:30 PM",
-  "runLabel": "Latest kkv2-wiki-v2 launch build",
+  "publishedAtHuman": "May 31, 2026 at 06:22 PM",
+  "runLabel": "Latest founder-ready MVP build",
   "palette": {
     "primary": {
       "name": "Mirror Black",
@@ -173,29 +173,18 @@
   "typography": {
     "header": {
       "font": "Sora",
-      "weights": [
-        "Regular",
-        "SemiBold",
-        "Bold"
-      ],
+      "weights": ["Regular", "SemiBold", "Bold"],
       "display_weight": "SemiBold",
       "emphasis_weight": "Bold",
       "case": "title case"
     },
     "body": {
       "font": "Inter",
-      "weights": [
-        "Regular",
-        "Medium",
-        "SemiBold"
-      ]
+      "weights": ["Regular", "Medium", "SemiBold"]
     },
     "data": {
       "font": "JetBrains Mono",
-      "weights": [
-        "Regular",
-        "Medium"
-      ]
+      "weights": ["Regular", "Medium"]
     }
   }
 }

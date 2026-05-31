@@ -43,7 +43,7 @@ for (const category of Object.keys(categories)) {
   categories[category].sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999));
 }
 
-const categoryOrder = ['general', 'product', 'brand', 'audience', 'marketing'];
+const categoryOrder = ['founder', 'product', 'brand', 'audience', 'marketing', 'press', 'general'];
 const sortedCategories = Object.entries(categories).sort(([a], [b]) => {
   const ai = categoryOrder.indexOf(a);
   const bi = categoryOrder.indexOf(b);

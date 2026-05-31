@@ -21,6 +21,7 @@ const copy = t(locale);
 const content = await Astro.slots.render('default');
 const wordCount = content.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
 const readingTime = Math.max(1, Math.ceil(wordCount / 210));
+const publishedAt = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 ---
 
 <BaseLayout title={title} description={description} locale={locale}>
@@ -30,6 +31,7 @@ const readingTime = Math.max(1, Math.ceil(wordCount / 210));
       <div class="doc-header__meta">
         {category && <span class="pill pill--soft">{category}</span>}
         <span class="pill pill--warm">{readingTime} {copy.shell.minRead}</span>
+        <span class="pill">{publishedAt}</span>
       </div>
       <h1>{title}</h1>
       {description && <p class="doc-description">{description}</p>}
@@ -45,7 +47,7 @@ const readingTime = Math.max(1, Math.ceil(wordCount / 210));
       </article>
 
       <ScrollReveal delay={0.2}>
-        <div class="immersive-doc-rail">
+        <div class="immersive-doc-rail sticky">
           <ArtifactDetail title={title} description={description} category={category} readingTime={readingTime} headings={headings} />
           {headings.length > 0 && <TableOfContents headings={headings} locale={locale} />}
         </div>
@@ -297,6 +299,26 @@ const readingTime = Math.max(1, Math.ceil(wordCount / 210));
       transparent
     );
     margin: var(--space-7) 0;
+  }
+
+  /* Sticky Rail */
+  .immersive-doc-rail.sticky {
+    position: sticky;
+    top: var(--space-8);
+    align-self: start;
+    max-height: calc(100vh - var(--space-16));
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--surface-border) transparent;
+  }
+
+  .immersive-doc-rail.sticky::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .immersive-doc-rail.sticky::-webkit-scrollbar-thumb {
+    background: var(--surface-border);
+    border-radius: 2px;
   }
 
   /* Responsive */

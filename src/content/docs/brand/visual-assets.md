@@ -27,25 +27,25 @@ _No generated visual assets were mapped for this run._
 
 Visual explanation of how Klear Karma's reflection-first architecture creates trust before commerce.
 
-![Reflection Before Transaction](/notebooklm/infographic-reflection.png)
+![Reflection Before Transaction](https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/artifacts/)
 
 - **Type:** Infographic
-- **Download:** [infographic-reflection.png](/notebooklm/infographic-reflection.png)
+- **Download:** [infographic-reflection.png](https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/artifacts/)
 
 ### Brand Strategy Overview
 
 High-level visual mapping of brand positioning, target personas, and market differentiation strategy.
 
-![Brand Strategy Overview](/notebooklm/infographic-brand-strategy.png)
+![Brand Strategy Overview](https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/artifacts/)
 
 - **Type:** Infographic
-- **Download:** [infographic-brand-strategy.png](/notebooklm/infographic-brand-strategy.png)
+- **Download:** [infographic-brand-strategy.png](https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/artifacts/)
 
 ### Spiritual Wellness Journey
 
 Visual representation of the complete user journey from first reflection to practitioner connection.
 
-![Spiritual Wellness Journey](/notebooklm/infographic-wellness.png)
+![Spiritual Wellness Journey](https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/artifacts/)
 
 - **Type:** Infographic
-- **Download:** [infographic-wellness.png](/notebooklm/infographic-wellness.png)
+- **Download:** [infographic-wellness.png](https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/artifacts/)

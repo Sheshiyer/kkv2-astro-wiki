@@ -41,12 +41,24 @@ const artifacts = artifactsData.artifacts.map(artifact => ({
 >
   <section class="artifact-page">
     <div class="artifact-page__header">
-      <p class="eyebrow">{copy.categories.research || 'Research'}</p>
-      <h1>NotebookLM Artifacts</h1>
-      <p class="artifact-page__description">
-        Browse all {artifactsData.totalCount} generated artifacts from the Wave 7 NotebookLM processing.
-        Each artifact is a first-class publishable output.
-      </p>
+      <div class="artifact-page__header-top">
+        <div>
+          <p class="eyebrow">{copy.categories.research || 'Research'}</p>
+          <h1>NotebookLM Artifacts</h1>
+          <p class="artifact-page__description">
+            Browse all {artifactsData.totalCount} generated artifacts from the Wave 7 NotebookLM processing.
+            Each artifact is a first-class publishable output.
+          </p>
+        </div>
+        <a href="/docs/research/notebooklm-artifacts" class="btn btn--secondary artifact-page__download" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Batch Download
+        </a>
+      </div>
     </div>
 
     <ArtifactBrowser

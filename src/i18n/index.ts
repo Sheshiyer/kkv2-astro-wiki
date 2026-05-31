@@ -30,10 +30,10 @@ export function switchLocalePath(pathname: string, targetLocale: Locale): string
 export const translations = {
   en: {
     shell: {
-      portalHome: 'Portal Home',
-      docsIndex: 'Docs Index',
-      notebooklm: 'NotebookLM',
-      portal: 'Portal',
+      portalHome: 'Home',
+      docsIndex: 'Docs',
+      notebooklm: 'Artifacts',
+      portal: 'Home',
       onThisPage: 'On this page',
       minRead: 'min read',
       launchReadyPortal: 'Launch-ready portal',
@@ -61,6 +61,9 @@ export const translations = {
       brand: 'Brand System',
       audience: 'Audience',
       marketing: 'Campaign',
+      founder: 'Vision & Strategy',
+      press: 'Press',
+      tech: 'Tech',
     },
     featureCardLabels: {
       '/docs/product/overview': { title: 'Product Overview', eyebrow: 'Product', description: 'Hero product definition, positioning, and messaging stack for the current launch build.' },
@@ -71,6 +74,10 @@ export const translations = {
     docTitles: {
       'index': 'Launch Dossier Index',
       'getting-started/quickstart': 'Quickstart',
+      'founder/vision': 'Founder Letter',
+      'founder/business-model': 'Business Model',
+      'founder/go-to-market': 'Go-to-Market Strategy',
+      'founder/proof-points': 'Proof Points',
       'product/overview': 'Product Overview',
       'product/features': 'Product Features',
       'product/specifications': 'Product Specifications',
@@ -85,15 +92,15 @@ export const translations = {
       'marketing/social-content': 'Social Content',
       'marketing/video-scripts': 'Video Scripts',
       'marketing/ad-creative': 'Ad Creative',
-      'research/notebooklm-artifacts': 'NotebookLM Artifacts',
+      'press/kit': 'Press Kit',
     },
   },
   th: {
     shell: {
-      portalHome: 'หน้าแรกพอร์ทัล',
-      docsIndex: 'ดัชนีเอกสาร',
-      notebooklm: 'NotebookLM',
-      portal: 'พอร์ทัล',
+      portalHome: 'Home',
+      docsIndex: 'Docs',
+      notebooklm: 'Artifacts',
+      portal: 'Home',
       onThisPage: 'ในหน้านี้',
       minRead: 'นาทีในการอ่าน',
       launchReadyPortal: 'พอร์ทัลพร้อมเปิดตัว',
@@ -121,6 +128,9 @@ export const translations = {
       brand: 'ระบบแบรนด์',
       audience: 'กลุ่มเป้าหมาย',
       marketing: 'แคมเปญ',
+      founder: 'วิสัยทัศน์และกลยุทธ์',
+      press: 'สื่อมวลชน',
+      tech: 'เทคโนโลยี',
     },
     featureCardLabels: {
       '/docs/product/overview': { title: 'ภาพรวมผลิตภัณฑ์', eyebrow: 'ผลิตภัณฑ์', description: 'คำนิยามผลิตภัณฑ์หลัก การวางตำแหน่ง และกลุ่มข้อความสำหรับการสร้างการเปิดตัวปัจจุบัน' },
@@ -131,6 +141,10 @@ export const translations = {
     docTitles: {
       'index': 'ดัชนีเอกสารการเปิดตัว',
       'getting-started/quickstart': 'เริ่มต้นใช้งาน',
+      'founder/vision': 'จดหมายจากผู้ก่อตั้ง',
+      'founder/business-model': 'โมเดลธุรกิจ',
+      'founder/go-to-market': 'กลยุทธ์เข้าสู่ตลาด',
+      'founder/proof-points': 'หลักฐานและความก้าวหน้า',
       'product/overview': 'ภาพรวมผลิตภัณฑ์',
       'product/features': 'คุณสมบัติผลิตภัณฑ์',
       'product/specifications': 'ข้อกำหนดผลิตภัณฑ์',
@@ -145,7 +159,7 @@ export const translations = {
       'marketing/social-content': 'เนื้อหาโซเชียล',
       'marketing/video-scripts': 'บทสคริปต์วิดีโอ',
       'marketing/ad-creative': 'สร้างสรรค์โฆษณา',
-      'research/notebooklm-artifacts': 'งานวิจัย NotebookLM',
+      'press/kit': 'ชุดสื่อมวลชน',
     },
   },
 } as const;

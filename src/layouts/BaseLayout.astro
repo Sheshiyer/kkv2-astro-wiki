@@ -3,6 +3,8 @@ import Navigation from '../components/Navigation.astro';
 import PageTransitionController from '../components/PageTransitionController.astro';
 import PixelMediaLayer from '../components/PixelMediaLayer.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
+import Footer from '../components/Footer.astro';
+import SiteSearch from '../components/SiteSearch.astro';
 import LanguageToggle from '../components/LanguageToggle.astro';
 import WebGLBackground from '../components/WebGLBackground.astro';
 import siteData from '../data/site-data.json';
@@ -30,13 +32,18 @@ const palette = siteData.palette || {};
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
     <meta name="theme-color" content={palette.primary?.hex || '#17131f'}>
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <meta property="og:image" content="https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/brand/OG-IMAGE-mirror-practitioner-context-reused-v1.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
   </head>
   <body class={`immersive-body ${fullWidth ? 'immersive-body--fullwidth' : ''}`}>
     <WebGLBackground />
     <div class="immersive-shell">
       <header class="immersive-topbar glass-panel">
         <a href={localizedPath(locale, '/')} class="brand-lockup">
-          <img src="/logo.png" alt="Logo" width="32" height="32">
+          <img src="/logo.png" alt="Klear Karma logo" width="32" height="32">
           <span class="brand-text">
             <strong>{siteData.brandName}</strong>
             <small>{siteData.tagline}</small>
@@ -48,9 +55,9 @@ const palette = siteData.palette || {};
         </button>
 
         <nav class="immersive-topbar__links">
-          <a href={localizedPath(locale, '/')}>Portal</a>
+          <a href={localizedPath(locale, '/')}>Home</a>
           <a href={localizedPath(locale, siteData.docsHomeHref)}>Docs</a>
-          <a href={localizedPath(locale, siteData.heroSecondaryHref || '/docs/research/notebooklm-artifacts')}">NotebookLM</a>
+          <a href={localizedPath(locale, siteData.heroSecondaryHref || '/docs/research/notebooklm-artifacts')}">Artifacts</a>
         </nav>
       </header>
 
@@ -61,8 +68,13 @@ const palette = siteData.palette || {};
       )}
 
       <main class="immersive-content">
-        <slot />
+        <div class="content-wrapper">
+          <SiteSearch locale={locale} />
+          <slot />
+        </div>
       </main>
+
+      <Footer locale={locale} />
     </div>
 
     <ThemeToggle locale={locale} />

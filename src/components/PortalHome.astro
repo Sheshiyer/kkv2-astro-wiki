@@ -63,8 +63,14 @@ const launchFacts = siteData.launchFacts || [];
             <a href={localizedPath(locale, siteData.heroPrimaryHref || '/docs/product/overview')} class="btn btn--primary">
               {locale === 'th' ? 'สำรวจผลิตภัณฑ์' : 'Explore Product'}
             </a>
-            <a href={localizedPath(locale, siteData.heroSecondaryHref || '/docs/research/notebooklm-artifacts')} class="btn btn--secondary">
-              {locale === 'th' ? 'ดูงานวิจัย' : 'View Artifacts'}
+            <a href={localizedPath(locale, '/docs/founder/vision')} class="btn btn--secondary">
+              {locale === 'th' ? 'อ่านจดหมายผู้ก่อตั้ง' : 'Founder Letter'}
+            </a>
+            <a href={localizedPath(locale, '/docs/founder/business-model')} class="btn btn--outline">
+              {locale === 'th' ? 'สำหรับพันธมิตร' : 'For Partners'}
+            </a>
+            <a href="https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/artifacts/Klear%20Karma%20Trust%20Protocol.pdf" class="btn btn--outline" target="_blank" rel="noopener noreferrer">
+              {locale === 'th' ? 'ดาวน์โหลด Pitch Deck' : 'Download Pitch Deck'}
             </a>
           </div>
           
@@ -83,32 +89,51 @@ const launchFacts = siteData.launchFacts || [];
       
       <div class="immersive-hero__visual">
         <div class="immersive-hero__image">
-          <img src="/logo.png" alt="Klear Karma" class="hero-logo" />
+          <img src="https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/brand/2C-mirror-logo-splash-reused-v1.png" alt="Klear Karma Mirror splash" class="hero-logo" loading="eager" decoding="async" />
         </div>
       </div>
     </section>
 
-    <!-- Metrics Section -->
-    {metrics.length > 0 && (
-      <section class="immersive-section">
-        <ScrollReveal>
-          <header class="section-header">
-            <span class="eyebrow">Launch Metrics</span>
-            <h2>Wave 7 Output Summary</h2>
-          </header>
-        </ScrollReveal>
-        <div class="immersive-metrics">
-          {metrics.map((metric, index) => (
-            <ScrollReveal delay={index * 0.1}>
-              <div class="glass-panel metric-card" data-count={metric.value}>
-                <strong class="metric-value">0</strong>
-                <span>{metric.label}</span>
-              </div>
-            </ScrollReveal>
-          ))}
-        </div>
-      </section>
-    )}
+    <!-- Path Entry Section -->
+    <section class="path-entry" aria-label="Choose your path">
+      <ScrollReveal>
+        <header class="section-header">
+          <span class="eyebrow">Who are you here for?</span>
+          <h2>I am here...</h2>
+        </header>
+      </ScrollReveal>
+      <div class="path-grid">
+        {[
+          {
+            title: 'Seeking support',
+            desc: 'Looking for a practitioner. A human guide. Not a directory filter.',
+            href: '/docs/product/overview',
+          },
+          {
+            title: 'Building trust',
+            desc: 'Practitioner, healer, or guide who wants to be found by those who need you.',
+            href: '/docs/product/overview',
+          },
+          {
+            title: 'Investing in the protocol',
+            desc: 'Partner, advisor, or funder evaluating the trust layer and the business model.',
+            href: '/docs/founder/business-model',
+          },
+          {
+            title: 'Joining the build',
+            desc: 'Developer, designer, or operator who wants to help ship the Mirror and the marketplace.',
+            href: '/docs/founder/vision',
+          },
+        ].map((path, i) => (
+          <ScrollReveal delay={i * 0.1}>
+            <a href={localizedPath(locale, path.href)} class="path-card">
+              <strong>{path.title}</strong>
+              <span>{path.desc}</span>
+            </a>
+          </ScrollReveal>
+        ))}
+      </div>
+    </section>
 
     <!-- Featured Documents -->
     {featuredDocs.length > 0 && (
@@ -183,7 +208,7 @@ const launchFacts = siteData.launchFacts || [];
               <a href={localizedPath(locale, item.href)} class="artifact-card">
                 <div class="artifact-card__media">
                   {item.image ? (
-                    <img src={item.image} alt={item.title} loading="lazy" />
+                    <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
                   ) : (
                     <span>{item.title}</span>
                   )}
@@ -353,6 +378,36 @@ const launchFacts = siteData.launchFacts || [];
     min-height: calc(100vh - 6rem);
     margin-top: -1rem;
     padding-top: 2rem;
+    background: linear-gradient(135deg, rgba(9, 7, 17, 0.97), rgba(34, 18, 69, 0.95)), url('/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 1.5rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .immersive-hero__visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .immersive-hero__image {
+    width: 100%;
+    max-width: 480px;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  }
+
+  .hero-logo {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: inherit;
   }
 
   .hero-eyebrow {
@@ -418,6 +473,17 @@ const launchFacts = siteData.launchFacts || [];
   }
 
   .btn--secondary:hover {
+    background: rgba(217, 210, 198, 0.1);
+    border-color: var(--moon-glass, #D9D2C6);
+  }
+
+  .btn--outline {
+    background: transparent;
+    color: var(--moon-glass, #D9D2C6);
+    border-color: rgba(217, 210, 198, 0.3);
+  }
+
+  .btn--outline:hover {
     background: rgba(217, 210, 198, 0.1);
     border-color: var(--moon-glass, #D9D2C6);
   }
@@ -646,6 +712,68 @@ const launchFacts = siteData.launchFacts || [];
     width: 100%;
     height: 160px;
     object-fit: cover;
+  }
+
+  /* Path Entry Cards */
+  .path-entry {
+    padding: 2rem 0;
+  }
+
+  .path-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+
+  .path-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.75rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 0.75rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    min-height: 160px;
+  }
+
+  .path-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(216, 179, 90, 0.25);
+    transform: translateY(-4px);
+  }
+
+  .path-card strong {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--moon-glass, #D9D2C6);
+    font-family: var(--font-body, 'Inter', sans-serif);
+  }
+
+  .path-card span {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--moon-glass, #D9D2C6);
+    opacity: 0.65;
+  }
+
+  @media (max-width: 1024px) {
+    .path-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .path-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .path-card {
+      min-height: auto;
+      padding: 1.25rem;
+    }
   }
 
   /* Responsive */

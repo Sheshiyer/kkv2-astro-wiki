@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kkv2-astro-wiki.vercel.app/sitemap.xml

@@ -1,33 +1,41 @@
 ---
 title: Launch Dossier Index
-description: High-level index of the latest launch documentation, key outputs, and
-  research deliverables.
+description: High-level index of the latest launch documentation, key outputs, and research deliverables.
 category: general
 tags:
 - overview
 - launch
 - docs
 sources: []
-lastUpdated: '2026-05-27'
+lastUpdated: '2026-05-31'
 order: 1
 icon: ""
 ---
 
 # Launch Dossier Index
 
-This dossier index summarizes the latest launch documentation build.
+This dossier index summarizes the latest founder-ready MVP build.
 
 ## Launch Snapshot
 
 - **Brand:** Klear Karma
-- **Tagline:** Mirror-guided trust for seekers and verified practitioners
-- **Structured outputs available:** 20
-- **NotebookLM artifacts surfaced:** 23
+- **Tagline:** Mirror-guided trust for seekers and verified practitioners.
+- **Phase:** Pre-launch, verification cohort building.
+- **Founder docs:** 4
+- **Product docs:** 3
+- **Brand docs:** 3
+- **Audience docs:** 3
+- **Marketing docs:** 5
+- **Research artifacts:** 27
+- **Artifact files (total library):** 42
 
 ## Primary Sections
 
-### Overview
-- [Index](/en/docs/index)
+### founder
+- [Founder Letter](/en/docs/founder/vision)
+- [Business Model](/en/docs/founder/business-model)
+- [Go-to-Market Strategy](/en/docs/founder/go-to-market)
+- [Proof Points](/en/docs/founder/proof-points)
 
 ### product
 - [Overview](/en/docs/product/overview)
@@ -35,7 +43,7 @@ This dossier index summarizes the latest launch documentation build.
 - [Specifications](/en/docs/product/specifications)
 
 ### brand
-- [Voice Tone](/en/docs/brand/voice-tone)
+- [Voice & Tone](/en/docs/brand/voice-tone)
 - [Visual Guidelines](/en/docs/brand/visual-guidelines)
 - [Visual Assets](/en/docs/brand/visual-assets)
 
@@ -51,11 +59,11 @@ This dossier index summarizes the latest launch documentation build.
 - [Video Scripts](/en/docs/marketing/video-scripts)
 - [Ad Creative](/en/docs/marketing/ad-creative)
 
-### general
+### research
 - [NotebookLM Artifacts](/en/docs/research/notebooklm-artifacts)
 
 ## Inventory Snapshot
 
 - **Source directory:** Internal build outputs
-- **Documents classified:** 20
-- **Agent groups available:** brand, foundation, marketing, persona
+- **Documents classified:** 24
+- **Agent groups available:** brand, foundation, marketing, persona, founder

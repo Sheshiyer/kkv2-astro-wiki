@@ -18,7 +18,7 @@ icon: ""
 
 **Brand Thesis: The Reflective Steward** Klear Karma is not a directory; it is a tokenized trust-and-guidance layer for seekers and verified practiti…
 
-- **Raw artifact path:** `/notebooklm/report-briefing.md`
+- **Raw artifact path:** `https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/artifacts/report-briefing.md`
 
 ## Imported Report
 

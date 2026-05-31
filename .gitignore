@@ -3,3 +3,6 @@ dist
 .astro
 .vercel
 public/notebooklm-old-backup/
+.wrangler/
+*.pyc
+__pycache__/
