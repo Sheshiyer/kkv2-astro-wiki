@@ -32,35 +32,35 @@ This dossier index summarizes the latest founder-ready MVP build.
 ## Primary Sections
 
 ### founder
-- [Founder Letter](/en/docs/founder/vision)
-- [Business Model](/en/docs/founder/business-model)
-- [Go-to-Market Strategy](/en/docs/founder/go-to-market)
-- [Proof Points](/en/docs/founder/proof-points)
+- [Founder Letter](/en/docs/founder/vision/)
+- [Business Model](/en/docs/founder/business-model/)
+- [Go-to-Market Strategy](/en/docs/founder/go-to-market/)
+- [Proof Points](/en/docs/founder/proof-points/)
 
 ### product
-- [Overview](/en/docs/product/overview)
-- [Features](/en/docs/product/features)
-- [Specifications](/en/docs/product/specifications)
+- [Overview](/en/docs/product/overview/)
+- [Features](/en/docs/product/features/)
+- [Specifications](/en/docs/product/specifications/)
 
 ### brand
-- [Voice & Tone](/en/docs/brand/voice-tone)
-- [Visual Guidelines](/en/docs/brand/visual-guidelines)
-- [Visual Assets](/en/docs/brand/visual-assets)
+- [Voice & Tone](/en/docs/brand/voice-tone/)
+- [Visual Guidelines](/en/docs/brand/visual-guidelines/)
+- [Visual Assets](/en/docs/brand/visual-assets/)
 
 ### audience
-- [Primary Persona](/en/docs/audience/primary-persona)
-- [Secondary Personas](/en/docs/audience/secondary-personas)
-- [Competitive Landscape](/en/docs/market/competitive-landscape)
+- [Primary Persona](/en/docs/audience/primary-persona/)
+- [Secondary Personas](/en/docs/audience/secondary-personas/)
+- [Competitive Landscape](/en/docs/market/competitive-landscape/)
 
 ### marketing
-- [Campaign Copy](/en/docs/marketing/campaign-copy)
-- [Email Templates](/en/docs/marketing/email-templates)
-- [Social Content](/en/docs/marketing/social-content)
-- [Video Scripts](/en/docs/marketing/video-scripts)
-- [Ad Creative](/en/docs/marketing/ad-creative)
+- [Campaign Copy](/en/docs/marketing/campaign-copy/)
+- [Email Templates](/en/docs/marketing/email-templates/)
+- [Social Content](/en/docs/marketing/social-content/)
+- [Video Scripts](/en/docs/marketing/video-scripts/)
+- [Ad Creative](/en/docs/marketing/ad-creative/)
 
 ### research
-- [NotebookLM Artifacts](/en/docs/research/notebooklm-artifacts)
+- [NotebookLM Artifacts](/en/docs/research/notebooklm-artifacts/)
 
 ## Inventory Snapshot
 

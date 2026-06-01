@@ -30,25 +30,25 @@ NotebookLM outputs are treated as first-class publish artifacts in this Wave 8 b
 
 ## Reports
 
-### [Beyond the Directory: Why Reflection is the New Standard](/docs/research/report-beyond-directory)
+### [Beyond the Directory: Why Reflection is the New Standard](/en/docs/research/report-blog/)
 
 Deep dive into the structural paradox of wellness marketplaces and why reflection must precede transaction. Explores the Mirror as a paid intent engine.
 
-- **Docs page:** [/docs/research/report-beyond-directory](/docs/research/report-beyond-directory)
+- **Docs page:** [/en/docs/research/report-blog/](/en/docs/research/report-blog/)
 - **Raw artifact path:** `https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/artifacts/report-beyond-directory.md`
 
-### [Brand Intelligence Report: Klear Karma](/docs/research/report-intelligence)
+### [Brand Intelligence Report: Klear Karma](/en/docs/research/report-briefing/)
 
 Comprehensive brand analysis covering market positioning, trust architecture, and competitive differentiation in the spiritual wellness space.
 
-- **Docs page:** [/docs/research/report-intelligence](/docs/research/report-intelligence)
+- **Docs page:** [/en/docs/research/report-briefing/](/en/docs/research/report-briefing/)
 - **Raw artifact path:** `https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/artifacts/report-intelligence.md`
 
-### [Klear Karma Comprehensive Study Guide](/docs/research/report-study-guide)
+### [Klear Karma Comprehensive Study Guide](/en/docs/research/report-study-guide/)
 
 Complete reference document covering product philosophy, user journeys, trust mechanics, and implementation strategy.
 
-- **Docs page:** [/docs/research/report-study-guide](/docs/research/report-study-guide)
+- **Docs page:** [/en/docs/research/report-study-guide/](/en/docs/research/report-study-guide/)
 - **Raw artifact path:** `https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/artifacts/report-study-guide.md`
 
 ## Infographics

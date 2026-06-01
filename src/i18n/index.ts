@@ -10,21 +10,36 @@ export function normalizeLocale(value: string | undefined): Locale {
   return isLocale(value) ? value : 'en';
 }
 
+const NON_LOCAL_URL = /^(?:[a-z][a-z0-9+.-]*:|\/\/|#)/i;
+
+function ensureTrailingSlash(path: string): string {
+  const match = path.match(/^([^?#]*)(\?[^#]*)?(#.*)?$/);
+  const pathname = match?.[1] ?? path;
+  const query = match?.[2] ?? '';
+  const hash = match?.[3] ?? '';
+
+  if (!pathname || pathname.endsWith('/') || /\.[a-z0-9]{2,8}$/i.test(pathname)) {
+    return `${pathname}${query}${hash}`;
+  }
+
+  return `${pathname}/${query}${hash}`;
+}
+
 export function localizedPath(locale: Locale, path: string): string {
-  if (!path || path === '/') return `/${locale}`;
-  if (/^https?:\/\//.test(path)) return path;
+  if (!path || path === '/') return `/${locale}/`;
+  if (NON_LOCAL_URL.test(path)) return path;
   const normalized = path.startsWith('/') ? path : `/${path}`;
-  return `/${locale}${normalized}`.replace(/\/+/g, '/');
+  return ensureTrailingSlash(`/${locale}${normalized}`.replace(/\/+/g, '/'));
 }
 
 export function switchLocalePath(pathname: string, targetLocale: Locale): string {
   const segments = pathname.split('/').filter(Boolean);
   if (segments[0] === 'en' || segments[0] === 'th') {
     segments[0] = targetLocale;
-    return `/${segments.join('/')}`;
+    return ensureTrailingSlash(`/${segments.join('/')}`);
   }
-  if (segments.length === 0) return `/${targetLocale}`;
-  return `/${targetLocale}/${segments.join('/')}`;
+  if (segments.length === 0) return `/${targetLocale}/`;
+  return ensureTrailingSlash(`/${targetLocale}/${segments.join('/')}`);
 }
 
 export const translations = {

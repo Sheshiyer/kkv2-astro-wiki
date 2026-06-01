@@ -42,6 +42,48 @@ const visualHighlights = siteData.visualHighlights || [];
 const notebooklmHighlights = siteData.notebooklmHighlights || [];
 const storyPillars = siteData.storyPillars || [];
 const launchFacts = siteData.launchFacts || [];
+
+const pathCards = [
+  {
+    title: 'Seekers',
+    desc: 'Name what you are carrying before comparing categories, price, or availability.',
+    href: '/docs/product/overview',
+  },
+  {
+    title: 'Practitioners',
+    desc: 'Receive consent-approved context instead of cold, generic discovery traffic.',
+    href: '/docs/product/features',
+  },
+  {
+    title: 'Partners',
+    desc: 'Evaluate the token loop, verification layer, and narrow beta economics.',
+    href: '/docs/founder/business-model',
+  },
+  {
+    title: 'Builders',
+    desc: 'Understand the source-to-wiki pipeline and what still needs to ship.',
+    href: '/docs/tech/architecture',
+  },
+];
+
+const mechanismSteps = [
+  {
+    label: 'Mirror asks',
+    body: 'One primary answer at a time, using reflective language rather than certainty claims.',
+  },
+  {
+    label: 'Mirror maps',
+    body: 'The opening flow spends roughly 108 tokens and turns context into a seeker map.',
+  },
+  {
+    label: 'Seeker consents',
+    body: 'Only approved context can move toward practitioner support.',
+  },
+  {
+    label: 'Trust compounds',
+    body: 'Recharge, repeat token use, handoff quality, and practitioner activation become proof.',
+  },
+];
 ---
 
 <BaseLayout 
@@ -50,82 +92,115 @@ const launchFacts = siteData.launchFacts || [];
   locale={locale}
   fullWidth={true}
 >
-  <div class="immersive-home">
-    <!-- Hero Section -->
-    <section class="immersive-hero">
-      <div class="immersive-hero__copy">
+  <div class="immersive-home landing-v2">
+    <section class="immersive-hero landing-hero">
+      <div class="immersive-hero__copy landing-hero__copy">
         <ScrollReveal>
-          <span class="hero-eyebrow">{siteData.themeName}</span>
+          <div class="hero-kicker">
+            <img src="/brand/klear-karma-lotus-logo.png" alt="" aria-hidden="true" loading="eager" decoding="async" />
+            <span>{siteData.themeName}</span>
+            <span>{siteData.launchChannel}</span>
+          </div>
           <h1>{siteData.heroTitle}</h1>
           <p class="hero-lead">{siteData.heroSubtitle}</p>
           {siteData.heroDescription && <p class="hero-desc">{siteData.heroDescription}</p>}
+
           <div class="hero-actions">
             <a href={localizedPath(locale, siteData.heroPrimaryHref || '/docs/product/overview')} class="btn btn--primary">
-              {locale === 'th' ? 'สำรวจผลิตภัณฑ์' : 'Explore Product'}
+              Explore Product
             </a>
-            <a href={localizedPath(locale, '/docs/founder/vision')} class="btn btn--secondary">
-              {locale === 'th' ? 'อ่านจดหมายผู้ก่อตั้ง' : 'Founder Letter'}
+            <a href={localizedPath(locale, siteData.heroSecondaryHref || '/docs/research/notebooklm-artifacts')} class="btn btn--secondary">
+              View Research
             </a>
             <a href={localizedPath(locale, '/docs/founder/business-model')} class="btn btn--outline">
-              {locale === 'th' ? 'สำหรับพันธมิตร' : 'For Partners'}
-            </a>
-            <a href="https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/artifacts/Klear%20Karma%20Trust%20Protocol.pdf" class="btn btn--outline" target="_blank" rel="noopener noreferrer">
-              {locale === 'th' ? 'ดาวน์โหลด Pitch Deck' : 'Download Pitch Deck'}
+              For Partners
             </a>
           </div>
-          
-          {launchFacts.length > 0 && (
-            <div class="immersive-hero__facts">
-              {launchFacts.map((fact) => (
-                <div class="glass-panel">
-                  <small>{fact.label}</small>
-                  <strong>{fact.value}</strong>
+
+          {metrics.length > 0 && (
+            <div class="proof-strip" aria-label="Launch proof points">
+              {metrics.map((metric) => (
+                <div>
+                  <strong>{metric.value}</strong>
+                  <span>{metric.label}</span>
                 </div>
               ))}
             </div>
           )}
         </ScrollReveal>
       </div>
-      
-      <div class="immersive-hero__visual">
-        <div class="immersive-hero__image">
-          <img src="https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/brand/2C-mirror-logo-splash-reused-v1.png" alt="Klear Karma Mirror splash" class="hero-logo" loading="eager" decoding="async" />
+
+      <div class="immersive-hero__visual landing-hero__visual">
+        <ScrollReveal delay={0.08}>
+          <div class="hero-product-card glass-panel">
+            <div class="hero-product-card__bar">
+              <span>Mirror flow</span>
+              <span>Consent-safe beta</span>
+            </div>
+            <img src={siteData.heroImage || '/brand/mirror-flow-v2.png'} alt={siteData.heroImageAlt || 'Klear Karma Mirror flow'} loading="eager" decoding="async" />
+            <div class="hero-product-card__caption">
+              <strong>Reflection before transaction</strong>
+              <span>App-native Mirror, token intent, and practitioner handoff in one controlled loop.</span>
+            </div>
+          </div>
+        </ScrollReveal>
+      </div>
+    </section>
+
+    {launchFacts.length > 0 && (
+      <section class="launch-ledger" aria-label="Launch facts">
+        {launchFacts.map((fact, index) => (
+          <ScrollReveal delay={index * 0.06}>
+            <div class="launch-ledger__item">
+              <small>{fact.label}</small>
+              <strong>{fact.value}</strong>
+            </div>
+          </ScrollReveal>
+        ))}
+      </section>
+    )}
+
+    <section class="mechanism-section">
+      <ScrollReveal>
+        <header class="section-header section-header--left">
+          <span class="eyebrow">Mechanism</span>
+          <h2>The marketplace is fulfillment. Mirror is the trust layer.</h2>
+          <p class="section-lead">Klear Karma replaces category-first browsing with a bounded sequence that helps the seeker articulate context before choosing support.</p>
+        </header>
+      </ScrollReveal>
+
+      <div class="mechanism-grid">
+        <ScrollReveal>
+          <figure class="mechanism-media glass-panel">
+            <img src="/brand/mirror-interaction-v2.png" alt="Klear Karma Mirror interaction surfaces" loading="lazy" decoding="async" />
+          </figure>
+        </ScrollReveal>
+        <div class="mechanism-list">
+          {mechanismSteps.map((step, index) => (
+            <ScrollReveal delay={index * 0.08}>
+              <article class="mechanism-item">
+                <span>0{index + 1}</span>
+                <div>
+                  <h3>{step.label}</h3>
+                  <p>{step.body}</p>
+                </div>
+              </article>
+            </ScrollReveal>
+          ))}
         </div>
       </div>
     </section>
 
-    <!-- Path Entry Section -->
     <section class="path-entry" aria-label="Choose your path">
       <ScrollReveal>
         <header class="section-header">
-          <span class="eyebrow">Who are you here for?</span>
-          <h2>I am here...</h2>
+          <span class="eyebrow">Entry Points</span>
+          <h2>I am here for...</h2>
         </header>
       </ScrollReveal>
       <div class="path-grid">
-        {[
-          {
-            title: 'Seeking support',
-            desc: 'Looking for a practitioner. A human guide. Not a directory filter.',
-            href: '/docs/product/overview',
-          },
-          {
-            title: 'Building trust',
-            desc: 'Practitioner, healer, or guide who wants to be found by those who need you.',
-            href: '/docs/product/overview',
-          },
-          {
-            title: 'Investing in the protocol',
-            desc: 'Partner, advisor, or funder evaluating the trust layer and the business model.',
-            href: '/docs/founder/business-model',
-          },
-          {
-            title: 'Joining the build',
-            desc: 'Developer, designer, or operator who wants to help ship the Mirror and the marketplace.',
-            href: '/docs/founder/vision',
-          },
-        ].map((path, i) => (
-          <ScrollReveal delay={i * 0.1}>
+        {pathCards.map((path, index) => (
+          <ScrollReveal delay={index * 0.08}>
             <a href={localizedPath(locale, path.href)} class="path-card">
               <strong>{path.title}</strong>
               <span>{path.desc}</span>
@@ -135,12 +210,11 @@ const launchFacts = siteData.launchFacts || [];
       </div>
     </section>
 
-    <!-- Featured Documents -->
     {featuredDocs.length > 0 && (
       <section class="immersive-section">
         <ScrollReveal>
           <header class="section-header">
-            <span class="eyebrow">Featured</span>
+            <span class="eyebrow">Source Docs</span>
             <h2>{copy.home.homeHeading || 'Explore the Portal'}</h2>
             <p class="section-lead">{copy.home.homeBlurb || 'Product documentation, brand guidelines, and research artifacts.'}</p>
           </header>
@@ -148,10 +222,10 @@ const launchFacts = siteData.launchFacts || [];
         
         <div class="showcase-grid showcase-grid--docs">
           {featuredDocs.map((doc, index) => (
-            <ScrollReveal delay={index * 0.1}>
+            <ScrollReveal delay={index * 0.08}>
               <a href={localizedPath(locale, doc.href)} class="immersive-doc-card">
                 <span class="immersive-doc-card__index">0{index + 1}</span>
-                <span class="immersive-doc-card__icon">→</span>
+                <span class="immersive-doc-card__icon" aria-hidden="true">↗</span>
                 <div class="immersive-doc-card__body">
                   <small>{doc.eyebrow}</small>
                   <strong>{doc.title}</strong>
@@ -164,19 +238,18 @@ const launchFacts = siteData.launchFacts || [];
       </section>
     )}
 
-    <!-- Story Pillars -->
     {storyPillars.length > 0 && (
       <section class="immersive-section immersive-section--split">
         <div>
           <ScrollReveal>
             <header class="section-header section-header--left">
               <span class="eyebrow">Principles</span>
-              <h2>Core Narrative Pillars</h2>
+              <h2>What the landing page must make obvious</h2>
             </header>
           </ScrollReveal>
           <div class="pillars-list">
             {storyPillars.map((pillar, index) => (
-              <ScrollReveal delay={index * 0.15}>
+              <ScrollReveal delay={index * 0.1}>
                 <div class="pillar-item">
                   <span class="pillar-number">0{index + 1}</span>
                   <p>{pillar}</p>
@@ -185,26 +258,27 @@ const launchFacts = siteData.launchFacts || [];
             ))}
           </div>
         </div>
-        <div class="pillar-visual glass-panel">
-          <span class="pillar-visual__text">Mirror<br/>First</span>
-        </div>
+        <ScrollReveal delay={0.12}>
+          <div class="pillar-visual glass-panel">
+            <span class="pillar-visual__text">Mirror<br/>First</span>
+          </div>
+        </ScrollReveal>
       </section>
     )}
 
-    <!-- Visual Highlights -->
     {visualHighlights.length > 0 && (
       <section class="immersive-section">
         <ScrollReveal>
           <header class="section-header">
             <span class="eyebrow">Visual Library</span>
-            <h2>NotebookLM Visual Assets</h2>
-            <p class="section-lead">Generated artifacts from the research pipeline</p>
+            <h2>Product and brand assets now driving the page</h2>
+            <p class="section-lead">These are project-local assets, selected from the current Klear Karma brand and NotebookLM source material.</p>
           </header>
         </ScrollReveal>
         
         <div class="showcase-grid showcase-grid--media">
           {visualHighlights.map((item, index) => (
-            <ScrollReveal delay={index * 0.1}>
+            <ScrollReveal delay={index * 0.08}>
               <a href={localizedPath(locale, item.href)} class="artifact-card">
                 <div class="artifact-card__media">
                   {item.image ? (
@@ -225,24 +299,23 @@ const launchFacts = siteData.launchFacts || [];
       </section>
     )}
 
-    <!-- NotebookLM Artifacts -->
     {notebooklmHighlights.length > 0 && (
       <section class="immersive-section">
         <ScrollReveal>
           <header class="section-header">
             <span class="eyebrow">Research Output</span>
             <h2>NotebookLM Artifacts</h2>
-            <p class="section-lead">Reports, infographics, decks, and audio briefs</p>
+            <p class="section-lead">Reports, infographics, decks, and audio briefs surfaced from the research pipeline.</p>
           </header>
         </ScrollReveal>
         
         <div class="showcase-grid showcase-grid--artifacts">
           {notebooklmHighlights.map((item, index) => (
-            <ScrollReveal delay={index * 0.1}>
+            <ScrollReveal delay={index * 0.08}>
               <a href={localizedPath(locale, item.href)} class="artifact-card">
                 <div class="artifact-card__media">
                   {item.image ? (
-                    <img src={item.image} alt={item.title} loading="lazy" />
+                    <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
                   ) : (
                     <span>{item.kind}</span>
                   )}
@@ -259,7 +332,6 @@ const launchFacts = siteData.launchFacts || [];
       </section>
     )}
 
-    <!-- Knowledge Map -->
     {orderedCategories.length > 0 && (
       <section class="immersive-section">
         <ScrollReveal>
@@ -271,7 +343,7 @@ const launchFacts = siteData.launchFacts || [];
         
         <div class="immersive-knowledge__grid">
           {orderedCategories.map(([category, categoryDocs], catIndex) => (
-            <ScrollReveal delay={catIndex * 0.1}>
+            <ScrollReveal delay={catIndex * 0.08}>
               <div class="immersive-knowledge glass-panel">
                 <h3>
                   {copy.categories[category as keyof typeof copy.categories] || category}
@@ -300,522 +372,22 @@ const launchFacts = siteData.launchFacts || [];
       </section>
     )}
 
-    <!-- CTA Section -->
     <section class="immersive-section cta-final">
       <ScrollReveal>
         <div class="cta-final__content glass-panel">
-          <h2>Ready to explore?</h2>
-          <p>Start with the product overview or dive into the research artifacts.</p>
+          <span class="eyebrow">Founder-ready MVP build</span>
+          <h2>Ready to inspect the trust layer?</h2>
+          <p>Start with the product overview, then review the source artifacts behind the landing page.</p>
           <div class="cta-final__actions">
             <a href={localizedPath(locale, '/docs/product/overview')} class="btn btn--primary">
-              {locale === 'th' ? 'เริ่มต้น' : 'Get Started'}
+              Product Overview
             </a>
             <a href={localizedPath(locale, '/docs/research/notebooklm-artifacts')} class="btn btn--secondary">
-              {locale === 'th' ? 'ดูงานวิจัย' : 'View Artifacts'}
+              Research Artifacts
             </a>
           </div>
         </div>
       </ScrollReveal>
     </section>
   </div>
-
-  <script>
-    // Animated counters
-    const animateCounters = () => {
-      const counters = document.querySelectorAll('.metric-card[data-count]');
-      counters.forEach(counter => {
-        const target = parseInt(counter.getAttribute('data-count') || '0');
-        const valueEl = counter.querySelector('.metric-value');
-        if (!valueEl) return;
-        
-        let current = 0;
-        const increment = target / 60;
-        const updateCounter = () => {
-          if (current < target) {
-            current += increment;
-            valueEl.textContent = Math.ceil(current).toString();
-            requestAnimationFrame(updateCounter);
-          } else {
-            valueEl.textContent = target.toString();
-          }
-        };
-        
-        // Use IntersectionObserver to trigger when visible
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              updateCounter();
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.5 });
-        
-        observer.observe(counter);
-      });
-    };
-
-    // Initialize when DOM is ready
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', animateCounters);
-    } else {
-      animateCounters();
-    }
-  </script>
 </BaseLayout>
-
-<style>
-  /* Override immersive-home for full-width */
-  .immersive-home {
-    display: grid;
-    gap: clamp(3rem, 8vw, 8rem);
-    padding: 0 clamp(1rem, 3vw, 3rem);
-    max-width: 1400px;
-    margin: 0 auto;
-  }
-
-  /* Hero overrides */
-  .immersive-hero {
-    min-height: calc(100vh - 6rem);
-    margin-top: -1rem;
-    padding-top: 2rem;
-    background: linear-gradient(135deg, rgba(9, 7, 17, 0.97), rgba(34, 18, 69, 0.95)), url('/images/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 1.5rem;
-    margin-left: -1rem;
-    margin-right: -1rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
-  .immersive-hero__visual {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .immersive-hero__image {
-    width: 100%;
-    max-width: 480px;
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-  }
-
-  .hero-logo {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: inherit;
-  }
-
-  .hero-eyebrow {
-    display: block;
-    font-size: 0.875rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--quiet-gold, #D8B35A);
-    margin-bottom: 1.5rem;
-  }
-
-  .hero-lead {
-    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-    color: var(--moon-glass, #D9D2C6);
-    line-height: 1.5;
-    max-width: 50ch;
-    margin-bottom: 1.5rem;
-  }
-
-  .hero-desc {
-    font-size: 1rem;
-    color: var(--moon-glass, #D9D2C6);
-    opacity: 0.7;
-    max-width: 55ch;
-    margin-bottom: 2rem;
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-  }
-
-  /* Buttons */
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.875rem 2rem;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    border: 2px solid transparent;
-    font-size: 0.9375rem;
-  }
-
-  .btn--primary {
-    background: var(--quiet-gold, #D8B35A);
-    color: var(--mirror-black, #090711);
-  }
-
-  .btn--primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(216, 179, 90, 0.3);
-  }
-
-  .btn--secondary {
-    background: transparent;
-    color: var(--moon-glass, #D9D2C6);
-    border-color: rgba(217, 210, 198, 0.3);
-  }
-
-  .btn--secondary:hover {
-    background: rgba(217, 210, 198, 0.1);
-    border-color: var(--moon-glass, #D9D2C6);
-  }
-
-  .btn--outline {
-    background: transparent;
-    color: var(--moon-glass, #D9D2C6);
-    border-color: rgba(217, 210, 198, 0.3);
-  }
-
-  .btn--outline:hover {
-    background: rgba(217, 210, 198, 0.1);
-    border-color: var(--moon-glass, #D9D2C6);
-  }
-
-  /* Sections */
-  .immersive-section {
-    padding: 2rem 0;
-  }
-
-  /* Section headers */
-  .section-header {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-
-  .section-header--left {
-    text-align: left;
-  }
-
-  .eyebrow {
-    display: block;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--quiet-gold, #D8B35A);
-    margin-bottom: 1rem;
-  }
-
-  .section-header h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-    line-height: 1.1;
-  }
-
-  .section-lead {
-    color: var(--moon-glass, #D9D2C6);
-    opacity: 0.7;
-    font-size: 1.125rem;
-    max-width: 50ch;
-    margin: 0 auto;
-  }
-
-  /* Metrics */
-  .metric-card {
-    text-align: center;
-    padding: 2rem !important;
-  }
-
-  .metric-value {
-    font-size: clamp(2.5rem, 5vw, 3.5rem) !important;
-    color: var(--quiet-gold, #D8B35A);
-    line-height: 1;
-    margin-bottom: 0.5rem;
-  }
-
-  /* Pillars */
-  .pillars-list {
-    display: grid;
-    gap: 1.5rem;
-  }
-
-  .pillar-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 1rem;
-    transition: all 0.3s ease;
-  }
-
-  .pillar-item:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(216, 179, 90, 0.2);
-    transform: translateX(8px);
-  }
-
-  .pillar-number {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--quiet-gold, #D8B35A);
-    opacity: 0.5;
-    line-height: 1;
-    font-family: var(--font-mono, monospace);
-  }
-
-  .pillar-item p {
-    margin: 0;
-    font-size: 1.125rem;
-    line-height: 1.5;
-    color: var(--moon-glass, #D9D2C6);
-  }
-
-  .pillar-visual {
-    display: grid;
-    place-items: center;
-    min-height: 300px;
-    background: linear-gradient(135deg, rgba(34, 18, 69, 0.6), rgba(9, 7, 17, 0.8));
-  }
-
-  .pillar-visual__text {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 700;
-    text-align: center;
-    line-height: 1.1;
-    background: linear-gradient(135deg, var(--quiet-gold, #D8B35A), var(--moon-glass, #D9D2C6));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  /* Knowledge map */
-  .immersive-knowledge h3 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .doc-count {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--quiet-gold, #D8B35A);
-    background: rgba(216, 179, 90, 0.1);
-    padding: 0.25rem 0.75rem;
-    border-radius: 1rem;
-  }
-
-  .immersive-knowledge a {
-    color: var(--moon-glass, #D9D2C6);
-    text-decoration: none;
-    opacity: 0.8;
-    transition: all 0.2s ease;
-    display: block;
-    padding: 0.35rem 0;
-  }
-
-  .immersive-knowledge a:hover {
-    opacity: 1;
-    color: var(--quiet-gold, #D8B35A);
-    transform: translateX(4px);
-  }
-
-  .more-link a {
-    color: var(--quiet-gold, #D8B35A);
-    font-weight: 600;
-    opacity: 1;
-  }
-
-  /* CTA Final */
-  .cta-final {
-    padding-bottom: 4rem;
-  }
-
-  .cta-final__content {
-    text-align: center;
-    padding: 4rem 2rem !important;
-    max-width: 700px;
-    margin: 0 auto;
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)) !important;
-  }
-
-  .cta-final__content h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    margin-bottom: 1rem;
-  }
-
-  .cta-final__content p {
-    color: var(--moon-glass, #D9D2C6);
-    opacity: 0.8;
-    margin-bottom: 2rem;
-    font-size: 1.125rem;
-  }
-
-  .cta-final__actions {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  /* Card visibility overrides - make them pop */
-  .immersive-doc-card {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.04)) !important;
-    border: 1px solid rgba(255, 255, 255, 0.12) !important;
-    padding: 1.5rem !important;
-  }
-
-  .immersive-doc-card:hover {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.06)) !important;
-    border-color: rgba(216, 179, 90, 0.3) !important;
-    transform: translateY(-4px);
-  }
-
-  .artifact-card {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.04)) !important;
-    border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  }
-
-  .artifact-card:hover {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.06)) !important;
-    border-color: rgba(216, 179, 90, 0.3) !important;
-    transform: translateY(-4px);
-  }
-
-  .artifact-card__media {
-    background: rgba(34, 18, 69, 0.5) !important;
-    min-height: 160px;
-    display: grid;
-    place-items: center;
-  }
-
-  .artifact-card__media span {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--quiet-gold, #D8B35A);
-  }
-
-  .artifact-card__media img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-  }
-
-  /* Path Entry Cards */
-  .path-entry {
-    padding: 2rem 0;
-  }
-
-  .path-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.25rem;
-  }
-
-  .path-card {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    padding: 1.75rem;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 0.75rem;
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.3s ease;
-    min-height: 160px;
-  }
-
-  .path-card:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(216, 179, 90, 0.25);
-    transform: translateY(-4px);
-  }
-
-  .path-card strong {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: var(--moon-glass, #D9D2C6);
-    font-family: var(--font-body, 'Inter', sans-serif);
-  }
-
-  .path-card span {
-    font-size: 0.875rem;
-    line-height: 1.5;
-    color: var(--moon-glass, #D9D2C6);
-    opacity: 0.65;
-  }
-
-  @media (max-width: 1024px) {
-    .path-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (max-width: 640px) {
-    .path-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .path-card {
-      min-height: auto;
-      padding: 1.25rem;
-    }
-  }
-
-  /* Responsive */
-  @media (max-width: 1180px) {
-    .immersive-hero {
-      grid-template-columns: 1fr;
-      min-height: auto;
-    }
-
-    .immersive-hero__visual {
-      display: none;
-    }
-  }
-
-  @media (max-width: 820px) {
-    .immersive-metrics {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .hero-actions,
-    .cta-final__actions {
-      flex-direction: column;
-    }
-
-    .btn {
-      width: 100%;
-      justify-content: center;
-    }
-
-    .pillar-item {
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .pillar-item:hover {
-      transform: none;
-    }
-
-    .immersive-knowledge a:hover {
-      transform: none;
-    }
-  }
-</style>

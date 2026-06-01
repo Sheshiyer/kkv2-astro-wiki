@@ -1,11 +1,9 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import ArtifactBrowser from '../../../../components/ArtifactBrowser.astro';
 import ArtifactPlayer from '../../../../components/ArtifactPlayer.astro';
 import artifactsData from '../../../../data/artifacts.json';
-import { normalizeLocale, t } from '../../../../i18n';
-import { hasThDocs } from '../../../../i18n/th-docs';
+import { localizedPath, normalizeLocale, t } from '../../../../i18n';
 
 export async function getStaticPaths() {
   const locales = ['en', 'th'];
@@ -36,7 +34,7 @@ const artifacts = artifactsData.artifacts.map(artifact => ({
 
 <BaseLayout
   title="NotebookLM Artifacts — Klear Karma"
-  description="Browse all 23 NotebookLM-generated artifacts including reports, infographics, decks, audio, video, tables, flashcards, quizzes, and mind maps."
+  description={`Browse all ${artifactsData.totalCount} NotebookLM-generated artifacts including reports, infographics, decks, audio, video, tables, flashcards, quizzes, and mind maps.`}
   locale={locale}
 >
   <section class="artifact-page">
@@ -50,7 +48,7 @@ const artifacts = artifactsData.artifacts.map(artifact => ({
             Each artifact is a first-class publishable output.
           </p>
         </div>
-        <a href="/docs/research/notebooklm-artifacts" class="btn btn--secondary artifact-page__download" download>
+        <a href={localizedPath(locale, '/docs/research/notebooklm-artifacts')} class="btn btn--secondary artifact-page__download">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
             <polyline points="7 10 12 15 17 10"/>

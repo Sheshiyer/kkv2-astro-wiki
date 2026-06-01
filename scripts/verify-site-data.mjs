@@ -88,15 +88,15 @@ assert(
 );
 
 assert(
-  siteData.metrics && siteData.metrics.some(m => m.label === 'Visual assets'),
-  'metrics includes "Visual assets"'
+  siteData.metrics && siteData.metrics.some(m => m.label === 'Free Mirror tokens'),
+  'metrics includes "Free Mirror tokens"'
 );
 
-const visualAssetMetric = siteData.metrics?.find(m => m.label === 'Visual assets');
-if (visualAssetMetric) {
+const artifactMetric = siteData.metrics?.find(m => m.label === 'Artifact records');
+if (artifactMetric) {
   assert(
-    visualAssetMetric.value !== '0',
-    `Visual assets metric is not "0" (current: ${visualAssetMetric.value})`,
+    artifactMetric.value === String(artifacts.totalCount),
+    `Artifact records metric matches artifacts.totalCount (${artifactMetric.value}/${artifacts.totalCount})`,
     true // warning only
   );
 }
@@ -105,13 +105,13 @@ if (visualAssetMetric) {
 console.log('\n━━ Artifact Checks ━━');
 
 assert(
-  artifacts.totalCount === 23,
-  `totalCount is 23 (found ${artifacts.totalCount})`
+  artifacts.totalCount === artifacts.artifacts?.length,
+  `totalCount matches artifacts array length (${artifacts.totalCount}/${artifacts.artifacts?.length || 0})`
 );
 
 assert(
-  artifacts.artifacts && artifacts.artifacts.length === 23,
-  `artifacts array has 23 items (found ${artifacts.artifacts?.length || 0})`
+  artifacts.artifacts && artifacts.artifacts.length >= 23,
+  `artifacts array has at least 23 items (found ${artifacts.artifacts?.length || 0})`
 );
 
 // Verify each artifact
@@ -119,8 +119,9 @@ let existingFiles = 0;
 let missingFiles = 0;
 
 for (const artifact of artifacts.artifacts) {
-  const filePath = join(PUBLIC_DIR, artifact.href);
-  const exists = existsSync(filePath);
+  const isRemote = /^https?:\/\//.test(artifact.href);
+  const filePath = isRemote ? artifact.href : join(PUBLIC_DIR, artifact.href.replace(/^\//, ''));
+  const exists = isRemote || existsSync(filePath);
   
   if (exists) {
     existingFiles++;
@@ -132,8 +133,9 @@ for (const artifact of artifacts.artifacts) {
   
   // Check thumbnail if present
   if (artifact.thumbnail) {
-    const thumbPath = join(PUBLIC_DIR, artifact.thumbnail);
-    if (!existsSync(thumbPath)) {
+    const thumbIsRemote = /^https?:\/\//.test(artifact.thumbnail);
+    const thumbPath = thumbIsRemote ? artifact.thumbnail : join(PUBLIC_DIR, artifact.thumbnail.replace(/^\//, ''));
+    if (!thumbIsRemote && !existsSync(thumbPath)) {
       warnings.push(`⚠️  Missing thumbnail: ${artifact.thumbnail} for ${artifact.id}`);
     }
   }
@@ -141,18 +143,18 @@ for (const artifact of artifacts.artifacts) {
 
 assert(
   missingFiles === 0,
-  `All artifact files exist (${existingFiles}/23)`
+  `All artifact file references are resolvable (${existingFiles}/${artifacts.artifacts.length})`
 );
 
 // === TYPE COUNTS ===
 console.log('\n━━ Type Distribution ━━');
 const expectedTypes = {
   report: 3,
-  infographic: 3,
-  deck: 4,
-  audio: 3,
+  infographic: 6,
+  slideDeck: 4,
+  audio: 4,
   video: 2,
-  table: 3,
+  dataTable: 3,
   flashcard: 2,
   quiz: 2,
   mindMap: 1

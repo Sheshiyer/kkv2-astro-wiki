@@ -6,9 +6,10 @@ import { hasThDocs } from '../../../i18n/th-docs';
 
 export async function getStaticPaths() {
   const docs = await getCollection('docs');
+  const docsForGenericRoute = docs.filter((doc) => doc.slug !== 'index' && doc.slug !== 'research/notebooklm-artifacts');
   const locales = ['en', 'th'];
   return locales.flatMap((locale) =>
-    docs.map((doc) => ({
+    docsForGenericRoute.map((doc) => ({
       params: { locale, slug: doc.slug },
       props: { doc, locale },
     })),

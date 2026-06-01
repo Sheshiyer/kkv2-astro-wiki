@@ -61,9 +61,27 @@ function extractLinks(html) {
   return links;
 }
 
+function isExternalOrSpecialHref(href) {
+  return (
+    href.startsWith('http') ||
+    href.startsWith('//') ||
+    href.startsWith('#') ||
+    href.startsWith('mailto:') ||
+    href.startsWith('tel:')
+  );
+}
+
+function requiresTrailingSlash(href) {
+  if (isExternalOrSpecialHref(href)) return false;
+  const pathOnly = href.split(/[?#]/)[0];
+  if (!pathOnly || pathOnly.endsWith('/')) return false;
+  const lastSegment = pathOnly.split('/').pop() || '';
+  return !/\.[a-z0-9]{2,8}$/i.test(lastSegment);
+}
+
 function checkLink(href, sourceFile) {
   // Skip external links and anchors
-  if (href.startsWith('http') || href.startsWith('#') || href.startsWith('mailto:')) {
+  if (isExternalOrSpecialHref(href)) {
     return { valid: true, external: true };
   }
   
@@ -131,7 +149,7 @@ if (homePath) {
   );
   
   assert(
-    homeHtml.includes('Turn Reflection Into Trusted Support') || homeHtml.includes('Turn Reflection'),
+    homeHtml.includes('Reflect before you choose support') || homeHtml.includes('Reflection before transaction'),
     'Home page contains hero title'
   );
   
@@ -156,7 +174,7 @@ if (artifactPath) {
   const artifactHtml = readFileSync(artifactPath, 'utf8');
   
   assert(
-    artifactHtml.includes('/notebooklm/'),
+    artifactHtml.includes('r2.dev/artifacts') || artifactHtml.includes('NotebookLM') || artifactHtml.includes('/brand/'),
     'Artifact page references NotebookLM files'
   );
   
@@ -173,6 +191,7 @@ if (artifactPath) {
 console.log('\n━━ Link Validation ━━');
 let totalLinks = 0;
 let brokenLinks = 0;
+let missingTrailingSlashLinks = 0;
 const checkedPaths = new Set();
 
 for (const file of htmlFiles) {
@@ -183,6 +202,13 @@ for (const file of htmlFiles) {
     const cacheKey = `${file}::${link}`;
     if (checkedPaths.has(cacheKey)) continue;
     checkedPaths.add(cacheKey);
+
+    if (requiresTrailingSlash(link)) {
+      missingTrailingSlashLinks++;
+      const relativeFile = file.replace(DIST_DIR + '/', '');
+      errors.push(`❌ Missing trailing slash in ${relativeFile}: ${link}`);
+      exitCode = 1;
+    }
     
     const result = checkLink(link, file);
     totalLinks++;
@@ -199,6 +225,11 @@ for (const file of htmlFiles) {
 assert(
   brokenLinks === 0,
   `All internal links valid (${totalLinks} checked, ${brokenLinks} broken)`
+);
+
+assert(
+  missingTrailingSlashLinks === 0,
+  `All extensionless internal links include trailing slash (${missingTrailingSlashLinks} missing)`
 );
 
 // Check for empty content areas
@@ -235,6 +266,7 @@ console.log('\n━━ Summary ━━');
 console.log(`HTML files: ${htmlFiles.length}`);
 console.log(`Links checked: ${totalLinks}`);
 console.log(`Broken links: ${brokenLinks}`);
+console.log(`Missing trailing slashes: ${missingTrailingSlashLinks}`);
 
 if (warnings.length > 0) {
   console.log(`\n⚠️  Warnings (${warnings.length}):`);

@@ -1,0 +1,393 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import siteData from '../../../../data/site-data.json';
+import { localizedDocTitle, localizedPath, normalizeLocale, t } from '../../../../i18n';
+import { hasThDocs } from '../../../../i18n/th-docs';
+
+export async function getStaticPaths() {
+  return ['en', 'th'].map((locale) => ({
+    params: { locale },
+    props: { locale },
+  }));
+}
+
+const { locale: routeLocale } = Astro.props;
+const locale = normalizeLocale(routeLocale);
+const copy = t(locale);
+const docs = await getCollection('docs');
+const thDocs = locale === 'th' && hasThDocs ? await getCollection('thDocs') : [];
+const thDocsBySlug = new Map(thDocs.map((entry) => [entry.slug, entry]));
+const visibleDocs = docs
+  .filter((doc) => doc.slug !== 'index')
+  .map((doc) => {
+    const localized = locale === 'th' ? thDocsBySlug.get(doc.slug) : undefined;
+    return localized
+      ? { ...doc, data: { ...doc.data, ...localized.data } }
+      : doc;
+  });
+
+const categoryOrder = ['founder', 'product', 'brand', 'audience', 'market', 'marketing', 'press', 'tech', 'general'];
+const categoryCopy: Record<string, { label: string; summary: string; accent: string }> = {
+  founder: {
+    label: copy.categories.founder,
+    summary: 'Vision, business model, go-to-market, proof, and partner-facing decisions.',
+    accent: 'Strategy',
+  },
+  product: {
+    label: copy.categories.product,
+    summary: 'Mirror flow, seeker maps, practitioner handoff, and product specifications.',
+    accent: 'Experience',
+  },
+  brand: {
+    label: copy.categories.brand,
+    summary: 'Voice, tone, visual rules, assets, and the trust-field design language.',
+    accent: 'Identity',
+  },
+  audience: {
+    label: copy.categories.audience,
+    summary: 'Premium seeker personas, secondary segments, and contextual anxieties.',
+    accent: 'People',
+  },
+  market: {
+    label: 'Market',
+    summary: 'Competitive landscape and category gaps for reflection-first wellness commerce.',
+    accent: 'Landscape',
+  },
+  marketing: {
+    label: copy.categories.marketing,
+    summary: 'Campaign copy, email, social content, scripts, and launch creative.',
+    accent: 'Launch',
+  },
+  press: {
+    label: copy.categories.press,
+    summary: 'Press kit, public-facing proof boundaries, and approved story materials.',
+    accent: 'Public',
+  },
+  tech: {
+    label: copy.categories.tech,
+    summary: 'Static Astro architecture, source pipeline, routing, and deployment notes.',
+    accent: 'System',
+  },
+  general: {
+    label: copy.categories.general,
+    summary: 'Research hub and publishable NotebookLM artifacts from the latest run.',
+    accent: 'Research',
+  },
+};
+
+const grouped = new Map<string, typeof visibleDocs>();
+for (const doc of visibleDocs) {
+  const category = (doc.data.category || 'general').toString();
+  if (!grouped.has(category)) grouped.set(category, []);
+  grouped.get(category)?.push(doc);
+}
+
+for (const categoryDocs of grouped.values()) {
+  categoryDocs.sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999));
+}
+
+const categoryCards = [...grouped.entries()].sort(([a], [b]) => {
+  const ai = categoryOrder.indexOf(a);
+  const bi = categoryOrder.indexOf(b);
+  const aRank = ai === -1 ? 99 : ai;
+  const bRank = bi === -1 ? 99 : bi;
+  return aRank === bRank ? a.localeCompare(b) : aRank - bRank;
+});
+
+const totalDocs = visibleDocs.length;
+const sourceDocs = siteData.metrics.find((metric) => metric.label === 'Source docs')?.value || String(totalDocs);
+const artifactRecords = siteData.metrics.find((metric) => metric.label === 'Artifact records')?.value || '27';
+const featuredDocs = siteData.featuredDocs || [];
+---
+
+<BaseLayout
+  title="Launch Dossier Index"
+  description="A bento-style map of Klear Karma product, founder, brand, audience, campaign, research, and technical documentation."
+  locale={locale}
+>
+  <section class="docs-index">
+    <div class="docs-index__hero glass-panel">
+      <div>
+        <p class="docs-index__eyebrow">Launch Dossier</p>
+        <h1>Find the right Klear Karma source quickly.</h1>
+        <p>
+          Product truth, founder strategy, brand rules, launch copy, and research artifacts are grouped by how the team actually uses them.
+        </p>
+      </div>
+      <div class="docs-index__metrics" aria-label="Documentation inventory">
+        <span><strong>{sourceDocs}</strong> source docs</span>
+        <span><strong>{artifactRecords}</strong> artifacts</span>
+        <span><strong>{categoryCards.length}</strong> sections</span>
+      </div>
+    </div>
+
+    <div class="docs-index__featured">
+      {featuredDocs.map((doc, index) => (
+        <a class={`docs-feature docs-feature--${index + 1}`} href={localizedPath(locale, doc.href)}>
+          <span class="docs-feature__meta">{doc.eyebrow}</span>
+          <strong>{doc.title}</strong>
+          <p>{doc.description}</p>
+        </a>
+      ))}
+    </div>
+
+    <div class="docs-bento-grid">
+      {categoryCards.map(([category, categoryDocs], index) => {
+        const meta = categoryCopy[category] || {
+          label: category,
+          summary: 'Source-linked documentation for this launch area.',
+          accent: 'Source',
+        };
+        return (
+          <article class={`docs-bento-card docs-bento-card--${index % 4}`}>
+            <div class="docs-bento-card__top">
+              <span>{meta.accent}</span>
+              <strong>{categoryDocs.length}</strong>
+            </div>
+            <h2>{meta.label}</h2>
+            <p>{meta.summary}</p>
+            <ul>
+              {categoryDocs.slice(0, 5).map((doc) => (
+                <li>
+                  <a href={localizedPath(locale, `/docs/${doc.slug}`)}>
+                    {localizedDocTitle(locale, doc.slug, doc.data.title)}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            {categoryDocs.length > 5 && (
+              <a class="docs-bento-card__more" href={localizedPath(locale, `/docs/${categoryDocs[0].slug}`)}>
+                Review section
+              </a>
+            )}
+          </article>
+        );
+      })}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .docs-index {
+    display: grid;
+    gap: clamp(1.25rem, 2.4vw, 2rem);
+  }
+
+  .docs-index__hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 0.36fr);
+    gap: clamp(1.25rem, 3vw, 2.5rem);
+    align-items: end;
+    padding: clamp(1.35rem, 3vw, 2.4rem);
+    border-radius: var(--radius-xl);
+    background:
+      radial-gradient(circle at 92% 12%, color-mix(in srgb, var(--brand-accent) 17%, transparent), transparent 30%),
+      linear-gradient(145deg, rgba(43, 34, 63, 0.96), rgba(18, 14, 28, 0.96));
+  }
+
+  .docs-index__eyebrow,
+  .docs-feature__meta,
+  .docs-bento-card__top span {
+    color: var(--brand-accent);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  .docs-index h1 {
+    max-width: 12ch;
+    margin-top: var(--space-3);
+    font-size: clamp(2.45rem, 5.4vw, 4.9rem);
+    line-height: 0.96;
+    letter-spacing: -0.055em;
+  }
+
+  .docs-index__hero p {
+    max-width: 48rem;
+    margin: var(--space-4) 0 0;
+    color: var(--text-muted);
+    font-size: 1rem;
+  }
+
+  .docs-index__metrics {
+    display: grid;
+    gap: var(--space-2);
+  }
+
+  .docs-index__metrics span {
+    display: grid;
+    gap: 0.25rem;
+    padding: var(--space-3);
+    border: 1px solid var(--surface-border);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.045);
+    color: var(--text-soft);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .docs-index__metrics strong {
+    color: var(--text-strong);
+    font-family: var(--font-mono);
+    font-size: 1.7rem;
+    line-height: 1;
+  }
+
+  .docs-index__featured {
+    display: grid;
+    grid-template-columns: 1.25fr 0.85fr 0.85fr;
+    gap: var(--space-3);
+  }
+
+  .docs-feature {
+    display: grid;
+    min-height: 210px;
+    align-content: space-between;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    border: 1px solid var(--surface-border);
+    border-radius: var(--radius-lg);
+    background:
+      linear-gradient(145deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.028));
+    transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+  }
+
+  .docs-feature:hover,
+  .docs-bento-card:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--brand-accent) 42%, var(--surface-border));
+    background:
+      linear-gradient(145deg, rgba(255, 255, 255, 0.105), rgba(255, 255, 255, 0.036));
+  }
+
+  .docs-feature--1 {
+    grid-row: span 2;
+    min-height: 430px;
+    background:
+      radial-gradient(circle at 20% 12%, color-mix(in srgb, var(--brand-accent) 16%, transparent), transparent 32%),
+      linear-gradient(145deg, rgba(55, 43, 78, 0.92), rgba(22, 17, 34, 0.96));
+  }
+
+  .docs-feature strong {
+    display: block;
+    color: var(--text-strong);
+    font-size: clamp(1.35rem, 2.2vw, 2.2rem);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+  }
+
+  .docs-feature p {
+    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+
+  .docs-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: var(--space-3);
+  }
+
+  .docs-bento-card {
+    grid-column: span 3;
+    display: grid;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    border: 1px solid var(--surface-border);
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.045);
+    transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+  }
+
+  .docs-bento-card--0,
+  .docs-bento-card--3 {
+    grid-column: span 4;
+  }
+
+  .docs-bento-card--1,
+  .docs-bento-card--2 {
+    grid-column: span 2;
+  }
+
+  .docs-bento-card__top {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-3);
+    align-items: center;
+  }
+
+  .docs-bento-card__top strong {
+    color: var(--text-soft);
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+  }
+
+  .docs-bento-card h2 {
+    font-size: clamp(1.6rem, 2.7vw, 2.6rem);
+  }
+
+  .docs-bento-card p {
+    margin: 0;
+    color: var(--text-muted);
+  }
+
+  .docs-bento-card ul {
+    display: grid;
+    gap: 0.6rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .docs-bento-card li {
+    min-width: 0;
+  }
+
+  .docs-bento-card a {
+    color: var(--text-body);
+    text-decoration: none;
+  }
+
+  .docs-bento-card li a {
+    display: block;
+    padding: 0.72rem 0.85rem;
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .docs-bento-card li a:hover,
+  .docs-bento-card__more:hover {
+    color: var(--brand-accent);
+  }
+
+  .docs-bento-card__more {
+    color: var(--text-soft);
+    font-size: 0.82rem;
+    font-weight: 800;
+  }
+
+  @media (max-width: 1180px) {
+    .docs-index__hero,
+    .docs-index__featured,
+    .docs-bento-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .docs-feature,
+    .docs-feature--1,
+    .docs-bento-card,
+    .docs-bento-card--0,
+    .docs-bento-card--1,
+    .docs-bento-card--2,
+    .docs-bento-card--3 {
+      grid-column: auto;
+      grid-row: auto;
+      min-height: auto;
+    }
+  }
+</style>

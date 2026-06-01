@@ -1,51 +1,68 @@
 ---
 title: Visual Assets Library
-description: Curated library of generated visuals and surfaced NotebookLM infographics
-  for the latest launch run.
+description: Curated library of generated visuals and surfaced NotebookLM assets
+  for the latest landing-page build.
 category: brand
 tags:
 - brand
 - assets
 - gallery
-sources: []
-lastUpdated: '2026-05-29'
+sources:
+- notebooklm-sources/mobile-visuals
+- deliverables/notebooklm/artifacts
+lastUpdated: '2026-06-01'
 order: 3
 icon: ""
 ---
 
 # Visual Assets Library
 
-Curated visual library for the latest launch run.
+Curated visual library for the current Klear Karma landing page and wiki portal.
 
-## Brandmint Generated Visuals
+## Landing Page Assets
 
-_No generated visual assets were mapped for this run._
+### Mirror Onboarding Flow
+
+Six-panel app-native flow showing how Mirror moves from system intro to name, intention, birth timing, consent, and resonance-map generation.
+
+![Mirror Onboarding Flow](/brand/mirror-flow-v2.png)
+
+- **Type:** Product flow
+- **Use:** Landing hero and product overview context
+- **Source:** `notebooklm-sources/mobile-visuals/03-mirror-flow.png`
+- **Download:** [mirror-flow-v2.png](/brand/mirror-flow-v2.png)
+
+### Mirror Interaction Surface
+
+Four-panel app-native view showing symbolic retrieval, resonance map, insight detail, and consent-safe bridge to support.
+
+![Mirror Interaction Surface](/brand/mirror-interaction-v2.png)
+
+- **Type:** Product interaction
+- **Use:** Mechanism section and visual library
+- **Source:** `notebooklm-sources/mobile-visuals/04-mirror-interaction.png`
+- **Download:** [mirror-interaction-v2.png](/brand/mirror-interaction-v2.png)
+
+### Lotus Logo Source
+
+High-resolution lotus mark suitable for app badge, small identity moments, and controlled brand lockups.
+
+![Klear Karma Lotus Logo](/brand/klear-karma-lotus-logo.png)
+
+- **Type:** Brand mark
+- **Use:** Kicker mark and identity reference
+- **Source:** `notebooklm-sources/mobile-visuals/02-logo.png`
+- **Download:** [klear-karma-lotus-logo.png](/brand/klear-karma-lotus-logo.png)
 
 ## NotebookLM Infographics
 
-### Reflection Before Transaction
+### Brand Strategy Board
 
-Visual explanation of how Klear Karma's reflection-first architecture creates trust before commerce.
+Dark, source-bound visual map of the reflective trust field, positioning, product/service map, and content strategy.
 
-![Reflection Before Transaction](https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/artifacts/)
-
-- **Type:** Infographic
-- **Download:** [infographic-reflection.png](https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/artifacts/)
-
-### Brand Strategy Overview
-
-High-level visual mapping of brand positioning, target personas, and market differentiation strategy.
-
-![Brand Strategy Overview](https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/artifacts/)
+![Klear Karma Brand Strategy Board](/brand/klear-karma-brand-strategy.png)
 
 - **Type:** Infographic
-- **Download:** [infographic-brand-strategy.png](https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/artifacts/)
-
-### Spiritual Wellness Journey
-
-Visual representation of the complete user journey from first reflection to practitioner connection.
-
-![Spiritual Wellness Journey](https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/artifacts/)
-
-- **Type:** Infographic
-- **Download:** [infographic-wellness.png](https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/artifacts/)
+- **Use:** Asset library preview and brand strategy context
+- **Source:** `deliverables/notebooklm/artifacts/Klear-Karma-Brand-Strategy.png`
+- **Download:** [klear-karma-brand-strategy.png](/brand/klear-karma-brand-strategy.png)

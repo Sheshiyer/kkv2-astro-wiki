@@ -4,48 +4,48 @@
   "themeName": "Reflective Trust Field",
   "defaultTheme": "dark",
   "launchChannel": "organic",
-  "heroTitle": "The trust layer between seekers and practitioners.",
-  "heroSubtitle": "A tokenized reflection protocol that helps people articulate what they need before they choose who helps them.",
-  "heroDescription": "Klear Karma is not a directory. It is a consent-safe system of context handoff designed for the wellness space.",
+  "heroTitle": "Reflect before you choose support.",
+  "heroSubtitle": "Mirror turns lived context into tokenized intent and a consent-safe seeker map before any practitioner handoff.",
+  "heroDescription": "Klear Karma is a reflection-first trust layer for seekers, verified practitioners, and protocol-reviewed wellness commerce.",
   "heroPrimaryHref": "/docs/product/overview",
-  "heroSecondaryHref": "/docs/founder/vision",
+  "heroSecondaryHref": "/docs/research/notebooklm-artifacts",
   "docsHomeHref": "/docs/index",
-  "heroImage": "",
-  "heroImageAlt": "",
+  "heroImage": "/brand/mirror-flow-v2.png",
+  "heroImageAlt": "Klear Karma Mirror onboarding flow and product interface",
   "metrics": [
     {
-      "label": "Verified practitioners (target)",
-      "value": "4"
+      "label": "Free Mirror tokens",
+      "value": "369"
     },
     {
-      "label": "Artifact files",
-      "value": "42"
+      "label": "Opening flow",
+      "value": "~108"
     },
     {
-      "label": "Wiki pages",
-      "value": "60"
+      "label": "Artifact records",
+      "value": "27"
     },
     {
-      "label": "Token packages",
-      "value": "3"
+      "label": "Source docs",
+      "value": "26"
     }
   ],
   "launchFacts": [
     {
-      "label": "Phase",
-      "value": "Pre-launch / Verification"
-    },
-    {
-      "label": "Monthly burn",
-      "value": "$460 USD"
-    },
-    {
-      "label": "Build pipeline",
-      "value": "Source → Brandmint → NotebookLM → Wiki"
-    },
-    {
-      "label": "Primary market",
+      "label": "Beta market",
       "value": "Thailand → India"
+    },
+    {
+      "label": "Recharge anchors",
+      "value": "299 / 599 / 799 / 1099"
+    },
+    {
+      "label": "Primary proof",
+      "value": "Recharge after meaningful token use"
+    },
+    {
+      "label": "Context boundary",
+      "value": "Consent before practitioner handoff"
     }
   ],
   "storyPillars": [
@@ -86,25 +86,25 @@
   ],
   "visualHighlights": [
     {
-      "title": "Kindness Cipher",
-      "description": "Kindness is not sentiment. It is a cryptographic event limited by attention.",
-      "href": "/docs/founder/vision",
-      "image": "https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/brand/campaign-trust-1.jpg",
-      "eyebrow": "Founder"
-    },
-    {
-      "title": "Mirror Context Brand Kit",
-      "description": "Premium brand visual system with Mirror fields, lotus geometry, and trust seals.",
-      "href": "/docs/brand/visual-guidelines",
-      "image": "https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/brand/2A-mirror-context-brand-kit-reused-v1.png",
-      "eyebrow": "Brand System"
-    },
-    {
-      "title": "Marketplace Surface",
-      "description": "App screenshot showcasing the Mirror flow and practitioner browse experience.",
+      "title": "Mirror Onboarding Flow",
+      "description": "A six-step product view showing how reflection becomes a structured seeker map.",
       "href": "/docs/product/overview",
-      "image": "https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/brand/APP-SCREENSHOT-app-flow-reused-v1.jpg",
-      "eyebrow": "Product"
+      "image": "/brand/mirror-flow-v2.png",
+      "eyebrow": "Product Flow"
+    },
+    {
+      "title": "Mirror Interaction Surface",
+      "description": "The in-app reflection, resonance map, insight, and support-path interface.",
+      "href": "/docs/brand/visual-guidelines",
+      "image": "/brand/mirror-interaction-v2.png",
+      "eyebrow": "Interface"
+    },
+    {
+      "title": "Brand Strategy Board",
+      "description": "A dark, source-bound visual map of the trust field, positioning, and content system.",
+      "href": "/docs/brand/visual-assets",
+      "image": "/brand/klear-karma-brand-strategy.png",
+      "eyebrow": "Brand System"
     }
   ],
   "notebooklmHighlights": [

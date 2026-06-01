@@ -9,7 +9,8 @@ export async function getStaticPaths() {
 }
 
 const slug = Astro.params.slug;
-const target = Array.isArray(slug) ? `/en/docs/${slug.join('/')}` : `/en/docs/${slug}`;
+const slugPath = Array.isArray(slug) ? slug.join('/') : slug;
+const target = `/en/docs/${slugPath}/`;
 ---
 
 <html lang="en">

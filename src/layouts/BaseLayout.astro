@@ -1,12 +1,10 @@
 ---
 import Navigation from '../components/Navigation.astro';
-import PageTransitionController from '../components/PageTransitionController.astro';
 import PixelMediaLayer from '../components/PixelMediaLayer.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
 import Footer from '../components/Footer.astro';
 import SiteSearch from '../components/SiteSearch.astro';
 import LanguageToggle from '../components/LanguageToggle.astro';
-import WebGLBackground from '../components/WebGLBackground.astro';
 import siteData from '../data/site-data.json';
 import type { Locale } from '../i18n';
 import { localizedPath } from '../i18n';
@@ -18,9 +16,11 @@ interface Props {
   description?: string;
   locale: Locale;
   fullWidth?: boolean;
+  showFooter?: boolean;
 }
 
 const { title, description, locale, fullWidth = false } = Astro.props;
+const showFooter = Astro.props.showFooter ?? fullWidth;
 const palette = siteData.palette || {};
 ---
 
@@ -38,8 +38,8 @@ const palette = siteData.palette || {};
     <meta property="og:title" content={title} />
     {description && <meta property="og:description" content={description} />}
   </head>
-  <body class={`immersive-body ${fullWidth ? 'immersive-body--fullwidth' : ''}`}>
-    <WebGLBackground />
+  <body class={`immersive-body ${fullWidth ? 'immersive-body--fullwidth' : ''} ${showFooter ? 'immersive-body--with-footer' : 'immersive-body--no-footer'}`}>
+    <PixelMediaLayer />
     <div class="immersive-shell">
       <header class="immersive-topbar glass-panel">
         <a href={localizedPath(locale, '/')} class="brand-lockup">
@@ -50,31 +50,33 @@ const palette = siteData.palette || {};
           </span>
         </a>
 
-        <button class="hamburger" id="menu-toggle">
+        <button class="hamburger" id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false">
           <span class="line"></span>
         </button>
 
         <nav class="immersive-topbar__links">
           <a href={localizedPath(locale, '/')}>Home</a>
           <a href={localizedPath(locale, siteData.docsHomeHref)}>Docs</a>
-          <a href={localizedPath(locale, siteData.heroSecondaryHref || '/docs/research/notebooklm-artifacts')}">Artifacts</a>
+          <a href={localizedPath(locale, '/docs/research/notebooklm-artifacts')}>Artifacts</a>
         </nav>
       </header>
 
       {!fullWidth && (
         <aside class="immersive-sidebar" id="sidebar">
+          <div class="immersive-sidebar__search">
+            <SiteSearch locale={locale} />
+          </div>
           <Navigation locale={locale} />
         </aside>
       )}
 
       <main class="immersive-content">
         <div class="content-wrapper">
-          <SiteSearch locale={locale} />
           <slot />
         </div>
       </main>
 
-      <Footer locale={locale} />
+      {showFooter && <Footer locale={locale} />}
     </div>
 
     <ThemeToggle locale={locale} />
@@ -85,7 +87,8 @@ const palette = siteData.palette || {};
       const body = document.body;
 
       menuToggle?.addEventListener('click', () => {
-        body.classList.toggle('sidebar-open');
+        const isOpen = body.classList.toggle('sidebar-open');
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
       });
 
       // Close on link click
