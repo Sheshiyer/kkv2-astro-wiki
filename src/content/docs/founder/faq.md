@@ -11,7 +11,7 @@ tags:
 sources:
   - partner-intent.json
   - investor-questions.json
-lastUpdated: '2026-05-31'
+lastUpdated: '2026-06-02'
 order: 5
 icon: ''
 ---
@@ -29,8 +29,10 @@ Klear Karma enters at the moment when seekers are sophisticated enough to know t
 Three revenue streams:
 
 1. **Token micro-purchases** — Seekers buy Mirror tokens to access the reflection engine. Non-refundable, immediate revenue.
-2. **Marketplace commission** — 15% on every session booked. Lower than competitors (20–40%) because our value is the trust layer, not the booking mechanism.
-3. **Practitioner subscriptions** — Premium tiers (1,200–3,600 THB/month) for enhanced profiles, analytics, and priority in the recommendation flow.
+2. **Practitioner subscriptions** — Premium tiers (1,200–3,600 THB/month) for enhanced profiles, analytics, and priority in the recommendation flow.
+3. **Reviewed contextual commerce** — Profile-scoped product listings can carry revenue share only after trust and practitioner context are established.
+
+Klear Karma does **not** take a consultation commission in the current MVP or early-growth phase.
 
 Break-even is ~15 premium practitioners or 45 active seekers/month. Achievable within 90 days of launch.
 
@@ -47,8 +49,10 @@ Additionally, practitioner network effects compound: more quality practitioners 
 - **4 practitioners** in the verification queue (Thailand 2, India 2)
 - **12 practitioners** who expressed interest after reviewing the protocol
 - **1 advisory reviewer** (clinical psychologist, 15 years private practice)
-- **42 artifacts** generated from research (reports, infographics, audio, video, data tables)
-- **72-page wiki** with full design system, product spec, and founder docs
+- **27 hosted artifact records** generated from research (reports, infographics, audio, video, data tables)
+- **81 generated wiki pages** with full design system, product spec, and founder docs
+- **450,000 THB investment-ask share** identified as Shesh's investment ask share for equal partnership
+- **150,000 THB MVP development build** completed for the current product surface
 - **Pre-revenue, pre-launch**. The plane is built. The runway is clear.
 
 ## What is the go-to-market plan?
@@ -72,11 +76,29 @@ Additionally, practitioner network effects compound: more quality practitioners 
 
 ## Who is the team?
 
-Currently, this is a founder-led build. Shesh Narayan Iyer (Bangkok/India) leads product, brand, and protocol design. The build pipeline is automated — Brandmint and NotebookLM generate research artifacts, Astro builds the wiki, Vercel deploys it.
+Currently, this is a founder-led build. **Shesh Narayan Iyer** leads product, brand, protocol design, and build scope through **Thoughtseed Labs in India**.
+
+The current MVP implementation team is:
+
+- **2 frontend developers** — app and web interface implementation
+- **1 backend developer** — server/API/data-layer implementation for the MVP
+- **1 tester/QA** — functional testing, regression checks, and release readiness feedback
 
 Advisory input from:
 - Clinical psychologist, 15 years (Bangkok) — reviewing consent-safe handoff
 - Behavioral economist — reviewing token economics and incentive design
+
+## What does the 150,000 THB build budget cover?
+
+The **150,000 THB** figure is the total development build cost for the current MVP now in hand. It is the build cost for Shesh's Thoughtseed Labs team in India.
+
+It covers the current MVP build only: the implemented product surface, frontend work, backend work, QA/testing, and founder-led product direction.
+
+It does **not** include third-party service setup, signup or registration costs, analytics tooling, hosting, databases, payment gateways, KYC/payout providers, legal/compliance work, practitioner onboarding operations, paid marketing, or ongoing maintenance.
+
+## What is the 450,000 THB number?
+
+The **450,000 THB** figure is Shesh's share of the investment ask to make the partners equal. It is separate from the 150,000 THB current MVP build cost and should not be described as a company valuation.
 
 ## What do you need?
 

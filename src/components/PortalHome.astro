@@ -42,6 +42,8 @@ const visualHighlights = siteData.visualHighlights || [];
 const notebooklmHighlights = siteData.notebooklmHighlights || [];
 const storyPillars = siteData.storyPillars || [];
 const launchFacts = siteData.launchFacts || [];
+const brandMarkImage = siteData.brandMarkImage || siteData.heroImage;
+const mechanismImage = visualHighlights[1]?.image || siteData.heroImage;
 
 const pathCards = [
   {
@@ -97,7 +99,7 @@ const mechanismSteps = [
       <div class="immersive-hero__copy landing-hero__copy">
         <ScrollReveal>
           <div class="hero-kicker">
-            <img src="/brand/klear-karma-lotus-logo.png" alt="" aria-hidden="true" loading="eager" decoding="async" />
+            {brandMarkImage && <img src={brandMarkImage} alt="" aria-hidden="true" loading="eager" decoding="async" />}
             <span>{siteData.themeName}</span>
             <span>{siteData.launchChannel}</span>
           </div>
@@ -137,7 +139,7 @@ const mechanismSteps = [
               <span>Mirror flow</span>
               <span>Consent-safe beta</span>
             </div>
-            <img src={siteData.heroImage || '/brand/mirror-flow-v2.png'} alt={siteData.heroImageAlt || 'Klear Karma Mirror flow'} loading="eager" decoding="async" />
+            <img src={siteData.heroImage} alt={siteData.heroImageAlt || 'Klear Karma Mirror flow'} loading="eager" decoding="async" />
             <div class="hero-product-card__caption">
               <strong>Reflection before transaction</strong>
               <span>App-native Mirror, token intent, and practitioner handoff in one controlled loop.</span>
@@ -172,7 +174,7 @@ const mechanismSteps = [
       <div class="mechanism-grid">
         <ScrollReveal>
           <figure class="mechanism-media glass-panel">
-            <img src="/brand/mirror-interaction-v2.png" alt="Klear Karma Mirror interaction surfaces" loading="lazy" decoding="async" />
+            <img src={mechanismImage} alt="Klear Karma Mirror interaction surfaces" loading="lazy" decoding="async" />
           </figure>
         </ScrollReveal>
         <div class="mechanism-list">
@@ -272,7 +274,7 @@ const mechanismSteps = [
           <header class="section-header">
             <span class="eyebrow">Visual Library</span>
             <h2>Product and brand assets now driving the page</h2>
-            <p class="section-lead">These are project-local assets, selected from the current Klear Karma brand and NotebookLM source material.</p>
+            <p class="section-lead">These are hosted source-of-truth assets from the configured Klear Karma R2 bucket.</p>
           </header>
         </ScrollReveal>
         

@@ -1,12 +1,14 @@
 # Klear Karma Astro Wiki Frontend Recovery Implementation Plan
 
+> **Status update (2026-06-01):** The local `public/notebooklm/` asset approach is retired. Active media and NotebookLM downloads are hosted from the configured Cloudflare R2 bucket and referenced through `src/data/site-data.json` and `src/data/artifacts.json`.
+
 > **For Codex:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task.
 
 **Goal:** Fix the standalone Klear Karma Astro wiki so the generated source documents, NotebookLM artifacts, media files, and ingestion-system narrative are visible, navigable, and visually aligned with a durable design system.
 
 **Architecture:** Keep the standalone Astro repo as the deployable site, but treat generated data as an explicit content contract instead of implicit decorative JSON. Create a `DESIGN.md`, normalize artifact/media data, replace the oversized doc hero with content-first layouts, and add verification that every linked file and image resolves before shipping.
 
-**Tech Stack:** Astro 5, Astro content collections, static assets in `public/notebooklm`, CSS custom properties, no new runtime framework dependency unless explicitly justified.
+**Tech Stack:** Astro 5, Astro content collections, hosted artifact assets in Cloudflare R2, CSS custom properties, no new runtime framework dependency unless explicitly justified.
 
 ---
 
@@ -24,7 +26,7 @@
 
 ## Current Diagnosis
 
-- Files are present in `public/notebooklm/`, including PNG, PDF, MP3, MP4, CSV, JSON, and Markdown artifacts.
+- Files are listed in `src/data/artifacts.json` and hosted from Cloudflare R2, including PNG, PDF, MP3, MP4, CSV, JSON, and Markdown artifacts.
 - `src/data/site-data.json` has `heroImage: ""`, `heroImageAlt: ""`, `metrics[1].value: "0"` for visual assets, and only one `visualHighlights` entry.
 - The page in the screenshot is the French route, so the nav/content labels are translated, but the actual Markdown content is far below the enormous title because `DocLayout.astro` renders a giant hero before the document body.
 - Background imagery is poor because `PixelMediaLayer.astro` blindly reuses the same NotebookLM infographic as ambient decorative texture rather than selecting intentional brand/media assets.
@@ -83,7 +85,7 @@
 - `heroTitle`, `heroSubtitle`, and `storyPillars` are non-empty.
 - `notebooklmHighlights.length >= 4`.
 - `visualHighlights.length >= 3`.
-- Every `downloadHref` under `/notebooklm/` exists in `public/notebooklm/`.
+- Every `downloadHref` uses the configured Cloudflare R2 base URL.
 - Every `image` path exists if non-empty.
 
 **Verification:** Run `bun run verify:data`; expected initial result may fail until later steps populate image/media data.
@@ -94,7 +96,7 @@
 - Create: `scripts/smoke-routes.mjs`
 - Modify: `package.json`
 
-**Action:** Add a build-output verifier that checks generated `dist` HTML includes body content, artifact download links, image references, and no broken `/notebooklm/` URLs.
+**Action:** Add a build-output verifier that checks generated `dist` HTML includes body content, artifact download links, image references, and no legacy local `/notebooklm/` URLs.
 
 **Verification:** `bun run build && bun run verify:routes` passes only when files and content are actually surfaced.
 
@@ -127,7 +129,7 @@
 - quizzes: 2
 - mind map: 1
 
-**Verification:** `artifacts.json` has exactly 23 entries and every `href` points to an existing `public/notebooklm` file.
+**Verification:** `artifacts.json` has the expected hosted artifact entries and every `href` points to the configured R2 bucket.
 
 ### Step 8: Create Artifact Browser Components
 
@@ -283,7 +285,7 @@ bun run verify:routes
 bun run preview --host 0.0.0.0
 ```
 
-**Verification:** All commands pass; preview routes return 200 for `/en/`, `/en/docs/research/notebooklm-artifacts/`, `/en/docs/product/overview/`, and direct `/notebooklm/*` assets.
+**Verification:** All commands pass; preview routes return 200 for `/en/`, `/en/docs/research/notebooklm-artifacts/`, and `/en/docs/product/overview/`; artifact media resolves from R2.
 
 ### Step 19: Commit and Push the Fixed Standalone Repo
 
@@ -333,7 +335,7 @@ git diff --check
 
 - The first viewport explains Klear Karma and the source-to-artifact ingestion system.
 - `/en/docs/research/notebooklm-artifacts/` visibly surfaces all 23 artifacts.
-- Every file link under `/notebooklm/` resolves locally and after build.
+- Every artifact file link resolves from the configured R2 bucket after build.
 - Background treatment is abstract and premium, not repeated screenshots/infographics.
 - `DESIGN.md` exists and is referenced by `AGENTS.md`.
 - No component uses emoji as UI icons.

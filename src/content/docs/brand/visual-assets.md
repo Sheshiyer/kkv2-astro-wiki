@@ -1,15 +1,15 @@
 ---
 title: Visual Assets Library
-description: Curated library of generated visuals and surfaced NotebookLM assets
-  for the latest landing-page build.
+description: Curated library of hosted brand and artifact visuals for the latest
+  landing-page build.
 category: brand
 tags:
 - brand
 - assets
 - gallery
 sources:
-- notebooklm-sources/mobile-visuals
-- deliverables/notebooklm/artifacts
+- https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/brand/
+- https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/artifacts/
 lastUpdated: '2026-06-01'
 order: 3
 icon: ""
@@ -17,7 +17,7 @@ icon: ""
 
 # Visual Assets Library
 
-Curated visual library for the current Klear Karma landing page and wiki portal.
+Curated visual library for the current Klear Karma landing page and wiki portal. Active assets are hosted in the configured Cloudflare R2 bucket; old local NotebookLM copies are intentionally not used by the site.
 
 ## Landing Page Assets
 
@@ -25,34 +25,34 @@ Curated visual library for the current Klear Karma landing page and wiki portal.
 
 Six-panel app-native flow showing how Mirror moves from system intro to name, intention, birth timing, consent, and resonance-map generation.
 
-![Mirror Onboarding Flow](/brand/mirror-flow-v2.png)
+![Mirror Onboarding Flow](https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/brand/APP-SCREENSHOT-app-flow-reused-v1.jpg)
 
 - **Type:** Product flow
 - **Use:** Landing hero and product overview context
-- **Source:** `notebooklm-sources/mobile-visuals/03-mirror-flow.png`
-- **Download:** [mirror-flow-v2.png](/brand/mirror-flow-v2.png)
+- **Source:** Hosted brand bucket
+- **Download:** [APP-SCREENSHOT-app-flow-reused-v1.jpg](https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/brand/APP-SCREENSHOT-app-flow-reused-v1.jpg)
 
 ### Mirror Interaction Surface
 
 Four-panel app-native view showing symbolic retrieval, resonance map, insight detail, and consent-safe bridge to support.
 
-![Mirror Interaction Surface](/brand/mirror-interaction-v2.png)
+![Mirror Interaction Surface](https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/brand/3B-mirror-hero-product-reused-v1.png)
 
 - **Type:** Product interaction
 - **Use:** Mechanism section and visual library
-- **Source:** `notebooklm-sources/mobile-visuals/04-mirror-interaction.png`
-- **Download:** [mirror-interaction-v2.png](/brand/mirror-interaction-v2.png)
+- **Source:** Hosted brand bucket
+- **Download:** [3B-mirror-hero-product-reused-v1.png](https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/brand/3B-mirror-hero-product-reused-v1.png)
 
 ### Lotus Logo Source
 
 High-resolution lotus mark suitable for app badge, small identity moments, and controlled brand lockups.
 
-![Klear Karma Lotus Logo](/brand/klear-karma-lotus-logo.png)
+![Klear Karma Lotus Logo](https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/brand/2C-mirror-logo-splash-reused-v1.png)
 
 - **Type:** Brand mark
 - **Use:** Kicker mark and identity reference
-- **Source:** `notebooklm-sources/mobile-visuals/02-logo.png`
-- **Download:** [klear-karma-lotus-logo.png](/brand/klear-karma-lotus-logo.png)
+- **Source:** Hosted brand bucket
+- **Download:** [2C-mirror-logo-splash-reused-v1.png](https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/brand/2C-mirror-logo-splash-reused-v1.png)
 
 ## NotebookLM Infographics
 
@@ -60,9 +60,9 @@ High-resolution lotus mark suitable for app badge, small identity moments, and c
 
 Dark, source-bound visual map of the reflective trust field, positioning, product/service map, and content strategy.
 
-![Klear Karma Brand Strategy Board](/brand/klear-karma-brand-strategy.png)
+![Klear Karma Brand Kit](https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/brand/2A-mirror-context-brand-kit-reused-v1.png)
 
 - **Type:** Infographic
 - **Use:** Asset library preview and brand strategy context
-- **Source:** `deliverables/notebooklm/artifacts/Klear-Karma-Brand-Strategy.png`
-- **Download:** [klear-karma-brand-strategy.png](/brand/klear-karma-brand-strategy.png)
+- **Source:** Hosted brand bucket
+- **Download:** [2A-mirror-context-brand-kit-reused-v1.png](https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/brand/2A-mirror-context-brand-kit-reused-v1.png)

@@ -27,8 +27,8 @@ icon: ""
 **Brand Thesis: The Reflective Steward**
 Klear Karma is not a directory; it is a tokenized trust-and-guidance layer for seekers and verified practitioners. We operate under the "Reflective Steward" archetype—a philosophy prioritizing the protection of seeker context over the friction of transaction. In an industry where most platforms force users to browse before they are understood, Klear Karma provides a structured, consent-safe environment that ensures a seeker feels reflected before they are sold to. The marketplace itself is merely the fulfillment layer; our core competitive moat is the creation of trust liquidity.
 
-**Commercial Logic & Valuation**
-The current product valuation is established at **450,000 THB**. Revenue generation is tied to "paid activation"—the point at which a user recharges their token balance after experiencing the utility of the Mirror interface. 
+**Commercial Logic & Build Scope**
+Shesh's share of the investment ask is **450,000 THB**. This is the investment ask share for equal partnership used to make the partners equal, not a company valuation. The current MVP development build cost is **150,000 THB** for Shesh Narayan Iyer's Thoughtseed Labs team in India. This covers the MVP now in hand only; third-party services, signup and registration costs, analytics, hosting, payment/KYC providers, service-provider fees, legal/compliance work, and ongoing operations must be budgeted separately. Revenue generation is tied to "paid activation"—the point at which a user recharges their token balance after experiencing the utility of the Mirror interface.
 
 **Investor Milestone & Launch Scope**
 Our beachhead strategy targets the high-permission markets of Thailand (premium island ecosystems) and India (founder and urban networks). The primary strategic objective is to demonstrate **Trust Liquidity** by achieving 1,000 paid-activated users, resulting in an investor milestone target of **600,000–700,000 THB ARR**.

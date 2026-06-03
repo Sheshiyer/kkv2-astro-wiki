@@ -11,7 +11,7 @@ tags:
 sources:
   - brand-assets.json
   - founder-bio.json
-lastUpdated: '2026-05-31'
+lastUpdated: '2026-06-02'
 order: 1
 icon: ''
 ---
@@ -43,11 +43,13 @@ He is based between Bangkok and India, works primarily in English, and is active
 | **Founded** | 2026 |
 | **Stage** | Pre-launch, verification cohort building |
 | **Markets** | Thailand (primary), India (secondary) |
-| **Team** | Founder-led, advisory board forming |
+| **Team** | Shesh Narayan Iyer leading Thoughtseed Labs India: 2 frontend developers, 1 backend developer, and 1 tester |
 | **Revenue** | Pre-revenue |
-| **Burn** | ~$460 USD/month |
+| **Investment Ask Share** | 450,000 THB as Shesh's share of the investment ask for equal partnership |
+| **MVP Build Cost** | 150,000 THB for current MVP development by Shesh's Thoughtseed Labs team in India |
+| **Excluded Costs** | Third-party services, registration, analytics, hosting, payment/KYC providers, legal/compliance, operations |
 | **Tech** | Astro 5, Vercel, Cloudflare R2 |
-| **Content** | 72 wiki pages, 42 artifacts, full design system |
+| **Content** | 81 generated pages, 27 hosted artifact records, full design system |
 
 ## Brand Assets
 

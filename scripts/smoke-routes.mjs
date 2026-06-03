@@ -154,8 +154,13 @@ if (homePath) {
   );
   
   assert(
-    homeHtml.includes('/notebooklm/') || homeHtml.includes('notebooklm-artifacts'),
+    homeHtml.includes('notebooklm-artifacts') && homeHtml.includes('r2.dev/brand/'),
     'Home page references NotebookLM artifacts'
+  );
+
+  assert(
+    !homeHtml.includes('src="/brand/') && !homeHtml.includes('src="/images/') && !homeHtml.includes('src="/notebooklm/'),
+    'Home page does not render legacy local media paths'
   );
   
   assert(
@@ -174,8 +179,13 @@ if (artifactPath) {
   const artifactHtml = readFileSync(artifactPath, 'utf8');
   
   assert(
-    artifactHtml.includes('r2.dev/artifacts') || artifactHtml.includes('NotebookLM') || artifactHtml.includes('/brand/'),
-    'Artifact page references NotebookLM files'
+    artifactHtml.includes('r2.dev/artifacts'),
+    'Artifact page references hosted NotebookLM files'
+  );
+
+  assert(
+    !artifactHtml.includes('r2.dev/artifacts/\u0001') && !artifactHtml.includes('src="/notebooklm/') && !artifactHtml.includes('href="/notebooklm/'),
+    'Artifact page has no legacy or malformed NotebookLM media paths'
   );
   
   assert(

@@ -80,7 +80,7 @@ The current wiki answers #2 partially, #3 weakly, and #1 not at all above the fo
 | Study Guide | `src/content/docs/research/report-study-guide.md` | 1,334 | Comprehensive |
 | Competitive Landscape | `src/content/docs/market/competitive-landscape.md` | 501 | Thin — needs moat analysis |
 | NotebookLM Artifacts | `src/content/docs/research/notebooklm-artifacts.md` | 601 | List, not story |
-| 23 Generated Artifacts | `public/notebooklm/` | — | Strong but unstructured |
+| 27 Generated Artifacts | Cloudflare R2 bucket via `src/data/artifacts.json` | — | Strong, now structured through hosted artifact records |
 
 ### What's Missing (Critical)
 
@@ -121,8 +121,8 @@ The current wiki answers #2 partially, #3 weakly, and #1 not at all above the fo
 **Purpose:** Show how the company makes money and why it's sustainable.
 
 **Structure:**
-1. Revenue streams (token fees, practitioner premium, marketplace commission)
-2. Cost structure (hosting, verification, content generation)
+1. Revenue streams (token fees, practitioner premium, reviewed contextual commerce)
+2. Cost structure (450,000 THB Shesh investment ask share for equal partnership, 150,000 THB current MVP build cost, plus separately budgeted hosting, registration, analytics, verification, and provider fees)
 3. Unit economics (lifetime value of seeker vs. cost of acquisition)
 4. Growth levers (network effects, data moat, brand gravity)
 5. Milestones (0-6 months, 6-12 months, 12-24 months)

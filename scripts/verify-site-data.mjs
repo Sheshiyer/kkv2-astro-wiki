@@ -13,10 +13,13 @@ import { join } from 'path';
 
 const DATA_DIR = 'src/data';
 const PUBLIC_DIR = 'public';
+const R2_BASE = 'https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev';
+const LEGACY_LOCAL_ASSET_PREFIXES = ['/brand/', '/images/', '/notebooklm/'];
 
 let exitCode = 0;
 const errors = [];
 const warnings = [];
+let passedChecks = 0;
 
 function assert(condition, message, isWarning = false) {
   if (!condition) {
@@ -28,7 +31,30 @@ function assert(condition, message, isWarning = false) {
     }
   } else {
     console.log(`✅ ${message}`);
+    passedChecks++;
   }
+}
+
+function isR2Url(value) {
+  return typeof value === 'string' && value.startsWith(`${R2_BASE}/`);
+}
+
+function isLegacyLocalAsset(value) {
+  return typeof value === 'string' && LEGACY_LOCAL_ASSET_PREFIXES.some((prefix) => value.startsWith(prefix));
+}
+
+function assertHostedAsset(value, label, isWarning = false) {
+  assert(
+    !isLegacyLocalAsset(value),
+    `${label} does not use legacy local asset paths`,
+    isWarning
+  );
+
+  assert(
+    isR2Url(value),
+    `${label} is hosted on configured R2 bucket`,
+    isWarning
+  );
 }
 
 console.log('🔍 Verifying site data contract...\n');
@@ -101,6 +127,27 @@ if (artifactMetric) {
   );
 }
 
+console.log('\n━━ Hosted Asset Checks ━━');
+
+assertHostedAsset(siteData.brandMarkImage, 'brandMarkImage');
+assertHostedAsset(siteData.heroImage, 'heroImage');
+
+for (const [index, item] of (siteData.visualHighlights || []).entries()) {
+  if (item.image) {
+    assertHostedAsset(item.image, `visualHighlights[${index}].image`);
+  }
+}
+
+for (const [index, item] of (siteData.notebooklmHighlights || []).entries()) {
+  if (item.image) {
+    assertHostedAsset(item.image, `notebooklmHighlights[${index}].image`);
+  }
+
+  if (item.downloadHref) {
+    assertHostedAsset(item.downloadHref, `notebooklmHighlights[${index}].downloadHref`);
+  }
+}
+
 // === ARTIFACT CHECKS ===
 console.log('\n━━ Artifact Checks ━━');
 
@@ -122,6 +169,8 @@ for (const artifact of artifacts.artifacts) {
   const isRemote = /^https?:\/\//.test(artifact.href);
   const filePath = isRemote ? artifact.href : join(PUBLIC_DIR, artifact.href.replace(/^\//, ''));
   const exists = isRemote || existsSync(filePath);
+
+  assertHostedAsset(artifact.href, `artifact ${artifact.id} href`);
   
   if (exists) {
     existingFiles++;
@@ -135,6 +184,7 @@ for (const artifact of artifacts.artifacts) {
   if (artifact.thumbnail) {
     const thumbIsRemote = /^https?:\/\//.test(artifact.thumbnail);
     const thumbPath = thumbIsRemote ? artifact.thumbnail : join(PUBLIC_DIR, artifact.thumbnail.replace(/^\//, ''));
+    assertHostedAsset(artifact.thumbnail, `artifact ${artifact.id} thumbnail`, true);
     if (!thumbIsRemote && !existsSync(thumbPath)) {
       warnings.push(`⚠️  Missing thumbnail: ${artifact.thumbnail} for ${artifact.id}`);
     }
@@ -170,7 +220,7 @@ for (const [type, expected] of Object.entries(expectedTypes)) {
 
 // === SUMMARY ===
 console.log('\n━━ Summary ━━');
-console.log(`Total checks passed: ${23 - errors.length - warnings.length}`);
+console.log(`Total checks passed: ${passedChecks}`);
 
 if (warnings.length > 0) {
   console.log(`\n⚠️  Warnings (${warnings.length}):`);

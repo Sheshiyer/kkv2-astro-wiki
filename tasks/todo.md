@@ -1,5 +1,55 @@
 # Klear Karma Landing V2 Plan
 
+## MVP Build Cost, Team, And Scope Correction
+
+Date: 2026-06-02
+Scope: Correct founder-facing numbers so Shesh's equal-partner investment ask share, current MVP build cost, excluded launch/provider costs, and implementation team are represented accurately.
+
+- [x] Locate stale cost/team/scope statements across founder, research, architecture, press, and index docs.
+- [x] Reclassify 450,000 THB as Shesh's share of the investment ask to make the partners equal, not company valuation.
+- [x] Update Business Model to show the 150,000 THB current MVP development build cost.
+- [x] Clarify that 150,000 THB is the current MVP build cost for Shesh's Thoughtseed Labs team in India.
+- [x] Clarify that the 150,000 THB build does not include third-party services, signup/registration, analytics, hosting, payment/KYC providers, legal/compliance, operations, marketing, or maintenance.
+- [x] Update team copy to: Shesh Narayan Iyer leading Thoughtseed Labs India: 2 frontend developers, 1 backend developer, and 1 tester.
+- [x] Replace stale 450,000 THB valuation wording and old 72-page/42-artifact summary claims in active docs.
+- [x] Run `bun run verify:data`, `bun run build`, and `bun run verify:routes`.
+
+### Results
+
+- Founder Business Model now frames 450,000 THB as Shesh's equal-partner investment ask share and 150,000 THB as the current MVP development build cost only.
+- Partner FAQ, Launch Dossier Index, Press Kit, Architecture, and research briefing/study-guide docs now use the same build-cost and team model.
+- Stale public claims for 450,000 THB as valuation, 72-page wiki summary, 42 artifacts, 15% consultation commission, and single-person team were removed from active source docs.
+- `bun run verify:data` passed.
+- `bun run build` passed cleanly after clearing `.astro` and `node_modules/.astro`.
+- `bun run verify:routes` passed: 81 HTML files, 2,457 links checked, 0 broken links, 0 missing trailing slashes.
+
+## R2-Only NotebookLM Asset Cleanup
+
+Date: 2026-06-01
+Scope: Remove stale local NotebookLM/public resource copies and keep the active site wired to the configured Cloudflare R2 bucket.
+
+- [x] Confirm active editable git repo is `kkv2-wiki-v2/wiki-site`, not archived `kkv2-wiki`.
+- [x] Inventory active local media references in `src/data/site-data.json`, `src/components/PortalHome.astro`, and brand asset docs.
+- [x] Identify configured hosted asset base: `https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev`.
+- [x] Replace active landing/visual-library image references with hosted R2 URLs.
+- [x] Rewrite the visual asset library so it references hosted R2 assets instead of `notebooklm-sources/`, `deliverables/notebooklm/`, or `/brand/`.
+- [x] Harden data verification so landing, visual, and artifact media cannot drift back to local NotebookLM paths.
+- [x] Remove stale local public media folders from `wiki-site/public/`.
+- [x] Remove obsolete parent-level NotebookLM generated/source folders after active references are gone.
+- [x] Run `bun run verify:data`, `bun run build`, and `bun run verify:routes`.
+- [x] Confirm no active source references remain for `/notebooklm/`, `/brand/`, `/images/`, `notebooklm-sources`, or `deliverables/notebooklm` outside historical task notes and validator guard strings.
+
+### Results
+
+- Active landing media now uses hosted R2 URLs for the brand mark, hero image, visual library cards, and NotebookLM highlights.
+- Removed `wiki-site/public/brand/` and `wiki-site/public/images/`; `public/` now only contains `logo.png` and `robots.txt`.
+- Removed parent-level stale NotebookLM resource folders: `notebooklm-sources/`, `deliverables/notebooklm/`, and `wiki-output/`.
+- Removed obsolete parent-level local artifact generation scripts that targeted the old local NotebookLM flow.
+- Removed obsolete `scripts/r2-replace-assets.*`; the durable protection is now in `bun run verify:data` and `bun run verify:routes`.
+- `bun run verify:data` passed with R2-only hosted asset checks.
+- `bun run build` passed after clearing stale `.astro` cache.
+- `bun run verify:routes` passed: 81 HTML files, 2,447 links checked, 0 broken links, 0 missing trailing slashes.
+
 Date: 2026-05-31
 Scope: Review brand docs, copy, current assets, and implement a stronger landing page version for the Astro wiki.
 

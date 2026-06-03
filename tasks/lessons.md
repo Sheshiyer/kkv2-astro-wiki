@@ -30,3 +30,16 @@
 - On inside documentation pages, render global search inside the sidebar/navigation rail instead of above the main document slot.
 - Search should not interrupt the document hero or content panel; keep it visually grouped with discovery controls.
 - Add layout-specific styling for reused controls when their placement changes, rather than relying on the component's generic max-width.
+
+## 2026-06-01: Treat R2 As The NotebookLM Asset Source Of Truth
+
+- Do not copy NotebookLM outputs into `public/brand/`, `public/images/`, or `public/notebooklm/` when the configured Cloudflare R2 bucket already hosts the active assets.
+- Active landing and artifact data should reference `https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev` directly, so stale generated folders cannot be mistaken for source truth.
+- When cleaning Klear Karma wiki assets, remove or clearly retire local NotebookLM source/output folders after verifying the Astro data and docs no longer depend on them.
+
+## 2026-06-02: Separate MVP Build Cost From Launch Operating Costs
+
+- Treat 450,000 THB as Shesh's share of the investment ask to make the partners equal; do not call it company valuation.
+- Treat 150,000 THB as the current MVP development build cost for Shesh's Thoughtseed Labs team in India only, not as the all-in launch budget or monthly burn.
+- Always list excluded costs explicitly: third-party services, signup/registration, analytics, hosting, payment/KYC providers, legal/compliance, operations, marketing, and maintenance.
+- Team copy should say Shesh Narayan Iyer leads Thoughtseed Labs India with 2 frontend developers, 1 backend developer, and 1 tester unless the user gives a newer staffing model.

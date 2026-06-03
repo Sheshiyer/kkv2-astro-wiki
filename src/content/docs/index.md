@@ -7,7 +7,7 @@ tags:
 - launch
 - docs
 sources: []
-lastUpdated: '2026-05-31'
+lastUpdated: '2026-06-02'
 order: 1
 icon: ""
 ---
@@ -21,13 +21,17 @@ This dossier index summarizes the latest founder-ready MVP build.
 - **Brand:** Klear Karma
 - **Tagline:** Mirror-guided trust for seekers and verified practitioners.
 - **Phase:** Pre-launch, verification cohort building.
+- **Investment ask share:** 450,000 THB as Shesh's share of the investment ask for equal partnership.
+- **MVP development build cost:** 150,000 THB for the current MVP only, delivered by Shesh's Thoughtseed Labs team in India.
+- **Build scope boundary:** third-party services, signup/registration, analytics, hosting, payment/KYC providers, legal/compliance, operations, and ongoing maintenance are excluded.
+- **Build team:** Shesh Narayan Iyer leads Thoughtseed Labs India: 2 frontend developers, 1 backend developer, and 1 tester.
 - **Founder docs:** 4
 - **Product docs:** 3
 - **Brand docs:** 3
 - **Audience docs:** 3
 - **Marketing docs:** 5
 - **Research artifacts:** 27
-- **Artifact files (total library):** 42
+- **Hosted artifact records:** 27
 
 ## Primary Sections
 

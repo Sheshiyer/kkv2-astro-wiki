@@ -10,8 +10,10 @@
   "heroPrimaryHref": "/docs/product/overview",
   "heroSecondaryHref": "/docs/research/notebooklm-artifacts",
   "docsHomeHref": "/docs/index",
-  "heroImage": "/brand/mirror-flow-v2.png",
-  "heroImageAlt": "Klear Karma Mirror onboarding flow and product interface",
+  "brandMarkImage": "https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/brand/2C-mirror-logo-splash-reused-v1.png",
+  "brandMarkImageAlt": "Klear Karma lotus mirror mark",
+  "heroImage": "https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/brand/APP-SCREENSHOT-app-flow-reused-v1.jpg",
+  "heroImageAlt": "Klear Karma Mirror app flow hosted on the brand asset bucket",
   "metrics": [
     {
       "label": "Free Mirror tokens",
@@ -71,7 +73,7 @@
     },
     {
       "title": "Business Model",
-      "description": "Three-stream revenue model, unit economics, cost structure, and break-even projection.",
+      "description": "Revenue model, 450,000 THB investment ask share for equal partnership, 150,000 THB MVP build cost, and excluded provider costs.",
       "href": "/docs/founder/business-model",
       "icon": "",
       "eyebrow": "Strategy"
@@ -89,21 +91,21 @@
       "title": "Mirror Onboarding Flow",
       "description": "A six-step product view showing how reflection becomes a structured seeker map.",
       "href": "/docs/product/overview",
-      "image": "/brand/mirror-flow-v2.png",
+      "image": "https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/brand/APP-SCREENSHOT-app-flow-reused-v1.jpg",
       "eyebrow": "Product Flow"
     },
     {
       "title": "Mirror Interaction Surface",
       "description": "The in-app reflection, resonance map, insight, and support-path interface.",
       "href": "/docs/brand/visual-guidelines",
-      "image": "/brand/mirror-interaction-v2.png",
+      "image": "https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/brand/3B-mirror-hero-product-reused-v1.png",
       "eyebrow": "Interface"
     },
     {
       "title": "Brand Strategy Board",
       "description": "A dark, source-bound visual map of the trust field, positioning, and content system.",
       "href": "/docs/brand/visual-assets",
-      "image": "/brand/klear-karma-brand-strategy.png",
+      "image": "https://pub-dba2c40f6183450a9bfc05eeb62b7837.r2.dev/brand/2A-mirror-context-brand-kit-reused-v1.png",
       "eyebrow": "Brand System"
     }
   ],

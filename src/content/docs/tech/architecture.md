@@ -55,8 +55,8 @@ Vercel Edge (global CDN)
 
 - **`src/content/docs/`** — Markdown documents with YAML frontmatter
 - **`src/data/`** — JSON data contracts (site metadata, artifact inventory)
-- **`public/`** — Static assets (logo, hero-bg, small images)
-- **`public/notebooklm/`** — Heavy artifacts (backed by R2)
+- **`public/`** — Static assets that must ship with the Astro build, currently limited to the local logo and crawler files
+- **Cloudflare R2 bucket** — Heavy brand media and NotebookLM artifacts linked from `site-data.json` and `artifacts.json`
 
 ## Build Pipeline
 
@@ -121,8 +121,17 @@ vercel deploy --prod --scope sheshiyers-projects
 ## Scalability
 
 ### Current
-- 72 pages, 41 assets, 2.3MB deploy
-- Single-person team, automated pipeline
+- 81 generated pages with hosted R2 media
+- Founder-led MVP implementation team
+- 450,000 THB Shesh investment ask share for equal partnership
+- 150,000 THB current MVP development build cost for Shesh's Thoughtseed Labs team in India
+- External hosting, analytics, signup/registration, payment/KYC, and service-provider costs budgeted separately
+
+### Build Team
+- **Lead:** Shesh Narayan Iyer / Thoughtseed Labs India
+- **Frontend:** 2 developers
+- **Backend:** 1 developer
+- **QA/testing:** 1 tester
 
 ### Next Phase
 - Add practitioner verification API (likely Cloudflare Workers)
@@ -135,4 +144,4 @@ vercel deploy --prod --scope sheshiyers-projects
 |------|--------|------|
 | May 27 | Initial wiki build | 41MB (with local assets) |
 | May 31 | R2 asset offload | 2.3MB (HTML only) |
-| May 31 | Founder docs added | 72 pages |
+| Jun 2 | Founder docs, R2 cleanup, and build-scope updates | 81 generated pages |

@@ -88,11 +88,24 @@ The platform defines **Paid Activation** as a user recharging at least **299 uni
 *   **KPI Targets:** 1,000 paid-activated users, 200 repeat purchasers, and 50 completed healer consultations.
 *   **Milestone Target:** 600,000 to 700,000 THB Annual Recurring Revenue (ARR).
 
-### Ownership and Leadership
-The project valuation is 450,000 THB, split equally among three founders:
-*   **Shesh Narayan Iyer:** Owns technology, mobile app, and technical setup.
-*   **Sahil Sahaparwal:** Owns marketing, distribution, and on-ground activations.
-*   **Mathis:** Owns investor path, company registration, and payment integrations.
+### Build Scope and Leadership
+Shesh's share of the investment ask is **450,000 THB**. This is the investment ask share for equal partnership used to make the partners equal; it is not a company valuation and it is not the MVP build vendor cost.
+
+The current MVP development build cost is **150,000 THB**. This is the cost of the MVP now in hand for **Shesh Narayan Iyer's Thoughtseed Labs team in India**, not the all-in launch or operating budget.
+
+The 150,000 THB build scope covers current MVP implementation only:
+*   Product and founder direction led by **Shesh Narayan Iyer**.
+*   Frontend implementation by **2 frontend developers**.
+*   Backend implementation by **1 backend developer**.
+*   Functional testing and release-readiness checks by **1 tester/QA**.
+
+Excluded costs must be budgeted separately:
+*   Third-party service setup and paid provider accounts.
+*   Signup, registration, company, store, or vendor onboarding costs.
+*   Analytics, dashboards, attribution, logs, and monitoring.
+*   Hosting, databases, Cloudflare/Vercel/R2 usage, and backend infrastructure.
+*   Payment gateway, KYC, payout, and other service-provider fees.
+*   Legal, compliance, practitioner onboarding, support, marketing, and ongoing maintenance.
 
 ---
 
@@ -127,13 +140,19 @@ The "Reflective Trust Field" visual system is designed to convey seriousness and
     *Answer:* 108 tokens.
 6.  **Does Klear Karma take a commission on practitioner consultations during the MVP phase?**
     *Answer:* No.
-7.  **Identify the three components of the "Reflective Steward" voice.**
+7.  **What does the 150,000 THB MVP build cost include?**
+    *Answer:* The current MVP development build only: founder-led product direction, frontend work, backend work, and QA/testing by Shesh's Thoughtseed Labs team in India.
+8.  **What is excluded from that build cost?**
+    *Answer:* Third-party services, signup/registration, analytics, hosting, payment/KYC providers, legal/compliance, operations, marketing, and ongoing maintenance.
+9.  **What does the 450,000 THB figure represent?**
+    *Answer:* Shesh's share of the investment ask to make the partners equal. It is not the 150,000 THB MVP build cost and not a company valuation.
+10.  **Identify the three components of the "Reflective Steward" voice.**
     *Answer:* Spiritually literate, commercially clear, and consent-first.
-8.  **What is the "moat" of the Klear Karma platform?**
+11.  **What is the "moat" of the Klear Karma platform?**
     *Answer:* Trust formation and context-aware handoff, rather than the marketplace itself.
-9.  **What material is used for the "Seal" in the visual identity?**
+12.  **What material is used for the "Seal" in the visual identity?**
     *Answer:* Quiet gold on black mirrored glass.
-10. **What is the practitioner payout threshold?**
+13. **What is the practitioner payout threshold?**
     *Answer:* 10,000 to 15,000 tokens (requires KYC and completed profile).
 
 ---

@@ -2,7 +2,7 @@
 
 **Date:** 2026-05-27
 **Branch:** kkv2-wiki-v2/wiki-site
-**Status:** INVESTIGATING
+**Status:** SUPERSEDED BY R2-HOSTED ASSET CONTRACT ON 2026-06-01
 
 ## Observed Failures
 
@@ -13,8 +13,8 @@
 - **Impact:** Users must scroll to find any substance; makes site appear empty.
 
 ### 2. Artifact Discovery Failure
-- **Description:** 23 NotebookLM artifacts exist in `public/notebooklm/` but are not surfaced as a browsable gallery.
-- **Evidence:** Files exist (PNG, PDF, MP3, MP4, CSV, JSON) but current UI only shows them as plain links in Markdown.
+- **Description:** NotebookLM artifacts are hosted in the configured Cloudflare R2 bucket and must be surfaced as a browsable gallery.
+- **Evidence:** Artifact records exist in `src/data/artifacts.json` with R2 URLs, but older notes referenced a removed local `public/notebooklm/` copy.
 - **Root Cause:** No dedicated artifact browser component; media files treated as decorative rather than primary content.
 - **Impact:** High-value generated artifacts are effectively invisible.
 
@@ -52,7 +52,7 @@
 
 - [ ] Homepage first viewport explains Klear Karma and the ingestion pipeline
 - [ ] `/en/docs/research/notebooklm-artifacts/` surfaces all 23 artifacts above the fold
-- [ ] Every file link under `/notebooklm/` resolves correctly
+- [ ] Every artifact link in `src/data/artifacts.json` resolves from the configured R2 bucket
 - [ ] Background treatment is abstract and premium (no repeated infographics)
 - [ ] `DESIGN.md` exists and defines typography, color, spacing, motion, media rules
 - [ ] No component uses emoji as UI icons
